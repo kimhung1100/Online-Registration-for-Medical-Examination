@@ -1,5 +1,5 @@
 function TrangChu() {
-    return <h2>Trang Chu</h2>;
+    return <h2>TrangChu</h2>;
 }
 
 export default TrangChu;

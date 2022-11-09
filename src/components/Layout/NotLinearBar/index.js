@@ -1,7 +1,7 @@
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../DefaultLayout/Header';
+import Footer from '../DefaultLayout/Footer';
 
-function DefaultLayout({ children }) {
+function NotLinearBar({ children }) {
     return (
         <div>
             <Header />
@@ -11,4 +11,4 @@ function DefaultLayout({ children }) {
     );
 }
 
-export default DefaultLayout;
+export default NotLinearBar;

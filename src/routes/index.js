@@ -8,6 +8,7 @@ import DangNhap from '../pages/DangNhap';
 import QuyTrinh from '../pages/QuyTrinh';
 import LienHe from '../pages/LienHe';
 
+import ChuyenKhoa from '../pages/ChuyenKhoa';
 import NhapLichKham from '../pages/NhapLichKham';
 // public routes
 const publicRoutes = [
@@ -17,10 +18,9 @@ const publicRoutes = [
     { path: '/lien-he', component: LienHe, layout: NotLinearBar },
     { path: '/dang-ky', component: DangKy, layout: null },
     { path: '/dang-nhap', component: DangNhap, layout: null },
-
-    { path: '/nhap-lich-kham', component: NhapLichKham },
+    { path: '/chuyen-khoa', component: ChuyenKhoa },
 ];
 // must login
-const privateRoutes = [];
+const privateRoutes = [{ path: '/nhap-lich-kham', component: NhapLichKham }];
 
 export { publicRoutes, privateRoutes };
