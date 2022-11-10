@@ -1,0 +1,34 @@
+#IntroductionPage{
+    .container_intro{
+        position: relative;
+        width: 1240px;
+        margin: auto;
+
+    .wapper{
+        background-image: url(../../assets/images/backgroundIntro.png) ;
+        border: 2px solid transparent;
+        background-repeat: no-repeat;
+        width: 1240px;
+        //height: 100%;
+        height: 150px;
+        text-align: center;
+        //margin: auto;
+        padding-top: 60px;
+        color: white;
+        position: absolute;
+        //background-size: 100% 100%;
+        margin: auto;
+    }
+    .contenty{
+        border: 2px solid #E5E5E5;
+        width: auto;
+        height: auto;
+        //text-align: center;
+        position: absolute;
+        margin: 100px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 15px;
+    }
+    }
+}
