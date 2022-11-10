@@ -3,6 +3,7 @@ import styles from './Header.module.scss';
 import whiteLogo from '../../../../assets/images/white_logo.jpg';
 const cx = classNames.bind(styles);
 
+
 function Header() {
     return (
         <header className={cx('wrapper')}>
