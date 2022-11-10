@@ -1,5 +1,5 @@
 function ChuyenKhoa() {
-    return <h2> ChuyenKhoa</h2>;
+    return <p>Lo.,</p>;
 }
 
 export default ChuyenKhoa;
