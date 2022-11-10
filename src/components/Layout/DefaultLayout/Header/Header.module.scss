@@ -4,7 +4,7 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: relative;
     top: 0;
     // position: relative;
     // min-width: 80%;
@@ -30,12 +30,16 @@
     //     }
     // }
 }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 .inner {
     height: 100%;
     width: 1240px;
     // background-color: aliceblue;
     font-size: 10px;
-    position: relative;
 }
 
 .inner p {
