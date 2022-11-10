@@ -2,7 +2,7 @@ import "./introduction.scss";
 
 function GioiThieu() {
     return( 
-    <div class="container">
+    
       <div id="IntroductionPage">
         <div className="container_intro">
           <div className="wapper"> 
@@ -26,7 +26,6 @@ function GioiThieu() {
           </div>
         </div>
       </div>
-    </div>
     );
 }
 
