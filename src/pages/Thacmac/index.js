@@ -1,20 +1,25 @@
 import './thacmac.css';
 import './base.css';
 import './fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/css/all.min.css'
-
+import React, { useEffect, useState, useRef } from 'react'
+import classNames from 'classnames';
 function ThacMac() {
+    const [hidden, setHidden] = useState(false);
+    const questionHandleClick = () => {
+        setHidden(!hidden);
+    };
     return (
-                <div class="content__wrapper">
-                    <div class="style__banner d-none d-lg-block">
-                        <div data-test="view" class="header">
-                            <div data-test="container" class="container">
-                                <div data-test="row" class="row">
-                                    <div data-test="col" class="col">
+                <div className={("content__wrapper")}>
+                    <div className={("style__banner d-none d-lg-block")}>
+                        <div data-test="view" className={("header")}>
+                            <div data-test="container" className={("container")}>
+                                <div data-test="row" className={("row")}>
+                                    <div data-test="col" className={("col")}>
                                         <div>
-                                            <h1 class="header__page">
+                                            <h1 className={("header__page")}>
                                                 <span>THẮC MẮC</span>
                                             </h1>
-                                            <div class="header__des">
+                                            <div className={("header__des")}>
                                                 <p>
                                                     Giải đáp câu hỏi nhanh giúp quý khách hiểu rõ hơn về sản phẩm, dịch
                                                     vụ của chúng tôi
@@ -26,58 +31,58 @@ function ThacMac() {
                             </div>
                         </div>
                     </div>
-                    <div data-test="container" class="container">
-                        <div data-test="row" class="row">
-                            <div class="col">
-                                <div class="mw-100 style_wrapper_page_inner">
-                                    <div data-test="row" class="row">
-                                        <div class="col-md-3">
-                                            <h2 class="title_table_thacmac">Giải đáp nhanh câu hỏi</h2>
-                                            <ul data-test="list-group" class="list-group style_list_category">
+                    <div data-test="container" className={("container")}>
+                        <div data-test="row" className={("row")}>
+                            <div className={("col")}>
+                                <div className={("mw-100 style_wrapper_page_inner")}>
+                                    <div data-test="row" className={("row")}>
+                                        <div className={("col-md-3")}>
+                                            <h2 className={("title_table_thacmac")}>Giải đáp nhanh câu hỏi</h2>
+                                            <ul data-test="list-group" className={("list-group style_list_category")}>
                                                 <a
                                                     data-test="list-group-item"
                                                     href="#"
-                                                    class="list-group-item style_active list-group-item-undefined"
+                                                    className={("list-group-item style_active list-group-item-undefined")}
                                                 >
                                                     Vấn đề chung
                                                 </a>
                                                 <a
                                                     data-test="list-group-item"
                                                     href="#"
-                                                    class="list-group-item list-group-item-undefined"
+                                                    className={("list-group-item list-group-item-undefined")}
                                                 >
                                                     Vấn đề tài khoản
                                                 </a>
                                                 <a
                                                     data-test="list-group-item"
                                                     href="#"
-                                                    class="list-group-item list-group-item-undefined"
+                                                    className={("list-group-item list-group-item-undefined")}
                                                 >
                                                     Vấn đề về quy trình khám
                                                 </a>
                                                 <a
                                                     data-test="list-group-item"
                                                     href="#"
-                                                    class="list-group-item list-group-item-undefined"
+                                                    className={("list-group-item list-group-item-undefined")}
                                                 >
                                                     Vấn đề thanh toán
                                                 </a>
                                             </ul>
                                         </div>
-                                        <div data-test="col" class="col">
-                                            <div class="style_list_question show">
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                        <div data-test="col" className={("col")}>
+                                            <div className={("style_list_question show")}>
+                                                <div onClick={questionHandleClick} className={("card style_card_collapse")}>
+                                                    <div className={classNames("style_card_collapse_item", {style_active: hidden})}>
                                                         Lợi ích khi sử dụng phần mềm đăng ký khám bệnh trực tuyến này là
                                                         gì?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="101"
-                                                        class="collapse style_collapse_active"
+                                                        className={classNames("collapse", "style_collapse_active", {opening_border: hidden}, {opening: hidden})}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Đặt lịch khám bệnh theo hẹn, mọi lúc mọi nơi, mà không
                                                                 cần đến bệnh viện
@@ -115,17 +120,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Làm sao để sử dụng được phần mềm đăng ký khám bệnh trực tuyến?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="102"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Có thể truy cập và sử dụng phần mềm trên tất cả
@@ -142,17 +147,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Đăng ký khám bệnh online có mất phí không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="103"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Có phí tiện ích, khi sử dụng dịch vụ đăng ký khám
@@ -168,18 +173,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi có thể dùng phần mềm để đăng ký và lấy số thứ tự khám cho
                                                         bệnh nhân khác không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="104"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Phần mềm khuyến cáo người dân, tự sử dụng phần mềm
@@ -203,17 +208,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Phần mềm có hỗ trợ đăng ký khám 24/7 không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="105"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Phần mềm cho phép bạn thực hiện việc đăng ký khám
@@ -226,18 +231,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Sau khi đăng ký khám thành công tôi nhận được phiếu khám bệnh
                                                         như thế nào?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="106"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Bạn sẽ nhận được phiếu khám bệnh điện tử trực tiếp
@@ -257,18 +262,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Có thể thanh toán trực tuyến chi phí khám chữa bệnh bằng những
                                                         phương phức nào?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="107"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>Thẻ quốc tế Visa , Master ,JCB</li>
                                                                 <li>
@@ -283,17 +288,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Làm sao tôi biết được là đã thanh toán thành công?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="108"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Khi thanh toán thành công, tiền khám chữa bệnh sẽ
@@ -313,17 +318,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi có thể đặt khám cho người nhà tôi được không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="109"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Quý khách có thể tạo tối đa 10 hồ sơ bệnh nhân. Quý
@@ -344,17 +349,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Đối tượng bệnh nhân nào có thể sử dụng qua phần mềm?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="110"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Tất cả người bệnh đều có thể sử dụng phần mềm để
@@ -375,18 +380,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Sau khi đã đăng ký khám thành công qua phần mềm, có thể hủy
                                                         phiếu khám không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="111"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Bạn có thể chủ động hủy phiếu khám đã đặt thành
@@ -408,18 +413,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi đến bênh viện trễ hơn so với giờ khám đã đăng ký, vậy tôi có
                                                         được khám hay không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="112"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Trường hợp bạn đến trễ so với giờ hẹn trên phiếu
@@ -434,18 +439,18 @@ function ThacMac() {
                                                 </div>
                                             </div>
 
-                                            <div class="style_list_question">
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                            <div className={("style_list_question")}>
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Có bao nhiêu cách để đăng nhập vào phần mềm?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="201"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Đăng nhập bằng số điện thoại di động, email, mạng xã
@@ -455,18 +460,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Mã số bệnh nhân là gì? làm sao tôi có thể biết được mã số bệnh
                                                         nhân của mình?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="202"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Mã số bệnh nhân là số hồ sơ mà bệnh viện dùng để
@@ -483,17 +488,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi quên mã số bệnh nhân của mình thì phải làm sao?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="203"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Để tìm lại mã số bệnh nhân, bạn có thể xem qua gợi ý
@@ -510,17 +515,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Làm sao tôi biết bên mình đã có mã số bệnh nhân chưa?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="204"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Nếu bạn đã từng thực hiện việc khám chữa bệnh tại
@@ -537,18 +542,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi có thể chọn tùy ý một hồ sơ bệnh nhân của người khác để đăng
                                                         ký khám bệnh cho mình không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="205"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Trong trường hợp bạn cố tình hay nhầm lẫn dùng hồ sơ
@@ -571,18 +576,18 @@ function ThacMac() {
                                                 </div>
                                             </div>
 
-                                            <div class="style_list_question">
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                            <div className={("style_list_question")}>
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Có thể đăng ký khám bệnh trong ngày bằng phần mềm không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="301"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Hiện tại bệnh viện hỗ trợ cả đặt khám đăng ký trong
                                                                 ngày, cho phép đặt khám trước 30 phút. Nhưng bạn không
@@ -591,17 +596,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Có thể đăng ký khám bệnh trong khoảng thời gian nào?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="302"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Bạn có thể đăng ký khám bệnh qua phần mềm, mọi lúc mọi
                                                                 nơi. Có thể đặt lịch hẹn khám bệnh trước ngày khám đến
@@ -610,17 +615,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Khi đi khám bệnh, tôi có cần chuẩn bị gì không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="303"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 <strong>
                                                                     Đối với Người bệnh có thẻ Bảo hiểm y tế:
@@ -645,18 +650,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi có việc đột xuất hoặc bận không đến khám được, tôi muốn huỷ
                                                         phiếu khám có được không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="304"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Quý khách chủ động thực hiện việc hủy phiếu trên phần
                                                                 mềm.
@@ -689,17 +694,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi có thể thay đổi thông tin khám đã đặt qua phần mềm không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="305"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Bạn không thể thay đổi thông tin khám trên phiếu khám
                                                                 bệnh đã đặt thành công.
@@ -707,18 +712,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Phần mềm có cho đăng ký khám bệnh với đối tượng bệnh nhân bhyt
                                                         không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="306"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Hiện tại bệnh viện chỉ hỗ trợ bệnh nhân đăng ký khám
                                                                 dịch vụ qua ứng dụng.
@@ -726,17 +731,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Nếu bác sĩ thay đổi lịch khám, tôi phải làm sao?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="307"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Khi bác sĩ thay đổi lịch khám, phần mềm sẽ gửi thông báo
                                                                 cho bạn qua tin nhắn sms, email và trên ứng dụng.Khi
@@ -768,18 +773,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Làm sao có thể chọn đúng chuyên khoa để đăng ký khám qua phần
                                                         mềm?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="308"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Trường hợp tái khám, bạn chỉ việc chọn đúng chuyên khoa
                                                                 của lần khám trước.
@@ -801,18 +806,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi sẽ được khám bệnh vào đúng thời gian đã chọn, sau khi đăng
                                                         ký khám qua phần mềm đúng không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="309"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>Trả lời: Có thể.</p>
                                                             <p>
                                                                 Thời gian bạn chọn khi đăng ký khám, được xem là thời
@@ -822,18 +827,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi đăng ký đã bị trừ tiền nhưng sao không nhận được mã số khám
                                                         bệnh?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="110"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Bạn vui lòng kiểm tra thông tin phiếu khám trong tài
                                                                 khoản trên phần mềm. Hoặc vui lòng gọi điện tổng đài
@@ -842,18 +847,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi đã đăng ký thành công vậy khi đi khám tôi có phải xếp hàng
                                                         gì không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="311"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Không, bạn không còn phải xếp hàng chờ đợi để lấy số
                                                                 khám bệnh, làm thủ tục đóng tiền, bạn chỉ cần đến cửa
@@ -864,18 +869,18 @@ function ThacMac() {
                                                 </div>
                                             </div>
 
-                                            <div class="style_list_question">
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                            <div className={("style_list_question")}>
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Điều kiện để được hoàn tiền là gì?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="401"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Bạn chỉ được hoàn tiền khi thực hiện thành công yêu cầu
                                                                 Hủy Phiếu Khám Bệnh trên phần mềm theo theo quy định.
@@ -883,17 +888,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Hoàn tiền như thế nào? Bao lâu thì tôi nhận lại được tiền hoàn?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="402"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Khi bạn thực hiện việc thanh toán bằng phương thức nào,
                                                                 thì phần mềm sẽ hoàn tiền lại cho bạn bằng đúng phương
@@ -928,18 +933,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi không có bất kỳ một thẻ khám bệnh hoặc thẻ ngân hàng nào để
                                                         thanh toán, vậy tôi phải làm sao?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="403"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Bạn có thể liên hệ nhân viên bệnh viện tại các quầy
                                                                 hướng dẫn trong bệnh viện để được hỗ trợ làm thẻ khám
@@ -957,18 +962,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Thông tin thanh toán của tôi có bị lộ khi tôi tiến hành thanh
                                                         toán trên phần mềm không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="404"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>Trả lời : Không!</p>
                                                             <p>
                                                                 Phần mềm và bệnh viện hoàn toàn không thể sao lưu lại
@@ -981,17 +986,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Phần mềm có hỗ trợ đăng ký khám 24/7 không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="405"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <ul>
                                                                 <li>
                                                                     Đối với thẻ khám bệnh/ATM nội địa phải đảm bảo đã
@@ -1010,18 +1015,18 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi muốn đăng ký khám online nhưng đến trực tiếp bệnh viện để
                                                         thanh toán được không?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="406"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Trả lời : không Hiện tại khi đặt khám trên phần mềm bạn
                                                                 vui lòng hoàn tất quy trình thanh toán ngay trên phần
@@ -1030,17 +1035,17 @@ function ThacMac() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card style_card_collapse">
-                                                    <div class="style_card_collapse_item">
+                                                <div className={("card style_card_collapse")}>
+                                                    <div className={("style_card_collapse_item")}>
                                                         Tôi nhập tài khoản thẻ nhưng bấm xác thực hoài không được?
-                                                        <i data-test="fa" class="fa fa-angle-down"></i>
+                                                        <i data-test="fa" className={("fa fa-angle-down")}></i>
                                                     </div>
                                                     <div
                                                         data-test="collapse"
                                                         id="407"
-                                                        class="collapse style_collapse_active"
+                                                        className={("collapse style_collapse_active")}
                                                     >
-                                                        <div data-test="card-body" class="card-body">
+                                                        <div data-test="card-body" className={("card-body")}>
                                                             <p>
                                                                 Vui lòng kiểm tra chính xác thông tin thẻ đã nhập.
                                                                 Trường hợp vẫn bị lỗi, hãy chụp ảnh màn hình báo lỗi và
