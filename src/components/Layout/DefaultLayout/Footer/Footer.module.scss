@@ -30,12 +30,6 @@
     //     }
     // }
 }
-.navbar {
-    margin: 0 auto;
-    display: inline-block;
-    float: none;
-    position: absolute;
-}
 .sticky {
     position: fixed;
     top: 0;
@@ -74,20 +68,7 @@
 .logo ul li {
     float: left;
 }
-.buttonLogin {
-    position: absolute;
-    bottom: 14px;
-    right: 80px;
-    font-size: 1.6rem;
-    width: 180px;
-    height: 28px;
-}
-.buttonLogin btn {
-    margin-block: 5px;
-}
-.btn {
-    margin-right: 10px;
-}
+
 .logo ul li a {
     display: block;
     color: #000;
