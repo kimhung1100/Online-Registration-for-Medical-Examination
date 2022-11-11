@@ -1,6 +1,7 @@
 import './thacmac.css';
 import './base.css';
 import './fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/css/all.min.css'
+
 function ThacMac() {
     return (
                 <div class="content__wrapper">
