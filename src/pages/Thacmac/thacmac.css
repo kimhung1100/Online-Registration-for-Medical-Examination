@@ -1,4 +1,4 @@
-body{
+/* body{
     margin: 0;
     font-size: 1rem;
     font-weight: 400;
@@ -11,7 +11,7 @@ body{
     font-family: Averta,serif;
     color: #12263f;
     height: 3000px;
-}
+} */
 
 .row{
     display: flex;
@@ -35,7 +35,7 @@ body{
 }
 
 .content__wrapper{
-    margin-top: 125px;
+    /* margin-top: 125px; */
     min-height: 100vh;
     position: relative;
     overflow: hidden;
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header__page{
     color: #fff;
-    font-size: 2rem;
+    font-size: 3.2rem;
     text-align: center;
     position: relative;
     margin: 0 auto;
@@ -95,7 +95,8 @@ p {
 
 .title_table_thacmac{
     padding: 11px 15px;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    font-weight: 300;
     line-height: 1.5rem;
     background: #1da1f2;
     color: #fff;

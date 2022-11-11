@@ -1,7 +1,8 @@
+import './thacmac.css';
+import './base.css';
+import './fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/css/all.min.css'
 function ThacMac() {
     return (
-        <wrapper>
-            <body>
                 <div class="content__wrapper">
                     <div class="style__banner d-none d-lg-block">
                         <div data-test="view" class="header">
@@ -74,7 +75,6 @@ function ThacMac() {
                                                         data-test="collapse"
                                                         id="101"
                                                         class="collapse style_collapse_active"
-                                                        style
                                                     >
                                                         <div data-test="card-body" class="card-body">
                                                             <p>
@@ -1056,8 +1056,6 @@ function ThacMac() {
                         </div>
                     </div>
                 </div>
-            </body>
-        </wrapper>
     );
 }
 

@@ -1,3 +1,86 @@
+#QuestionPage{
+    *, :after, :before{
+        box-sizing: border-box;
+    }
+    
+    ::selection {
+        background: #0352cc;
+        color: #fff;
+    }
+    
+    html {
+        font-size: 100%; /*100% = 16px*/
+        line-height: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+    
+    .grid {
+        width: 1200px;
+        max-width: 100%;
+        margin: 0 auto; /*căn giữa*/
+    }
+    
+    .grid__full-width {
+        width: 100%;
+    }
+    
+    .grid__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .mw-100 {
+        max-width: 100%!important;
+    }
+    
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+    .style_wrapper_page_inner{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    dl, ol, ul {
+        margin-top: 0;
+    }
+    
+    address, dl, ol, ul {
+        margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 1200px){
+        .container {
+            max-width: 1140px;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199px){
+        .d-lg-block {
+            display: block!important;
+        }
+    
+        .container {
+            max-width: 960px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991px){
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media (min-width: 576px) and (max-width: 767px){
+        .container {
+            max-width: 540px;
+        }
+    }
+    
+    b, strong {
+        font-weight: bolder;
+    }
+
 body {
     margin: 0;
     font-size: 1rem;
@@ -39,6 +122,7 @@ body {
     min-height: 100vh;
     position: relative;
     overflow: hidden;
+    background-size: cover;
     background-color: #fff;
 }
 .style__banner {
@@ -257,7 +341,4 @@ a {
     position: relative;
     height: auto;
 }
-
-:focus-visible {
-    outline: -webkit-focus-ring-color auto 1px;
 }

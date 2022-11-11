@@ -8,7 +8,6 @@ import DangNhap from '../pages/DangNhap';
 import QuyTrinh from '../pages/QuyTrinh';
 import LienHe from '../pages/LienHe';
 import ThacMac from '../pages/ThacMac';
-
 import ChuyenKhoa from '../pages/ChuyenKhoa';
 import NhapLichKham from '../pages/NhapLichKham';
 // public routes
