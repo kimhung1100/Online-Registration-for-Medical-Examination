@@ -247,7 +247,7 @@ a{
 }
 
 .opening{
-    border: 1px solid #307be7;
+    /* border: 1px solid #307be7; */
     max-height: 600px;
     position: relative;
     height:auto; 
