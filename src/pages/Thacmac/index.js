@@ -74,7 +74,6 @@ function ThacMac() {
                                                         data-test="collapse"
                                                         id="101"
                                                         class="collapse style_collapse_active"
-                                                        style
                                                     >
                                                         <div data-test="card-body" class="card-body">
                                                             <p>

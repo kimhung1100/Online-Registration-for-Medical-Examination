@@ -3,12 +3,11 @@ import styles from './Header.module.scss';
 import whiteLogo from '../../../../assets/images/white_logo.jpg';
 const cx = classNames.bind(styles);
 
-
 function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <div class="navbar navbar-expand-lg" className={cx('logo')}>
                     <img src={whiteLogo} className={styles.logo}></img>
                     <ul>
                         <li>
@@ -30,10 +29,14 @@ function Header() {
                             <a href="./lien-he">Liên hệ</a>
                         </li>
                     </ul>
-                    <button type="button" href="./dang-ki">
-                        Đăng kí
-                    </button>
-                    <button type="button">Đăng nhập</button>
+                    <div class="col-md-3 text-end bottomright" className={cx('buttonLogin')}>
+                        <a type="button" class="btn btn-primary mx-2 px-4" href="./dang-ky">
+                            Đăng ký
+                        </a>
+                        <a type="button" class="btn btn-outline-primary me-2 px-3" href="./dang-nhap">
+                            Đăng nhập
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
