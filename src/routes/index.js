@@ -10,9 +10,9 @@ import LienHe from '../pages/LienHe';
 import ThacMac from '../pages/ThacMac';
 import ThongTinChuyenKhoa from '../pages/ChuyenKhoa/ThongTinChuyenKhoa';
 import NhapLichKham from '../pages/NhapLichKham';
-import KhoaHoHap from '../pages/ChuyenKhoa/KhoaHoHap';
-import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
-import KhoaMat from '../pages/ChuyenKhoa/KhoaMat';
+// import KhoaHoHap from '../pages/ChuyenKhoa/KhoaHoHap';
+// import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
+// import KhoaMat from '../pages/ChuyenKhoa/KhoaMat';
 // public routes
 const publicRoutes = [
     { path: '/', component: TrangChu, layout: NotLinearBar }, // path: '/', component: trangChu, exact: true'}
@@ -23,9 +23,9 @@ const publicRoutes = [
     { path: '/dang-nhap', component: DangNhap, layout: null },
     { path: '/chuyen-khoa', component: ThongTinChuyenKhoa },
     { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
-    { path: '/chuyen-khoa/khoa-ho-hap', component: KhoaHoHap },
-    { path: '/chuyen-khoa/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
-    { path: '/chuyen-khoa/khoa-mat', component: KhoaMat },
+    // { path: '/chuyen-khoa/khoa-ho-hap', component: KhoaHoHap },
+    // { path: '/chuyen-khoa/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
+    // { path: '/chuyen-khoa/khoa-mat', component: KhoaMat },
 ];
 // must login
 const privateRoutes = [{ path: '/nhap-lich-kham', component: NhapLichKham }];
