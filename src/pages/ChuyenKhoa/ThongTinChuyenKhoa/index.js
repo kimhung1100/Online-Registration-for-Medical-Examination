@@ -1,11 +1,13 @@
 import "./chuyenKhoa.css"
+import lamsang from '../../../assets/images/lam_sang.jpg'
+import canlamsang from '../../../assets/images/can_lam_sang.jpg'
 
 function ThongTinChuyenKhoa() {
     return (
         <div className="chuyen_khoa_box">
             <div className="lam_sang">
                 <div className="anh_lam_sang">
-                    <img src="..\..\assets\images\lam_sang.jpg" alt="" />
+                    <img src={lamsang} alt="khong co hinh" />
                     <div className="khoa_content">KHOA LÂM SÀNG</div>
                 </div>
                 <div className="noi_dung_khoa">
@@ -28,7 +30,7 @@ function ThongTinChuyenKhoa() {
 
             <div className="can_lam_sang">
                 <div className="anh_lam_sang">
-                    <img src="..\..\assets\images\can_lam_sang.jpg" alt="" />
+                    <img src={canlamsang} alt="" />
                     <div className="khoa_content">KHOA CẬN LÂM SÀNG</div>
                 </div>    
                 <div className="noi_dung_khoa">

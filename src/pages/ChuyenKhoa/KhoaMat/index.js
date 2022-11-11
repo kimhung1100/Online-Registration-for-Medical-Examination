@@ -43,7 +43,7 @@ function KhoaMat () {
                 </ul>
             </div>
             <div class="thong_tin_thanh_tuu">
-                <p style="font-weight: normal;">Trải qua quá trình hoạt động cùng những nỗ lực không ngừng về mặt chuyên môn, đào tạo, hợp tác, Khoa Mắt Bệnh viện The Group Solutions đã đạt được những thành tựu chuyên môn và giải thưởng quan trọng.</p>
+                <p style={{fontWeight: 'normal'}}>Trải qua quá trình hoạt động cùng những nỗ lực không ngừng về mặt chuyên môn, đào tạo, hợp tác, Khoa Mắt Bệnh viện The Group Solutions đã đạt được những thành tựu chuyên môn và giải thưởng quan trọng.</p>
                 <ul>
                     <li>Danh hiệu thi đua: 
                         <ul>
