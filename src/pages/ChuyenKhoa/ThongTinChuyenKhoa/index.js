@@ -4,6 +4,10 @@ import canlamsang from '../../../assets/images/can_lam_sang.jpg'
 
 function ThongTinChuyenKhoa() {
     return (
+    <div>
+        <div className="wrapper">
+            CHUYÊN KHOA
+        </div>
         <div className="chuyen_khoa_box">
             <div className="lam_sang">
                 <div className="anh_lam_sang">
@@ -18,11 +22,11 @@ function ThongTinChuyenKhoa() {
                         <li><a href="">Khoa Nội tim mạch</a></li>
                         <li><a href="">Khoa Tim mạch can thiệp</a></li>
                         <li><a href="">Khoa Thần kinh</a></li>          
-                        <li><a href="">Khoa Tai - Mũi - Họng</a></li>
+                        <li><a href="./chuyen-khoa/khoa-tai-mui-hong">Khoa Tai - Mũi - Họng</a></li>
                         <li><a href="">Khoa Phụ sản</a></li>
                         <li><a href="">Khoa Tiêu hoá</a></li>
-                        <li><a href="">Khoa Hô hấp</a></li>
-                        <li><a href="">Khoa Mắt</a></li>
+                        <li><a href="./chuyen-khoa/khoa-ho-hap">Khoa Hô hấp</a></li>
+                        <li><a href="./chuyen-khoa/khoa-mat">Khoa Mắt</a></li>
                         <li><a href="">Khoa Tạo hình Thẩm mỹ</a></li>
                     </ul>
                 </div>
@@ -47,6 +51,7 @@ function ThongTinChuyenKhoa() {
                 </div>
             </div>    
         </div>
+    </div>
     );
 }
 
