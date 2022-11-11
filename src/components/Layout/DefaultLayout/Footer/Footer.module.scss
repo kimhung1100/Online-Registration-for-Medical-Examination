@@ -1,11 +1,13 @@
 .wrapper {
-    width: 100%;
     height: 125px;
     margin: 0 auto;
-    display: flex;
+    // display: flex;
     justify-content: center;
-    position: relative;
+    // position: relative;
     top: 0;
+    padding: 30px;
+    background-size: cover;
+
     // position: relative;
     // min-width: 80%;
     // max-width: 1240px;
@@ -34,4 +36,11 @@ strong {
     font-weight: bolder;
     color: #307be7;
     size: 3rem;
+}
+.linearBar {
+    padding: 20px 0;
+    background-image: linear-gradient(45deg, #6a78d1, #00a4bd);
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+    background-size: cover;
 }

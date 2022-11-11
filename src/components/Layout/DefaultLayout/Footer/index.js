@@ -5,8 +5,8 @@ const cx = classNames.bind(styles);
 
 function Footer() {
     return (
-        <footer className={cx('wrapper')}>
-            <div className={cx('inner')}>
+        <div>
+            <footer className={cx('wrapper')}>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2">
@@ -27,8 +27,9 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+                <div class="row" className={cx('linearBar')}></div>
+            </footer>
+        </div>
 
         // <div className={cx('linnearBar')}>
         //         <div class="container">
