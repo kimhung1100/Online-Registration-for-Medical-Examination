@@ -1,7 +1,9 @@
+import './thacmac.css';
+import './base.css';
+import './fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/css/all.min.css'
+import './thacmac.js'
 function ThacMac() {
     return (
-        <wrapper>
-            <body>
                 <div class="content__wrapper">
                     <div class="style__banner d-none d-lg-block">
                         <div data-test="view" class="header">
@@ -1055,8 +1057,6 @@ function ThacMac() {
                         </div>
                     </div>
                 </div>
-            </body>
-        </wrapper>
     );
 }
 

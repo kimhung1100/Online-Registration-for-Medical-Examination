@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="thongTinKhoa.css">
+    <title>Khoa Hô hấp</title>
+</head>
+<body>
+    <h1>KHOA HÔ HẤP</h1>
+    <div class="anh_khoa">
+        <img src="..\..\assets\images\khoaHoHap.jpg" alt="">
+    </div>
+    <div class="gioi_thieu">
+        <button class="gioi_thieu_chung">GIỚI THIỆU CHUNG</button>
+        <button class="trang_thiet_bi">TRANG THIẾT BỊ</button>
+        <button class="thanh_tuu">THÀNH TỰU</button>
+    </div>
+    <div class="thong_tin_gioi_thieu">
+        <p>Đội ngũ nhân sự:</p>
+        <ul>
+            <li>PGS TS BS. Lê Tiến Dũng - Trưởng khoa</li>
+            <li>BS CKII. Lê Thị Kim Chi</li>
+            <li>BS CKI. Nguyễn Dũng</li>
+            <li>ThS BS. Trần Minh Trí</li>
+            <li>ThS BS. Trần Xuân Sáng </li>
+            <li>ThS BS. Phan Quang Hiếu</li>
+            <br>
+            <li>ThS BS. Võ Kim Tuyến</li>
+            <li>ThS BS. Nguyễn Lê Phương Anh</li>
+            <li>ThS BS. Nguyễn Tuấn Anh</li>
+            <li>ThS BS. Nguyễn Tiết Âu</li>
+            <li>BS. Sơn Thị Oanh</li>
+            <li>BS. Đỗ Đức Quân</li>
+        </ul>
+    </div>
+    <div class="thong_tin_trang_thiet_bi">
+        <ul>
+            <li>Bên cạnh yếu tố nhân lực, khoa Hô Hấp rất chú trọng vào việc đầu tư trang thiết bị, máy móc hiện đại nhằm mang lại kết quả chính xác trong chẩn đoán cũng như điều trị cho bệnh nhân. Các trang thiết bị cần thiết để phục vụ cho việc khám chữa bệnh về hô hấp luôn được đảm bảo đầy đủ gồm có: Máy thở không xâm lấn, máy thở xâm lấn, hệ thống soi phế quản, Monitor, máy phun khí dung… và các thiết bị hỗ trợ điều trị khác.</li>
+            <li>Với mong muốn tạo môi trường thoải mái nhất cho các bệnh nhân đến thăm khám, điều trị, khoa Hô Hấp quan tâm xây dựng các phòng điều trị với giường bệnh hiện đại, đầy đủ tiện ích, không gian thoải mái, sạch sẽ cho cả người bệnh và người nhà đến chăm sóc.</li>
+            <li>Cùng với đó, không thể không kể đến hệ thống xe cấp cứu được trang bị đầy đủ thuốc, vật tư, hộp chống sốc và những phương tiện hiện đại nhất cho việc chăm sóc kịp thời cho người bệnh theo tiêu chuẩn của Y khoa quốc tế. </li>
+        </ul>
+    </div>
+    <div class="thong_tin_thanh_tuu">
+        <ul>
+            <li>Sinh thiết phổi dưới hướng dẫn CT scan ngực: Phương pháp đưa kim sinh thiết vào  phổi dưới hướng dẫn của máy chụp cắt lớp vi tính để tiến hành lấy một số bệnh phẩm từ u phổi. Các mẫu này sau đó được gửi đi kiểm tra dưới kính hiển vi giúp xác định bệnh tật. Kết quả chẩn đoán chính xác lên đến 81,5% và được đánh giá là phương pháp xâm lấn tối thiểu ít xảy ra tai biến.</li>
+            <li>Sinh thiết màng phổi mù bằng kim Abrams: Dùng kim sinh thiết màng phổi Abrams chọc qua thành ngực vào vùng có dịch ở khoang màng phổi. Sau khi đã chắc chắn đưa được kim dẫn đường vào khoang màng phổi, nòng của kim dẫn đường được rút ra, sau đó kim cắt được đưa vào để cắt bệnh phẩm. Mỗi lần sinh thiết thường lấy 3-4 mảnh để gửi xét nghiệm mô bệnh học. Ưu điểm của kỹ thuật này là dễ triển khai, nhanh chóng trong quá trình thực hiện và mang đến chi phí hợp lý cho người bệnh.</li>
+            <li>Nội soi phế quản: Thủ thuật giúp bác sĩ quan sát đường hô hấp bằng một ống soi mềm (soi phế quản) để chẩn đoán các bệnh lý về phổi. Trong quá trình nội soi, bác sĩ có thể lấy các mẫu mô, tế bào hoặc dịch của phổi để phục vụ cho công tác chẩn đoán, điều trị.</li>
+        </ul>
+    </div>
+
+    <script>
+        const showGioiThieu = document.querySelector('.gioi_thieu_chung')
+        const showThietBi = document.querySelector('.trang_thiet_bi')
+        const showThanhTuu = document.querySelector('.thanh_tuu')
+
+        const showThongTinGioiThieu = document.querySelector('.thong_tin_gioi_thieu')
+        const showThongTinThietBi = document.querySelector('.thong_tin_trang_thiet_bi')
+        const showThongTinThanhTuu = document.querySelector('.thong_tin_thanh_tuu')
+
+        function openGioiThieu() {
+            showThongTinGioiThieu.classList.remove('none')
+            showGioiThieu.classList.remove('none')
+            showThongTinGioiThieu.classList.add('open')
+            showGioiThieu.classList.add('open')
+            showThietBi.classList.remove('open')
+            showThanhTuu.classList.remove('open')
+            showThongTinThietBi.classList.remove('open')
+            showThongTinThanhTuu.classList.remove('open')
+        }
+        function openThietBi() {
+            showThongTinThietBi.classList.add('open')
+            showThietBi.classList.add('open')
+            showGioiThieu.classList.remove('open')
+            showGioiThieu.classList.add('none')
+            showThanhTuu.classList.remove('open')
+            showThongTinGioiThieu.classList.remove('open')
+            showThongTinGioiThieu.classList.add('none')
+            showThongTinThanhTuu.classList.remove('open')
+        }
+        function openThanhTuu() {
+            showThongTinThanhTuu.classList.add('open')
+            showThanhTuu.classList.add('open')
+            showGioiThieu.classList.remove('open')
+            showGioiThieu.classList.add('none')
+            showThietBi.classList.remove('open')
+            showThongTinGioiThieu.classList.remove('open')
+            showThongTinGioiThieu.classList.add('none')
+            showThongTinThietBi.classList.remove('open')
+        }
+
+        showGioiThieu.addEventListener('click', openGioiThieu)
+        showThietBi.addEventListener('click', openThietBi)
+        showThanhTuu.addEventListener('click', openThanhTuu)
+    </script>
+</body>
+</html>
