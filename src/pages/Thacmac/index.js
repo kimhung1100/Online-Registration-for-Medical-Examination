@@ -94,9 +94,9 @@ function ThacMac() {
                                 <div data-test="row" className={("row")}>
                                     <div data-test="col" className={("col")}>
                                         <div>
-                                            <h1 className={("header__page")}>
-                                                <span>THẮC MẮC</span>
-                                            </h1>
+                                            <div className={("header__page")}>
+                                                <p>THẮC MẮC</p>
+                                            </div>
                                             <div className={("header__des")}>
                                                 <p>
                                                     Giải đáp câu hỏi nhanh giúp quý khách hiểu rõ hơn về sản phẩm, dịch

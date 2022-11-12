@@ -1,4 +1,10 @@
-.wrapper {
+@media (min-width: 992px){
+    .col-lg-2 {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+/* .wrapper {
     height: 125px;
     margin: 0 auto;
     // display: flex;
@@ -31,16 +37,28 @@
     //         right: 15px;
     //     }
     // }
-}
+} */
 strong {
     font-weight: bolder;
     color: #307be7;
     size: 3rem;
 }
+
 .linearBar {
     padding: 20px 0;
     background-image: linear-gradient(45deg, #6a78d1, #00a4bd);
     background-repeat: no-repeat;
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
     background-size: cover;
+}
+
+.style_footer{
+    width: 100%;
+    overflow: hidden;
+}
+
+.style_footer .style_footer_inner{
+    background-color: #f8fafd;
+    padding: 2rem 0;
+    border-top: 1px solid #dfe3eb;
 }
