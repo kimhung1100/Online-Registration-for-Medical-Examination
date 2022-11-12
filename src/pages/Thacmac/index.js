@@ -1,13 +1,91 @@
 import './thacmac.css';
 import './base.css';
-import './fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/css/all.min.css'
-import React, { useEffect, useState, useRef } from 'react'
+import './fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/css/all.min.css';
+import React, { useEffect, useState, useRef } from 'react';
 import classNames from 'classnames';
+import { ReactDOM } from 'react';
 function ThacMac() {
     const [hidden, setHidden] = useState(false);
     const questionHandleClick = () => {
         setHidden(!hidden);
     };
+
+    useEffect(() => {
+        const list_group_items=document.querySelectorAll('a.list-group-item')
+        const style_list_questions=document.querySelectorAll('.style_list_question')
+        var i;
+        for(i=0; i<list_group_items.length; i++){
+            const list_group_item = list_group_items[i]
+            const style_list_question = style_list_questions[i]
+            console.log(list_group_item)
+            list_group_item.addEventListener('click', () => {
+                list_group_item.classList.add('style_active')
+                style_list_question.classList.add('show')
+                var j;
+                for(j=0; j<list_group_items.length; j++){
+                    const list_group_item_other = list_group_items[j]
+                    const style_list_question_other = style_list_questions[j]
+                    if(list_group_item_other != list_group_item)
+                    {
+                        list_group_item_other.classList.remove('style_active')
+                        style_list_question_other.classList.remove('show')
+                    }
+                }
+            })
+        }
+    },[])
+
+    useEffect(() => {
+        const style_card_collapses=document.querySelectorAll('.style_card_collapse')
+        var i; 
+        for(i=0; i<style_card_collapses.length; i++)
+        {
+            const style_collapse_active=style_card_collapses[i].querySelector('.style_collapse_active')
+            const style_card_collapse_item=style_card_collapses[i].querySelector('.style_card_collapse_item')
+            const icon=style_card_collapse_item.querySelector('i')
+            style_card_collapses[i].addEventListener('click', () => {
+                let x = style_collapse_active.classList.contains('opening');
+                console.log(x);
+                if(x===false){
+                    console.log('hi')
+                    style_collapse_active.classList.add('opening');
+                    style_collapse_active.classList.add('opening_border');
+                    style_card_collapse_item.classList.add('style_active');
+                    icon.classList.add('fa-angle-up');
+                    icon.classList.remove('fa-angle-down');
+                }
+                // if(x){
+                //     style_collapse_active.classList.remove('opening');
+                //     style_collapse_active.classList.remove('opening_border')
+                //     style_card_collapse_item.classList.remove('style_active')
+                //     icon.classList.remove('fa-angle-up');
+                //     icon.classList.add('fa-angle-down')
+                // }
+            })
+        }
+    },[])
+
+    useEffect(()=>{
+        const style_card_collapses=document.querySelectorAll('.style_card_collapse')
+        var i; 
+        for(i=0; i<style_card_collapses.length; i++)
+        {
+            const style_collapse_active=style_card_collapses[i].querySelector('.style_collapse_active')
+            const style_card_collapse_item=style_card_collapses[i].querySelector('.style_card_collapse_item')
+            const icon=style_card_collapse_item.querySelector('i')
+            style_card_collapses[i].addEventListener('click', () => {
+                let x = style_collapse_active.classList.contains('opening');
+                if(x){
+                    style_collapse_active.classList.remove('opening');
+                    style_collapse_active.classList.remove('opening_border')
+                    style_card_collapse_item.classList.remove('style_active')
+                    icon.classList.remove('fa-angle-up');
+                    icon.classList.add('fa-angle-down')
+                }
+            })
+        }
+    })
+
     return (
                 <div className={("content__wrapper")}>
                     <div className={("style__banner d-none d-lg-block")}>
@@ -72,7 +150,7 @@ function ThacMac() {
                                         <div data-test="col" className={("col")}>
                                             <div className={("style_list_question show")}>
                                                 <div onClick={questionHandleClick} className={("card style_card_collapse")}>
-                                                    <div className={classNames("style_card_collapse_item", {style_active: hidden})}>
+                                                    <div className={classNames("style_card_collapse_item")}>
                                                         Lợi ích khi sử dụng phần mềm đăng ký khám bệnh trực tuyến này là
                                                         gì?
                                                         <i data-test="fa" className={("fa fa-angle-down")}></i>
@@ -80,7 +158,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="101"
-                                                        className={classNames("collapse", "style_collapse_active", {opening_border: hidden}, {opening: hidden})}
+                                                        className={classNames("style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -128,7 +206,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="102"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -155,7 +233,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="103"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -182,7 +260,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="104"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -216,7 +294,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="105"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -240,7 +318,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="106"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -271,7 +349,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="107"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -296,7 +374,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="108"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -326,7 +404,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="109"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -357,7 +435,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="110"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -389,7 +467,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="111"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -422,7 +500,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="112"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -448,7 +526,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="201"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -469,7 +547,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="202"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -496,7 +574,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="203"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -523,7 +601,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="204"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -551,7 +629,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="205"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -585,7 +663,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="301"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -604,7 +682,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="302"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -623,7 +701,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="303"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -659,7 +737,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="304"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -702,7 +780,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="305"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -721,7 +799,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="306"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -739,7 +817,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="307"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -782,7 +860,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="308"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -815,7 +893,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="309"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>Trả lời: Có thể.</p>
@@ -836,7 +914,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="110"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -856,7 +934,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="311"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -878,7 +956,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="401"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -896,7 +974,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="402"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -942,7 +1020,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="403"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -971,7 +1049,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="404"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>Trả lời : Không!</p>
@@ -994,7 +1072,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="405"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <ul>
@@ -1024,7 +1102,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="406"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>
@@ -1043,7 +1121,7 @@ function ThacMac() {
                                                     <div
                                                         data-test="collapse"
                                                         id="407"
-                                                        className={("collapse style_collapse_active")}
+                                                        className={(" style_collapse_active")}
                                                     >
                                                         <div data-test="card-body" className={("card-body")}>
                                                             <p>

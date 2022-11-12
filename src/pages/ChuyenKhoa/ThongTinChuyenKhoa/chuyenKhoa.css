@@ -1,3 +1,16 @@
+.wrapper {
+    padding: 60px 0;
+    background-image: linear-gradient(45deg,#6a78d1,#00a4bd);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
 .chuyen_khoa_box {
     margin-left: auto;
     margin-right: auto;

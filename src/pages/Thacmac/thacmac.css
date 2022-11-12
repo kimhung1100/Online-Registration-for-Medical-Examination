@@ -210,9 +210,9 @@ a{
 }
 
 .style_collapse_active {
-    overflow:hidden;
+    overflow: hidden;
     position: relative;
-    transition:max-height .8s ease;
+    transition: max-height .8s ease;
     max-height: 0; 
 }
 

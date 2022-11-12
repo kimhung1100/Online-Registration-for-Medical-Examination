@@ -7726,7 +7726,11 @@
   dependencies:
     "@remix-run/router" "1.0.3"
 
+<<<<<<< HEAD
 "react-scripts@^5.0.1", "react-scripts@>=2.1.3":
+=======
+"react-scripts@>=2.1.3", "react-scripts@5.0.1":
+>>>>>>> a6bf0318d4a26a464392b3a5b5d45a8dcab77e56
   "integrity" "sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ=="
   "resolved" "https://registry.npmjs.org/react-scripts/-/react-scripts-5.0.1.tgz"
   "version" "5.0.1"
