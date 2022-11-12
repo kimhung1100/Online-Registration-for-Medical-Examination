@@ -11,7 +11,7 @@ function TrangChu() {
                     <div className={cx('title')}>ĐẶT LỊCH KHÁM</div>
                     <div className={cx('description')}>Đặt lịch khám theo chuyên khoa, chuyên môn, bác sĩ.</div>
                     <div className={cx('button')}>
-                        <a href="./dang-ky">Đăng ký khám</a>
+                        <a href="./chon-ho-so">Đăng ký khám</a>
                     </div>
                     <div className={cx('right')}>
                         <img src={doctorImage} className={cx('doctorImage')}></img>
@@ -19,16 +19,16 @@ function TrangChu() {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                {/* <div class="col-md-6">
                     <div className={cx('leftBox')}>
-                        <div className={cx('title')}>TẠI SAO NÊN CHỌN CHÚNG TÔI?</div>
+                        <div className={cx('title')}>Tra cứu thông tin</div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div className={cx('rightBox')}>
-                        <div className={cx('title')}>TẠI SAO KHÔNG NÊN CHỌN CHÚNG TÔI?</div>
+                        <div className={cx('title')}>Các vấn đề thường gặp</div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
