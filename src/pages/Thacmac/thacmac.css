@@ -213,6 +213,7 @@ a{
     overflow: hidden;
     position: relative;
     transition: max-height .8s ease;
+    /* transition: border .5s ease; */
     max-height: 0; 
 }
 
@@ -247,7 +248,7 @@ a{
 }
 
 .opening{
-    /* border: 1px solid #307be7; */
+    border: 1px solid #307be7;
     max-height: 600px;
     position: relative;
     height:auto; 
