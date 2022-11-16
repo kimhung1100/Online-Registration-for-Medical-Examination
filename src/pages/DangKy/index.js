@@ -1,4 +1,5 @@
-
+import './dangki.scss'
+import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf'
 
 function DangKy() {
     return(
