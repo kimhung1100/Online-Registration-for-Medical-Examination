@@ -5,7 +5,7 @@ import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf'
 function DangNhap() {
     return (
         <section>
-            <div className="quaylai"><a href="#" className="previous">&#8592;</a></div>
+            <div className="quaylai"><a href="./" className="previous">&#8592;</a></div>
             <div className="noi-dung">
                 <div className="form">
                     <h2>Đăng nhập</h2>

@@ -75,14 +75,14 @@ function Header() {
                             <div className={cx('style_widget')}></div>
                             <ul data-test='list-group' className={cx('list-group', 'style_list_group_dangnhap')}>
                                 <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
-                                    <a href='#' className={cx('style_button', 'style_redirect')}>Đăng Nhập</a>
+                                    <a href='./dang-ky' className={cx('style_button', 'style_redirect')}>Đăng ký</a>
                                 </li>
                                 <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
-                                    <a className={cx('style_button', 'style_login')} href='#'>Đăng nhập</a>
+                                    <a className={cx('style_button', 'style_login')} href='./dang-nhap'>Đăng nhập</a>
                                 </li>
-                                <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
-                                    <a className={cx('style_button', 'style_signup')} href='#'>Đăng ký</a>
-                                </li>
+                                {/* <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
+                                    <a className={cx('style_button', 'style_signup')} href=''>Đăng ký</a>
+                                </li> */}
                             </ul>
                         </div>
                         <div>

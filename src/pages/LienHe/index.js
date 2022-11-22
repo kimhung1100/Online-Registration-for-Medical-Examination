@@ -51,7 +51,7 @@ function LienHe() {
                                             </div>
                                             <div>
                                                 <span className={cx('style_link')}>
-                                                    <a href='#'>
+                                                    <a href='./thac-mac'>
                                                         Tham khảo
                                                         <i className={cx('fa', 'fa-long-arrow-alt-right')}></i>
                                                     </a>

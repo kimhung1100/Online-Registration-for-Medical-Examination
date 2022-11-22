@@ -4,7 +4,7 @@ import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf'
 function DangKy() {
     return(
         <section>
-            <div className="quaylai"><a href="#" className="previous">&#8592;</a></div>
+            <div className="quaylai"><a href="./" className="previous">&#8592;</a></div>
             <div className="noi-dung">
                 <div className="form">
                     <h2>Form đăng kí</h2>
