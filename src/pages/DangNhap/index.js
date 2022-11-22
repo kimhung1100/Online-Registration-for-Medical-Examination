@@ -1,4 +1,4 @@
-import '.dangnhap.scss'
+import './dangnhap.scss'
 import '../../assets/images/dangnhap.png'
 import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf'
 
