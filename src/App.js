@@ -1,11 +1,16 @@
-import { Fragment } from 'react';
+import { Fragment, useState, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 import { DefaultLayout } from './components/Layout';
+import {UserContext} from './components/UserContext';
+
 function App() {
+    
+    //const value = useMemo (() => ({user, setUser}), [user,setUser]);
     return (
         <Router>
             <div className="App">
+                <UserContext.Provider value={value}>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
@@ -29,6 +34,7 @@ function App() {
                         );
                     })}
                 </Routes>
+                </UserContext.Provider>
             </div>
         </Router>
     );

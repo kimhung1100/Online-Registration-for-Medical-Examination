@@ -1,11 +1,27 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import whiteLogo from '../../../../assets/images/white_logo.jpg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {UserContext} from '../../../UserContext';
+import { useContext } from 'react';
 const cx = classNames.bind(styles);
 
 
 function Header() {
+    //const [user, setUser] = useContext(UserContext);
+    const [auth, setAuth] = useState();
+    const [pwd, setPwd] = useState();
+    let navigate = useNavigate();
+    useEffect(()=>{
+        //var auth = user.phone;
+        //var pwd = user.password;
+       // console.log(user.phone);
+        setAuth(auth);
+        setPwd(pwd);
+    },
+    [])
+
     const [trangchu,setTrangchu] = useState(true)
     const [gioithieu,setGioithieu] = useState(false)
     const [chuyenkhoa,setChuyenkhoa] = useState(false)
@@ -75,13 +91,13 @@ function Header() {
                             <div className={cx('style_widget')}></div>
                             <ul data-test='list-group' className={cx('list-group', 'style_list_group_dangnhap')}>
                                 <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
-                                    <a href='#' className={cx('style_button', 'style_redirect')}>Đăng Nhập</a>
+                                    <a href='./dang-nhap' className={cx('style_button', 'style_redirect')}>Đăng Nhập</a>
                                 </li>
                                 <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
                                     <a className={cx('style_button', 'style_login')} href='#'>Đăng nhập</a>
                                 </li>
                                 <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
-                                    <a className={cx('style_button', 'style_signup')} href='#'>Đăng ký</a>
+                                    <a className={cx('style_button', 'style_signup')} href='./dang-ky'>Đăng ký</a>
                                 </li>
                             </ul>
                         </div>
