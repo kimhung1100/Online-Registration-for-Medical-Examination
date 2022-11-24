@@ -43,10 +43,12 @@ switch($method) {
                 //$stmt->bindParam(':created_at', $created_at);
                 //$stmt->execute();
                 break;
-            }
-            if($stmt->execute()) {
-                $response = ['Status' => '200'];
-            } else {
-                $response = ['message' => 'Failed to update record.'];
-            }
+                if($stmt->execute()) {
+                    $response = ['Status' => '200'];
+                } else {
+                    $response = ['message' => 'Failed to update record.'];
+                }
+        }
+        }
+        
 ?>
