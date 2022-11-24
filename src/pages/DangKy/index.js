@@ -5,7 +5,7 @@ function DangKy() {
     return(
         <section>
             <div className="quaylai"><a href="./" className="previous">&#8592;</a></div>
-            <div className="noi-dung">
+            <div className="noi-dung1">
                 <div className="form">
                     <h2>Form đăng kí</h2>
                     <form action="">
@@ -34,19 +34,19 @@ function DangKy() {
                     <ul className="icon-dang-nhap">
                         <li>
                             <i className="fa fa-facebook" aria-hidden="true"></i>
-                            <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với facebook</a></p>
+                            <p><a href="">Liên kết với facebook</a></p>
                         </li>
                         <li>
                             <i className="fa fa-google" aria-hidden="true"></i>
-                            <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với google</a></p>
+                            <p><a href="">Liên kết với google</a></p>
                         </li>
                         <li>
                             <i className="fa fa-twitter" aria-hidden="true"></i>
-                            <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với twitter</a></p>
+                            <p><a href="">Liên kết với twitter</a></p>
                         </li>
                     </ul>
                     <div className="input-form1">
-                        <input type="submit" value="Xác nhận" style="height:45px; width:200px" />
+                        <input type="submit" value="Xác nhận" ></input>
                     </div>
                 </div>
             </div>

@@ -14,6 +14,7 @@ section {
     width: 100%;
     height: 100vh;
     display: flex;
+    background-color: #f1f1f1;
 }
 
 section .img-bg {
@@ -73,7 +74,7 @@ section .noi-dung .form .input-form span {
     margin-bottom: 5px;
     display: inline-block;
     color: #607db8;
-    letter-spacing: 1px;
+    letter-spacing: 1px
 }
 
 section .noi-dung .form .input-form input {
@@ -86,6 +87,10 @@ section .noi-dung .form .input-form input {
     color: #607d8b;
     background: #ffffff;
     border-radius: 10px;
+}
+
+section .noi-dung .form .input-form input[type="text"] {
+    width: 100%;
 }
 
 section .noi-dung .form .input-form input[type="submit"] {
@@ -111,7 +116,10 @@ section .noi-dung .form .input-form input[type="submit"]:hover {
 section .noi-dung .form .input-form p {
     color: #607d8b;
     font-size: 0.8em;
-    text-align: center;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: right;
 }
 
 section .noi-dung .form .input-form p a {

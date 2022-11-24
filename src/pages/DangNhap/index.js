@@ -1,5 +1,5 @@
 import './dangnhap.scss'
-import '../../assets/images/dangnhap.png'
+import img from '../../assets/images/dangnhap.png'
 import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf'
 
 function DangNhap() {
@@ -19,7 +19,7 @@ function DangNhap() {
                             <input type="submit" value="Tiếp tục"></input>
                         </div>
                         <div className="input-form">
-                            <p>Bạn Chưa Có Tài Khoản? <a href="http://127.0.0.1:5500/dangki.html">Đăng Ký</a></p>
+                            <p>Bạn Chưa Có Tài Khoản? <a href="http://localhost:3000/dang-ky">Đăng Ký</a></p>
                         </div>
                     </form>
                     <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>
@@ -31,7 +31,7 @@ function DangNhap() {
                 </div>
             </div>
             <div className="img-bg">
-                <img src="images/dangnhap.png"></img>
+                <img src={img} value="image"></img>
             </div>
         </section>       
     );
