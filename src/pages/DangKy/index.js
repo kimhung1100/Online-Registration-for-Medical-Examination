@@ -7,7 +7,7 @@ function DangKy() {
             <div className="quaylai"><a href="./" className="previous">&#8592;</a></div>
             <div className="noi-dung1">
                 <div className="form">
-                    <h2>Form đăng kí</h2>
+                    <h2>Form đăng kí </h2>
                     <form action="">
                         <div className="input-form">
                             <label for="phone">Số điện thoại:</label><input type="text" name="" placeholder="+84"></input>
