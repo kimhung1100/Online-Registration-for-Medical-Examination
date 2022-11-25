@@ -10,7 +10,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    background-color: #f1f1f1;
+    background-color: #f6fcff;
 }
 
 
@@ -52,6 +52,7 @@
 .container2 .noi-dung1 .form .input-form {
     margin-bottom: 15px;
     margin-top: 15px;
+    margin-left: 15px;
 }
 
 
@@ -147,6 +148,11 @@ section .noi-dung1 .form .gender li {
     cursor: pointer;
     margin-top: 15px;
     width: 200px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
+        0 2px 2px rgba(0, 0, 0, 0.12),
+        0 4px 4px rgba(0, 0, 0, 0.12),
+        0 8px 8px rgba(0, 0, 0, 0.12),
+        0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
 .container2 .noi-dung1 .form .input-form1 input[type="submit"]:hover {
@@ -194,6 +200,11 @@ section .noi-dung1 .form .gender li {
     text-align: center;
     height: 50px;
     margin:10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02),
+        0 2px 2px rgba(0, 0, 0, 0.02),
+        0 4px 4px rgba(0, 0, 0, 0.02),
+        0 8px 8px rgba(0, 0, 0, 0.02),
+        0 16px 16px rgba(0, 0, 0, 0.02);
 }
 
 .container2 .noi-dung1 .form .icon-dang-nhap li i {
@@ -236,7 +247,7 @@ section .noi-dung1 .form .gender li {
 }
 
 .container2 .quaylai .previous {
-    background-color: #f1f1f1;
+    background-color: #f6fcff;
     color: #1DA1F2;
     font-size: 24px;
 }
