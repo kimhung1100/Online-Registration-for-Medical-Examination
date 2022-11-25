@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import whiteLogo from '../../../../assets/images/white_logo.jpg';
 import { useState } from 'react';
+import TheGroup_icon from './TheGroup_icon.png'
 const cx = classNames.bind(styles);
 
 
@@ -138,7 +139,7 @@ function Header() {
                             <div className={cx('style_support', 'style_widget')}>
                                 <div className={cx('style_iconThegroup')}>
                                     <a target={'_blank'} rel = 'noopener noreferrer'>
-                                        <img src='' alt='The Group'></img>
+                                        <img src={TheGroup_icon} alt='The Group'></img>
                                     </a>
                                 </div>
                                 <div className={cx('style_info')}>
