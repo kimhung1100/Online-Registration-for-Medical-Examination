@@ -1,0 +1,269 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+/* viet chung*/
+.col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.content__wrapper {
+    /* margin-top: 125px; */
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.style__banner {
+    padding: 60px 0;
+    background-image: linear-gradient(45deg, #6a78d1, #00a4bd);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+}
+
+.header {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+.style__banner .header {
+    overflow: unset;
+}
+
+.container3 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.header__page {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: left;
+    position: relative;
+    margin: 0 auto;
+    font-weight: 400;
+    margin-left: 50px;
+    z-index: 2;
+}
+
+.header__des {
+    color: #fff;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: 'Archivo', sans-serif;
+}
+
+.list {
+    margin-top: 50px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width: 60%;
+    border: 1px solid #DFE3EB;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    border-bottom: 1px solid #DFE3EB;
+    text-align: left;
+    border-left: none;
+    border-right: none;
+    padding: 16px;
+}
+
+th {
+    border-top: 1px solid #CFD2D9;
+    border-bottom: 1px solid #CFD2D9;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #F6F7F6;
+}
+
+.filter-cover {
+    background-color: #F9F8FA;
+    width: 60%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #969696;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    background-color: #FFFFFF;
+    width: 98%;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #969696;
+    border-radius: 10px;
+}
+
+.toolbox {
+    margin: 8px;
+    display: flex;
+    justify-content: right;
+    flex-flow: row wrap;
+}
+
+.selection {
+    margin: 10px;
+    display: flex;
+    justify-content: left;
+    flex-flow: row wrap;
+}
+
+.holder {
+    margin: 10px;
+    display: flex;
+    justify-content: left;
+    flex-flow: row wrap;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.match {
+    line-height: 30px;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.clear-button {
+    user-select: none;
+    width: 100px;
+    color: #4F4F4F;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 4px;
+    background: #E1E1E1;
+    opacity: 1;
+    margin-right: 5px;
+}
+
+.clear-button:hover {
+    opacity: 0.8;
+}
+
+.submit-button {
+    user-select: none;
+    width: 100px;
+    color: #ffffff;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 4px;
+    background: #1DA1F2;
+    opacity: 1;
+}
+
+.submit-button:hover {
+    opacity: 0.8;
+}
+
+/* Pagination links */
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+    background-color: #B8DBFE;
+    cursor: pointer;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+    background-color: #1DA1F2;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination a.last {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pagination a.next {
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    opacity: 0.8;
+}
+
+.taotaikhoan {
+    user-select: none;
+    width: 110px;
+    color: #ffffff;
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    height: 35px;
+    border-radius: 5px;
+    background: #1DA1F2;
+    opacity: 1;
+    margin-left: auto;
+}
+
+.taotaikhoan:hover {
+    opacity: 0.8;
+}
