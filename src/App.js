@@ -1,11 +1,12 @@
-import { Fragment } from 'react';
+import { Fragment, useState, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 import { DefaultLayout } from './components/Layout';
+import {UserContext} from './components/UserContext';
 function App() {
     const [user,setUser] = useState({
         key: Number,
-        login: Boolean,
+        login: false,
         userName:"",
         password:"",
         phone:"",
