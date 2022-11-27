@@ -183,7 +183,7 @@ function Header() {
                                             <a
                                                 href="./gioi-thieu"
                                                 aria-current="page"
-                                                className={cx('nav-link', 'Ripple-parent', gioithieu && 'active')}
+                                                className={cx('nav-link', 'Ripple-parent', gioithieu && 'target')}
                                                 data-test="nav-link"
                                             >
                                                 Giới thiệu

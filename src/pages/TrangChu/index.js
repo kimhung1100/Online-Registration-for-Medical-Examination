@@ -2,6 +2,8 @@ import classNames from 'classnames/bind';
 import doctorImage from '../../assets/images/doctor_image.png';
 import styles from './TrangChu.module.scss';
 import backgroundImage from '../../assets/images/hospital_background.jpg';
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const cx = classNames.bind(styles);
 function TrangChu() {
     return (
@@ -10,26 +12,48 @@ function TrangChu() {
                 <div className={cx('middle')}>
                     <div className={cx('title')}>ĐẶT LỊCH KHÁM</div>
                     <div className={cx('description')}>Đặt lịch khám theo chuyên khoa, chuyên môn, bác sĩ.</div>
-                    <div className={cx('button')}>
-                        <a href="./chon-ho-so">Đăng ký khám</a>
-                    </div>
+
                     <div className={cx('right')}>
                         <img src={doctorImage} className={cx('doctorImage')}></img>
                     </div>
+                    {/* <div className={cx('button')}>
+                        <a href="./chon-ho-so">Đăng ký khám</a>
+                    </div> */}
+                    <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                        Đặt lịch khám
+                    </button>
                 </div>
             </div>
-            <div class="row">
-                {/* <div class="col-md-6">
-                    <div className={cx('leftBox')}>
-                        <div className={cx('title')}>Tra cứu thông tin</div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <div class="card ">
+                        <div class="card-body">
+                            <p className={cx('card-title')}>Tra cứu thông tin</p>
+                            <p class="card-text" className={cx('card-text')}>
+                                Tại đây quý khách có thể tra cứu thông tin đặt chỗ, thông tin bệnh nhân, lịch khám...
+                            </p>
+                            <a href="#" class="btn btn-primary">
+                                Tra cứu thông tin
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div className={cx('rightBox')}>
-                        <div className={cx('title')}>Các vấn đề thường gặp</div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p className={cx('card-title')}>Các vấn đề thường gặp</p>
+                            <p class="card-text" className={cx('card-text')}>
+                                Vấn đề trong quá trình khám <br /> Vấn đề về dấu hiệu và tính trạng bệnh...
+                            </p>
+
+                            <a href="#" class="btn btn-primary">
+                                Các vấn đề thường gặp
+                            </a>
+                        </div>
                     </div>
-                </div> */}
+                </div>
             </div>
+            <div class="row justify-content-center"></div>
         </div>
     );
 }

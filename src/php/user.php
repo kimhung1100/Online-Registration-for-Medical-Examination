@@ -29,9 +29,7 @@ switch($method) {
                 if($nums >= 1){
                     $outp .= '{"Status":"200",'.'"Id":"'.$result["id"].'","userName":"'.$result["username"].'","gender":"'.$result["gender"].'"}'; 
                 }
-                //echo json_encode($order);
                 echo $outp;
-               
                 break;
             case "save":
                 $userName = $product->userName;
@@ -44,13 +42,13 @@ switch($method) {
                 //$created_at = date('Y-m-d');
                 //$stmt->bindParam(':created_at', $created_at);
                 break;
-            }
-        
+                
+        }
         if($stmt->execute()) {
             $response = ['Status' => '200'];
         } else {
             $response = ['message' => 'Failed to update record.'];
         }
+    }
         
-}
 ?>
