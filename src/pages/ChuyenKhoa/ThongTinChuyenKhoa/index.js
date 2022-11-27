@@ -5,48 +5,48 @@ import canlamsang from '../../../assets/images/can_lam_sang.jpg'
 function ThongTinChuyenKhoa() {
     return (
     <div>
-        <div className="wrapper">
+        <div className="ChuyenKhoa_wrapper">
             CHUYÊN KHOA
         </div>
-        <div className="chuyen_khoa_box">
-            <div className="lam_sang">
-                <div className="anh_lam_sang">
-                    <img src={lamsang} alt="khong co hinh" />
-                    <div className="khoa_content">KHOA LÂM SÀNG</div>
+        <div className="ChuyenKhoa_chuyen_khoa_box">
+            <div className="ChuyenKhoa_lam_sang">
+                <div className="ChuyenKhoa_anh_lam_sang">
+                    <img src={lamsang} alt="" />
+                    <div className="ChuyenKhoa_khoa_content">KHOA LÂM SÀNG</div>
                 </div>
-                <div className="noi_dung_khoa">
+                <div className="ChuyenKhoa_noi_dung_khoa">
                     <ul>
-                        <li><a href="">Khoa Cấp cứu</a></li>
-                        <li><a href="">Khoa Khám bệnh</a></li>
-                        <li><a href="">Khoa Nội tiết</a></li>
-                        <li><a href="">Khoa Nội tim mạch</a></li>
-                        <li><a href="">Khoa Tim mạch can thiệp</a></li>
-                        <li><a href="">Khoa Thần kinh</a></li>          
-                        <li><a href="./chuyen-khoa/khoa-tai-mui-hong">Khoa Tai - Mũi - Họng</a></li>
-                        <li><a href="">Khoa Phụ sản</a></li>
-                        <li><a href="">Khoa Tiêu hoá</a></li>
-                        <li><a href="./chuyen-khoa/khoa-ho-hap">Khoa Hô hấp</a></li>
-                        <li><a href="./chuyen-khoa/khoa-mat">Khoa Mắt</a></li>
-                        <li><a href="">Khoa Tạo hình Thẩm mỹ</a></li>
+                        <li><a href="./khoa-tai-mui-hong">Khoa Cấp cứu</a></li>
+                        <li><a href="./khoa-ho-hap">Khoa Khám bệnh</a></li>
+                        <li><a href="./khoa-mat">Khoa Nội tiết</a></li>
+                        <li><a href="./khoa-tai-mui-hong">Khoa Nội tim mạch</a></li>
+                        <li><a href="./khoa-ho-hap">Khoa Tim mạch can thiệp</a></li>
+                        <li><a href="./khoa-mat">Khoa Thần kinh</a></li>          
+                        <li><a href="./khoa-tai-mui-hong">Khoa Tai - Mũi - Họng</a></li>
+                        <li><a href="./khoa-ho-hap">Khoa Phụ sản</a></li>
+                        <li><a href="./khoa-mat">Khoa Tiêu hoá</a></li>
+                        <li><a href="./khoa-ho-hap">Khoa Hô hấp</a></li>
+                        <li><a href="./khoa-mat">Khoa Mắt</a></li>
+                        <li><a href="/khoa-tai-mui-hong">Khoa Tạo hình Thẩm mỹ</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div className="can_lam_sang">
-                <div className="anh_lam_sang">
+            <div className="ChuyenKhoa_can_lam_sang">
+                <div className="ChuyenKhoa_anh_lam_sang">
                     <img src={canlamsang} alt="" />
-                    <div className="khoa_content">KHOA CẬN LÂM SÀNG</div>
+                    <div className="ChuyenKhoa_khoa_content">KHOA CẬN LÂM SÀNG</div>
                 </div>    
-                <div className="noi_dung_khoa">
+                <div className="ChuyenKhoa_noi_dung_khoa">
                     <ul>
-                        <li><a href="">Khoa Chẩn đoán hình ảnh</a></li>
-                        <li><a href="">Khoa giải phẫu bệnh</a></li>
-                        <li><a href="">Khoa Dinh dưỡng - Tiết chế</a></li>
-                        <li><a href="">Khoa Nội soi</a></li>
-                        <li><a href="">Khoa Xét nghiệm</a></li>
-                        <li><a href="">Khoa Dược</a></li>
-                        <li><a href="">Khoa Vi sinh</a></li>
-                        <li><a href="">Khoa Y học hạt nhân</a></li>
+                        <li><a href="/khoa-tai-mui-hong">Khoa Chẩn đoán hình ảnh</a></li>
+                        <li><a href="./khoa-ho-hap">Khoa giải phẫu bệnh</a></li>
+                        <li><a href="./khoa-mat">Khoa Dinh dưỡng - Tiết chế</a></li>
+                        <li><a href="/khoa-tai-mui-hong">Khoa Nội soi</a></li>
+                        <li><a href="./khoa-ho-hap">Khoa Xét nghiệm</a></li>
+                        <li><a href="./khoa-mat">Khoa Dược</a></li>
+                        <li><a href="/khoa-tai-mui-hong">Khoa Vi sinh</a></li>
+                        <li><a href="./khoa-ho-hap">Khoa Y học hạt nhân</a></li>
                     </ul>
                 </div>
             </div>    

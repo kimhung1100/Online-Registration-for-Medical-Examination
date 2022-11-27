@@ -1,0 +1,150 @@
+/* .wrapper {
+    padding: 60px 0;
+    background-image: linear-gradient(45deg,#6a78d1,#00a4bd);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 40px;
+    padding: 2rem 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.wrapper_content {
+    color: white;
+    display: block;
+    padding: 16px 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.wrapper_content > a, 
+.chon_chuyen_khoa {
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.wrapper_content i {
+    font-size: 8px;
+}
+
+.chon_chuyen_khoa {
+    display: inline-block;
+    padding-right: 4px;
+}
+
+.wrapper_content > a:hover,
+.wrapper_content > .chon_chuyen_khoa:hover {
+    color: white;
+    opacity: 1;
+}
+
+.chuyen_khoa_content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    position: relative;
+}
+
+.thong_tin_kham {
+    max-width: 25%;
+}
+
+.thong_tin {
+    background-color: #1da1f2;
+    color: white;
+    font-weight: 700;
+    padding: 12px 20px;
+}
+
+.dia_chi {
+    padding: 12px 20px;
+    border: #dee2e6 2px solid;
+}
+
+.chon_khoa {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-bottom: 75px;
+}
+
+.cac_chuyen_khoa {
+    width: 600px;
+    max-height: 500px;
+    overflow: auto;
+    border-bottom: #dee2e6 2px solid;
+    border-left: #dee2e6 2px solid;
+    border-right: #dee2e6 2px solid;
+}
+
+.search {
+    padding: 15px;
+    border-left: #dee2e6 2px solid;
+    border-right: #dee2e6 2px solid;
+}
+
+.search_box {
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.fa-magnifying-glass {
+    top: 0;
+    bottom: 0;
+    font-size: 16px;
+    padding: 12px;
+    color: #dee2e6;
+}
+
+input {
+    border-radius: 3px;
+    border: #dee2e6 2px solid;
+    padding: 10px;
+    margin-left: 40px;
+    position: absolute;
+    left: 0;
+    line-height: 1.5;
+    right: 0;
+}
+
+input:focus {
+    border: #1da1f2 5px solid;;
+}
+
+ul {
+    padding-inline-start: 16px;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px 0 10px 0;
+    border-bottom: #dee2e6 2px solid;
+}
+
+a {
+    text-decoration: none;
+    color: #12263f;
+    padding: 10px 0 10px 0;
+}
+
+li > a:hover {
+    color: #1da1f2;
+}
+
+.thac_mac {
+    position: absolute;
+    font-weight: 700;
+    padding: 20px 0 20px;
+    color: #1da1f2;
+}
+
+.back {
+    position: absolute;
+    font-weight: 700;
+    padding: 20px 0 20px;
+    right: 0;
+} */
