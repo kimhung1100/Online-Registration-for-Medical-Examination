@@ -88,41 +88,7 @@ function Header() {
                             <ul data-test="list-group" className={cx('list-group', 'style_list_group_dangnhap')}>
                                 {user.login ? (
                                     <>
-                                        <li
-                                            data-test="list-group-item"
-                                            className={cx('list-group-item', 'list-group-item-undefined')}
-                                        >
-                                            <a className={cx('style_button', 'style_signup')} href="#">
-                                                {user.userName}
-                                            </a>
-                                        </li>
-                                    </>
-                                ) : (
-                                    <>
-                                        <li
-                                            data-test="list-group-item"
-                                            className={cx('list-group-item', 'list-group-item-undefined')}
-                                        >
-                                            <a href="#" className={cx('style_button', 'style_redirect')}>
-                                                Đăng Nhập
-                                            </a>
-                                        </li>
-                                        <li
-                                            data-test="list-group-item"
-                                            className={cx('list-group-item', 'list-group-item-undefined')}
-                                        >
-                                            <a className={cx('style_button', 'style_login')} href="./dang-nhap">
-                                                Đăng nhập
-                                            </a>
-                                        </li>
-                                        <li
-                                            data-test="list-group-item"
-                                            className={cx('list-group-item', 'list-group-item-undefined')}
-                                        >
-                                            <a className={cx('style_button', 'style_signup')} href="./dang-ky">
-                                                Đăng ký
-                                            </a>
-                                        </li>
+                                        
                                         <div class="btn-group">
                                             <button
                                                 type="button"
@@ -131,13 +97,13 @@ function Header() {
                                                 aria-expanded="false"
                                                 className={cx('style_button', 'style_signup')}
                                             >
-                                                Họ và tên bệnh nhân
+                                                {user.userName}
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
                                                     <button class="dropdown-item" type="button">
                                                         Xin chào!
-                                                        <h4>Họ và tên bệnh nhân</h4>
+                                                        <h4>{user.userName}</h4>
                                                     </button>
                                                 </li>
                                                 <li>
@@ -166,6 +132,34 @@ function Header() {
                                                 </li>
                                             </ul>
                                         </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <li
+                                            data-test="list-group-item"
+                                            className={cx('list-group-item', 'list-group-item-undefined')}
+                                        >
+                                            <a href="#" className={cx('style_button', 'style_redirect')}>
+                                                Đăng Nhập
+                                            </a>
+                                        </li>
+                                        <li
+                                            data-test="list-group-item"
+                                            className={cx('list-group-item', 'list-group-item-undefined')}
+                                        >
+                                            <a className={cx('style_button', 'style_login')} href="./dang-nhap">
+                                                Đăng nhập
+                                            </a>
+                                        </li>
+                                        <li
+                                            data-test="list-group-item"
+                                            className={cx('list-group-item', 'list-group-item-undefined')}
+                                        >
+                                            <a className={cx('style_button', 'style_signup')} href="./dang-ky">
+                                                Đăng ký
+                                            </a>
+                                        </li>
+                                        
                                     </>
                                 )}
                             </ul>
