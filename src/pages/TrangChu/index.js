@@ -4,6 +4,7 @@ import styles from './TrangChu.module.scss';
 import backgroundImage from '../../assets/images/hospital_background.jpg';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 function TrangChu() {
     return (
@@ -19,7 +20,7 @@ function TrangChu() {
                     {/* <div className={cx('button')}>
                         <a href="./chon-ho-so">Đăng ký khám</a>
                     </div> */}
-                    <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                    <button Link to="/chon-ho-so" type="button" class="btn btn-warning btn-lg button-dang-ky">
                         Đặt lịch khám
                     </button>
                 </div>
@@ -46,9 +47,9 @@ function TrangChu() {
                                 Vấn đề trong quá trình khám <br /> Vấn đề về dấu hiệu và tính trạng bệnh...
                             </p>
 
-                            <a href="#" class="btn btn-primary">
+                            <Link to="#" class="btn btn-primary">
                                 Các vấn đề thường gặp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

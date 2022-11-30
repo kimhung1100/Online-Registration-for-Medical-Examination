@@ -4,6 +4,7 @@ import whiteLogo from '../../../../assets/images/white_logo.jpg';
 import { useState } from 'react';
 import { UserContext } from '../../../UserContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -88,7 +89,6 @@ function Header() {
                             <ul data-test="list-group" className={cx('list-group', 'style_list_group_dangnhap')}>
                                 {user.login ? (
                                     <>
-                                        
                                         <div class="btn-group">
                                             <button
                                                 type="button"
@@ -159,7 +159,6 @@ function Header() {
                                                 Đăng ký
                                             </a>
                                         </li>
-                                        
                                     </>
                                 )}
                             </ul>
@@ -199,8 +198,8 @@ function Header() {
                                                 trangchu && 'undefined',
                                             )}
                                         >
-                                            <a
-                                                href="./"
+                                            <Link
+                                                to="/"
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', trangchu && 'active')}
                                                 data-test="nav-link"
@@ -211,7 +210,7 @@ function Header() {
                                                     class="Ripple "
                                                     style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
                                                 ></div>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li
                                             onClick={handleGioithieu}
@@ -222,8 +221,8 @@ function Header() {
                                                 gioithieu && 'undefined',
                                             )}
                                         >
-                                            <a
-                                                href="./gioi-thieu"
+                                            <Link
+                                                to="/gioi-thieu"
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', gioithieu && 'target')}
                                                 data-test="nav-link"
@@ -234,7 +233,7 @@ function Header() {
                                                     class="Ripple "
                                                     style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
                                                 ></div>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li
                                             onClick={handleChuyenkhoa}
@@ -245,8 +244,8 @@ function Header() {
                                                 chuyenkhoa && 'undefined',
                                             )}
                                         >
-                                            <a
-                                                href="./chuyen-khoa"
+                                            <Link
+                                                to="/chuyen-khoa"
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', chuyenkhoa && 'active')}
                                                 data-test="nav-link"
@@ -257,7 +256,7 @@ function Header() {
                                                     class="Ripple "
                                                     style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
                                                 ></div>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li
                                             onClick={handleQuytrinh}
@@ -268,8 +267,8 @@ function Header() {
                                                 quytrinh && 'undefined',
                                             )}
                                         >
-                                            <a
-                                                href="./quy-trinh"
+                                            <Link
+                                                to="/quy-trinh"
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', quytrinh && 'active')}
                                                 data-test="nav-link"
@@ -280,7 +279,7 @@ function Header() {
                                                     class="Ripple "
                                                     style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
                                                 ></div>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li
                                             onClick={handleThacmac}
@@ -291,11 +290,11 @@ function Header() {
                                                 thacmac && 'undefined',
                                             )}
                                         >
-                                            <a
+                                            <Link
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', thacmac && 'active')}
                                                 data-test="nav-link"
-                                                href="./thac-mac"
+                                                to="/thac-mac"
                                             >
                                                 Thắc mắc
                                                 <div
@@ -303,15 +302,15 @@ function Header() {
                                                     class="Ripple "
                                                     style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
                                                 ></div>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li
                                             onClick={handleLienhe}
                                             data-test="nav-item"
                                             className={cx('nav-item', lienhe && 'style_active', lienhe && 'undefined')}
                                         >
-                                            <a
-                                                href="./lien-he"
+                                            <Link
+                                                to="/lien-he"
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', lienhe && 'active')}
                                                 data-test="nav-link"
@@ -322,7 +321,7 @@ function Header() {
                                                     class="Ripple "
                                                     style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
                                                 ></div>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
