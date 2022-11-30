@@ -5,7 +5,7 @@ import { DefaultLayout } from './components/Layout';
 import {UserContext} from './components/UserContext';
 function App() {
     const [user,setUser] = useState({
-        key: Number,
+        key: 0,
         login: false,
         userName:"",
         password:"",

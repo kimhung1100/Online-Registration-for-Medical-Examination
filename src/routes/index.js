@@ -22,6 +22,7 @@ import ChonLichKham from '../pages/ChonLichKham';
 import XacNhanThongTin from '../pages/XacNhanThongTin';
 import ThanhToan from '../pages/ThanhToan';
 
+import TraCuuThongTin from '../pages/TraCuuThongTin';
 import NhapHoSoBacSi from '../pages/NhapHoSoBacSi';
 import NhapLichKhamBacSi from '../pages/NhapLichKhamBacSi';
 import ChinhSuaLichKhamBacSi from '../pages/ChinhSuaLichKhamBacSi';
@@ -55,6 +56,8 @@ const publicRoutes = [
     { path: '/chon-lich-kham', component: ChonLichKham },
     { path: '/xac-nhan-thong-tin', component: XacNhanThongTin },
     { path: '/thanh-toan', component: ThanhToan },
+
+    { path: '/tra-cuu', component: TraCuuThongTin },
 
     // these pages below need task administrator permission, temporary write here
     { path: '/nhap-ho-so-bac-si', component: NhapHoSoBacSi },

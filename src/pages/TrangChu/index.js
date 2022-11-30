@@ -4,9 +4,12 @@ import styles from './TrangChu.module.scss';
 import backgroundImage from '../../assets/images/hospital_background.jpg';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+import {UserContext} from '../../components/UserContext';
+import { useContext } from 'react';
 const cx = classNames.bind(styles);
 function TrangChu() {
+    const [user, setUser] = useContext(UserContext);
     return (
         <div className={cx('container')}>
             <div className={cx('content')}>
@@ -20,9 +23,17 @@ function TrangChu() {
                     {/* <div className={cx('button')}>
                         <a href="./chon-ho-so">Đăng ký khám</a>
                     </div> */}
-                    <button Link to="/chon-ho-so" type="button" class="btn btn-warning btn-lg button-dang-ky">
-                        Đặt lịch khám
-                    </button>
+                    {user.key === 0 ? (
+                        <Link to="/dang-nhap">
+                            <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                            Đặt lịch khám</button>
+                        </Link>) :
+                        (
+                        <Link to="/dat-lich-kham">
+                            <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                            Đặt lịch khám</button>
+                        </Link>)
+                    }
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -33,9 +44,15 @@ function TrangChu() {
                             <p class="card-text" className={cx('card-text')}>
                                 Tại đây quý khách có thể tra cứu thông tin đặt chỗ, thông tin bệnh nhân, lịch khám...
                             </p>
-                            <a href="#" class="btn btn-primary">
+                            {user.key === 0 ? 
+                                ( <Link to="/dang-nhap" class="btn btn-primary">
                                 Tra cứu thông tin
-                            </a>
+                                </Link>):(
+                                <Link to="/tra-cuu" class="btn btn-primary">
+                                    Tra cứu thông tin
+                                </Link>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
@@ -44,10 +61,9 @@ function TrangChu() {
                         <div class="card-body">
                             <p className={cx('card-title')}>Các vấn đề thường gặp</p>
                             <p class="card-text" className={cx('card-text')}>
-                                Vấn đề trong quá trình khám <br /> Vấn đề về dấu hiệu và tính trạng bệnh...
+                                Vấn đề trong quá trình khám <br/> Vấn đề về dấu hiệu và tính trạng bệnh...
                             </p>
-
-                            <Link to="#" class="btn btn-primary">
+                            <Link to="/thac-mac" class="btn btn-primary">
                                 Các vấn đề thường gặp
                             </Link>
                         </div>

@@ -74,9 +74,9 @@ function TraCuuThongTin() {
                     <div data-test="container" className="container">
                         <div data-test="row" className="row">
                             <div data-test="col" className="col-md-5 col-lg-4">
-                                <a className={cx("add_patients")} href="#">
+                                <Link className={cx("add_patients")} to="/tao-moi-ho-so">
                                     <i className="fas fa-user-plus"></i>Thêm hồ sơ bệnh nhân
-                                </a>
+                                </Link>
                                 <ul data-test="nav" className={cx("nav", "nav_tab_info")}>
                                     <li data-test="nav-item" className={cx("nav-item")}>
                                         <Link aria-current="page" className={cx("nav-link", "Ripple-parent", "active")} data-test="nav-link" role="tab" onClick={() => setPage("HoSoBenhNhan")}>

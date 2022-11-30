@@ -4,7 +4,11 @@ import whiteLogo from '../../../../assets/images/white_logo.jpg';
 import { useState } from 'react';
 import { UserContext } from '../../../UserContext';
 import { useContext } from 'react';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
+=======
+import { Link, useNavigate } from "react-router-dom";
+>>>>>>> 128777d (chonhs)
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -66,6 +70,8 @@ function Header() {
         setThacmac = false;
         setLienhe = true;
     };
+
+    const navigate = useNavigate();
     return (
         <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
             <div
@@ -126,7 +132,7 @@ function Header() {
                                                     </button>
                                                 </li>
                                                 <li>
-                                                    <button class="dropdown-item" type="button">
+                                                    <button class="dropdown-item" type="button" onClick = {()=>{setUser({});navigate('/')}}>
                                                         Thoát
                                                     </button>
                                                 </li>
@@ -139,25 +145,17 @@ function Header() {
                                             data-test="list-group-item"
                                             className={cx('list-group-item', 'list-group-item-undefined')}
                                         >
-                                            <a href="#" className={cx('style_button', 'style_redirect')}>
-                                                Đăng Nhập
-                                            </a>
-                                        </li>
-                                        <li
-                                            data-test="list-group-item"
-                                            className={cx('list-group-item', 'list-group-item-undefined')}
-                                        >
-                                            <a className={cx('style_button', 'style_login')} href="./dang-nhap">
+                                            <Link className={cx('style_button', 'style_login')} to="/dang-nhap">
                                                 Đăng nhập
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li
                                             data-test="list-group-item"
                                             className={cx('list-group-item', 'list-group-item-undefined')}
                                         >
-                                            <a className={cx('style_button', 'style_signup')} href="./dang-ky">
+                                            <Link className={cx('style_button', 'style_signup')} to="/dang-ky">
                                                 Đăng ký
-                                            </a>
+                                            </Link>
                                         </li>
                                     </>
                                 )}
