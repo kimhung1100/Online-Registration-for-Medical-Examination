@@ -9,9 +9,9 @@ import QuyTrinh from '../pages/QuyTrinh';
 import LienHe from '../pages/LienHe';
 import ThacMac from '../pages/ThacMac';
 import ThongTinChuyenKhoa from '../pages/ChuyenKhoa/ThongTinChuyenKhoa';
-// import KhoaHoHap from '../pages/ChuyenKhoa/KhoaHoHap';
-// import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
-// import KhoaMat from '../pages/ChuyenKhoa/KhoaMat';
+import KhoaHoHap from '../pages/ChuyenKhoa/KhoaHoHap';
+import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
+import KhoaMat from '../pages/ChuyenKhoa/KhoaMat';
 
 import TaoMoiHoSo from '../pages/TaoMoiHoSo';
 import NhapLichKham from '../pages/NhapLichKham';
@@ -43,9 +43,9 @@ const publicRoutes = [
     { path: '/dang-nhap', component: DangNhap, layout: null },
     { path: '/chuyen-khoa', component: ThongTinChuyenKhoa, layout: NotLinearBar },
     { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
-    // { path: '/chuyen-khoa/khoa-ho-hap', component: KhoaHoHap },
-    // { path: '/chuyen-khoa/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
-    // { path: '/chuyen-khoa/khoa-mat', component: KhoaMat },
+    { path: '/khoa-ho-hap', component: KhoaHoHap },
+    { path: '/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
+    { path: '/khoa-mat', component: KhoaMat },
 
     // these pages below need customer permission, temporary write here
     { path: '/tao-moi-ho-so', component: TaoMoiHoSo },

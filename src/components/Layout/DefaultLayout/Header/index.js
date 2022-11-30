@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import whiteLogo from '../../../../assets/images/white_logo.jpg';
 import { useState } from 'react';
-import {UserContext} from '../../../UserContext';
+import { UserContext } from '../../../UserContext';
 import { useContext } from 'react';
 const cx = classNames.bind(styles);
 
@@ -86,40 +86,88 @@ function Header() {
                         <div className={cx('style_nav_info')}>
                             <div className={cx('style_widget')}></div>
                             <ul data-test="list-group" className={cx('list-group', 'style_list_group_dangnhap')}>
-                            {user.login ? (
-                                <>
-                                <li data-test='list-group-item' className={cx('list-group-item', 'list-group-item-undefined')}>
-                                    <a className={cx('style_button', 'style_signup')} href='#'>{user.userName}</a>
-                                    </li>
-                                </>
-                            ):(
-                                <>
-                                <li
-                                    data-test="list-group-item"
-                                    className={cx('list-group-item', 'list-group-item-undefined')}
-                                >
-                                    <a href="#" className={cx('style_button', 'style_redirect')}>
-                                        Đăng Nhập
-                                    </a>
-                                </li>
-                                <li
-                                    data-test="list-group-item"
-                                    className={cx('list-group-item', 'list-group-item-undefined')}
-                                >
-                                    <a className={cx('style_button', 'style_login')} href="#">
-                                        Đăng nhập
-                                    </a>
-                                </li>
-                                <li
-                                    data-test="list-group-item"
-                                    className={cx('list-group-item', 'list-group-item-undefined')}
-                                >
-                                    <a className={cx('style_button', 'style_signup')} href="#">
-                                        Đăng ký
-                                    </a>
-                                </li>
-                                </>
-                            )}
+                                {user.login ? (
+                                    <>
+                                        <li
+                                            data-test="list-group-item"
+                                            className={cx('list-group-item', 'list-group-item-undefined')}
+                                        >
+                                            <a className={cx('style_button', 'style_signup')} href="#">
+                                                {user.userName}
+                                            </a>
+                                        </li>
+                                    </>
+                                ) : (
+                                    <>
+                                        <li
+                                            data-test="list-group-item"
+                                            className={cx('list-group-item', 'list-group-item-undefined')}
+                                        >
+                                            <a href="#" className={cx('style_button', 'style_redirect')}>
+                                                Đăng Nhập
+                                            </a>
+                                        </li>
+                                        <li
+                                            data-test="list-group-item"
+                                            className={cx('list-group-item', 'list-group-item-undefined')}
+                                        >
+                                            <a className={cx('style_button', 'style_login')} href="./dang-nhap">
+                                                Đăng nhập
+                                            </a>
+                                        </li>
+                                        <li
+                                            data-test="list-group-item"
+                                            className={cx('list-group-item', 'list-group-item-undefined')}
+                                        >
+                                            <a className={cx('style_button', 'style_signup')} href="./dang-ky">
+                                                Đăng ký
+                                            </a>
+                                        </li>
+                                        <div class="btn-group">
+                                            <button
+                                                type="button"
+                                                class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false"
+                                                className={cx('style_button', 'style_signup')}
+                                            >
+                                                Họ và tên bệnh nhân
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <button class="dropdown-item" type="button">
+                                                        Xin chào!
+                                                        <h4>Họ và tên bệnh nhân</h4>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider"></hr>
+                                                </li>
+
+                                                <li>
+                                                    <button class="dropdown-item" type="button">
+                                                        Hồ sơ bệnh nhân
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="dropdown-item" type="button">
+                                                        Phiếu khám bệnh
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="dropdown-item" type="button">
+                                                        Thông báo
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="dropdown-item" type="button">
+                                                        Thoát
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </>
+                                )}
                             </ul>
                         </div>
                         <div>
