@@ -36,13 +36,18 @@ function DangNhap() {
             if(result.data.Status === "200"){
                 //window.localStorage.setItem('phone', result.data.phone);
                 //window.localStorage.setItem('password', result.data.password);
-                navigate(`/`);
-               
-                //user.login = true;
+                
                 //user.key = result.data.Id;
-                setUser(
-                    [...result.data]
-                );
+                setUser(user => ({
+                    ...user,
+                    ...data,
+                    login:true,
+                    userName:result.data.userName,
+                    key:result.data.Id,
+                    gender:result.data.gender
+                }));
+                console.log(user);
+                navigate('/');
             }
             else {alert('Invalid');}
         })
@@ -50,9 +55,11 @@ function DangNhap() {
             console.log(error.response);
         });
         
-        //setUser(sendData);
-        //user.login = true;
-        //console.log(sendData);
+        setData({
+            ...data,
+            password:"",
+            phone:"",
+        });
         
         
 	};
