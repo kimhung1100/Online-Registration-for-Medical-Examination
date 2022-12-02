@@ -1,4 +1,5 @@
-import './dangnhap.scss';
+import styles from './dangnhap.scss';
+import classNames from 'classnames/bind';
 import bglogin from '../../assets/images/dangnhap.png';
 import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf';
 import React, { useEffect, useState } from 'react';
@@ -7,6 +8,7 @@ import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
 import axios from 'axios';
 import userEvent from '@testing-library/user-event';
+const cx = classNames.bind(styles);
 
 function DangNhap() {
     const [user, setUser] = useContext(UserContext);
@@ -64,18 +66,18 @@ function DangNhap() {
     };
 
     return (
-        <section>
-            <div className="quaylai">
-                <Link to="/" className="previous">
+        <section className={cx('container1')}>
+             <div className={cx('quaylai')}>
+                <Link to="/" className={cx('previous')}>
                     &#8592;
                 </Link>
             </div>
-            <div className="noi-dung">
-                <div className="form">
+            <div className={cx('noi-dung')}>
+                <div className={cx('form')}>
                     <h2>Đăng nhập</h2>
                     <h3>Vui lòng nhập số điện thoại để tiếp tục</h3>
                     <form action="" onSubmit={handleSubmit}>
-                        <div className="input-form">
+                        <div className={cx('input-form')}>
                             <input
                                 type="text"
                                 name="phone"
@@ -85,7 +87,7 @@ function DangNhap() {
                                 required
                             />
                         </div>
-                        <div className="input-form">
+                        <div className={cx('input-form')}>
                             <input
                                 type="password"
                                 name="password"
@@ -95,34 +97,33 @@ function DangNhap() {
                                 required
                             />
                         </div>
-                        <div className="input-form">
+                        <div className={cx('input-form')}>
                             <input type="submit" value="Xác nhận" />
                         </div>
-                        <div className="input-form">
+                        <div className={cx('input-form')}>
                             <p>
                                 Bạn Chưa Có Tài Khoản? <a href="http://127.0.0.1:5500/dangki.html">Đăng Ký</a>
                             </p>
                         </div>
                     </form>
                     <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>
-                    <ul class="icon-dang-nhap">
+                    <ul class={cx("icon-dang-nhap")}>
                         <li>
-                            <i className="fa fa-facebook" aria-hidden="true"></i>
+                            <i className={cx("fa fa-facebook")} aria-hidden="true"></i>
                         </li>
                         <li>
-                            <i className="fa fa-google" aria-hidden="true"></i>
+                            <i className={cx("fa fa-google")} aria-hidden="true"></i>
                         </li>
                         <li>
-                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                            <i className={cx("fa fa-twitter")} aria-hidden="true"></i>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className="img-bg">
-                <img src={bglogin}></img>
+            <div className={cx("img-bg")}>
+                <img src={bglogin} value="image"></img>
             </div>
         </section>
     );
-}
-
+}     
 export default DangNhap;

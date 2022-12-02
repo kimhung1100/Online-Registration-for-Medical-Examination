@@ -1,6 +1,10 @@
 import axios from'axios';
 import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import styles from './dangki.scss'
+import classNames from 'classnames/bind';
+import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf'
+const cx = classNames.bind(styles);
 
 
 export default function DangKy() {
@@ -53,21 +57,21 @@ export default function DangKy() {
 	};
 
     return(
-        <section>
+        <section className={cx("container2")}>
             {/*<div className="quaylai"><a href="#" className="previous">&#8592;</a></div>*/}
-            <div className="quaylai">
-					<h1>Welcome Back</h1>
+            <div className={cx("quaylai")}>
+					
 					<Link to="/dang-nhap">
 						<button type="button">
 							Sign in
 						</button>
 					</Link>
 				</div>
-            <div className="noi-dung">
-                <div className="form">
+            <div className={cx("noi-dung1")}>
+                <div className={cx("form")}>
                     <h2>Form đăng kí</h2>
                     <form onSubmit={handleSubmit}>
-                        <div className="input-form">
+                        <div className={cx("input-form")}>
                             <label>Số điện thoại:</label>
                             <input 
                                 type="text" 
@@ -78,7 +82,7 @@ export default function DangKy() {
                                 required
                             />
                         </div>
-                        <div className="input-form">
+                        <div className={cx("input-form")}>
                             <label>Tên tài khoản:</label>
                             <input 
                                 type="text" 
@@ -90,7 +94,7 @@ export default function DangKy() {
                                 required
                             />
                         </div>
-                        <div className="input-form">
+                        <div className={cx("input-form")}>
                             <label>Password:</label>
                             <input 
                                 type="text" 
@@ -103,7 +107,7 @@ export default function DangKy() {
                             />
                             <p> 6-14 kí tự, kết hợp chữ cái và số</p>
                         </div>
-                        <ul className="gender">
+                        <ul className={cx("gender")}>
                             <li><label>Giới tính:</label> </li>
                             <li><label>Nam</label>
                                 <input type="radio" 
@@ -126,21 +130,21 @@ export default function DangKy() {
                                 />
                             </li>
                         </ul>
-                        <div className="input-form1">
+                        <div className={cx("input-form1")}>
                             <input type="submit" value="Xác nhận"/>
                         </div>
                     </form>
-                    <ul className="icon-dang-nhap">
+                    <ul className={cx("icon-dang-nhap")}>
                         <li>
-                            <i className="fa fa-facebook" aria-hidden="true"></i>
+                            <i className={cx("fa fa-facebook")} aria-hidden="true"></i>
                             <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với facebook</a></p>
                         </li>
                         <li>
-                            <i className="fa fa-google" aria-hidden="true"></i>
+                            <i className={cx("fa fa-google")} aria-hidden="true"></i>
                             <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với google</a></p>
                         </li>
                         <li>
-                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                            <i className={cx("fa fa-twitter")} aria-hidden="true"></i>
                             <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với twitter</a></p>
                         </li>
                     </ul>
@@ -151,5 +155,3 @@ export default function DangKy() {
     );
     
 }
-
-
