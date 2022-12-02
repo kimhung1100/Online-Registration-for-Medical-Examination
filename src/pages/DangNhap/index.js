@@ -102,7 +102,7 @@ function DangNhap() {
                         </div>
                         <div className={cx('input-form')}>
                             <p>
-                                Bạn Chưa Có Tài Khoản? <a href="http://127.0.0.1:3000/dangki.html">Đăng Ký</a>
+                                Bạn Chưa Có Tài Khoản? <a href="http://127.0.0.1:3000/dang-ky">Đăng Ký</a>
                             </p>
                         </div>
                     </form>
