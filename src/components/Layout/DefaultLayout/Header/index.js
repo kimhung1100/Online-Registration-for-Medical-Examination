@@ -4,11 +4,7 @@ import whiteLogo from '../../../../assets/images/white_logo.jpg';
 import { useState } from 'react';
 import { UserContext } from '../../../UserContext';
 import { useContext } from 'react';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom';
-=======
-import { Link, useNavigate } from "react-router-dom";
->>>>>>> 128777d (chonhs)
+import { Link, useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -132,7 +128,14 @@ function Header() {
                                                     </button>
                                                 </li>
                                                 <li>
-                                                    <button class="dropdown-item" type="button" onClick = {()=>{setUser({});navigate('/')}}>
+                                                    <button
+                                                        class="dropdown-item"
+                                                        type="button"
+                                                        onClick={() => {
+                                                            setUser({});
+                                                            navigate('/');
+                                                        }}
+                                                    >
                                                         Thoát
                                                     </button>
                                                 </li>
