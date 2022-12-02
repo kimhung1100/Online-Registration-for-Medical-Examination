@@ -3,11 +3,37 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 // import { Button, View, Text } from 'react-native';
 // import { NavigationContainer } from '@react-navigation/native';
+import { Link } from 'react-router-dom';
+import {UserContext} from '../../components/UserContext';
+import { useContext } from 'react';
+import React, { useEffect} from "react";
+import axios from 'axios';
 import styles from './ChonHoSo.module.scss';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const cx = classNames.bind(styles);
 
 function ChonHoSo() {
+
+    const [user, setUser] = useContext(UserContext);
+    const [patient, setPatient] = useState([]);
+
+    useEffect(() => {
+        const sendData = {
+            userID: user.key
+        }
+        axios.post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/patients.php/patient/lookup`, sendData)
+        .then((result) => {
+            setPatient(result.data);
+            console.log(result.data);
+            console.log(patient);
+        })
+        .catch((error) => {
+            console.log(error.response);
+        });
+        //setPatient([]);
+        console.log(patient);
+    },[])
+
     const [press, setpress] = useState(false);
     const navigate = useNavigate();
     const pressHoso = () => {
@@ -50,7 +76,9 @@ function ChonHoSo() {
                                     <span>Chọn hồ sơ bệnh nhân</span>
                                 </h1>
                             </div>
-                            <div className={cx('style_wrapper_page_item')}>
+                            
+                            <div className={cx('style_wrapper_page_item')} >
+                            {patient.map((element,idx)=>
                                 <div
                                     data-test="animation"
                                     className={cx('animated', 'fadeIn')}
@@ -58,7 +86,7 @@ function ChonHoSo() {
                                         animationIterationCount: '1',
                                         visibility: 'visible',
                                         animationName: 'fadeIn',
-                                    }}
+                                    }} key={idx}
                                 >
                                     <div
                                         onClick={pressHoso}
@@ -72,7 +100,7 @@ function ChonHoSo() {
                                             >
                                                 <div className={cx('style_fullname')}>
                                                     <i className={cx('fal', 'fa-user-circle')}></i>
-                                                    <strong style={{ color: '#0352cc' }}>DƯƠNG HUỲNH ANH ĐỨC</strong>
+                                                    <strong style={{ color: '#0352cc' }}>{element.name}</strong>
                                                 </div>
                                             </li>
                                             <li
@@ -83,7 +111,7 @@ function ChonHoSo() {
                                                     <i className={cx('fal', 'fa-birthday-cake')}></i>
                                                     <span>Ngày sinh</span>
                                                 </div>
-                                                <div className={cx('style_column2')}>01/02/2002</div>
+                                                <div className={cx('style_column2')}>{element.birthday}</div>
                                             </li>
                                             <li
                                                 data-test="list-group-item"
@@ -93,7 +121,7 @@ function ChonHoSo() {
                                                     <i className={cx('fal', 'fa-mobile')}></i>
                                                     <span>Số điện thoại</span>
                                                 </div>
-                                                <div className={cx('style_column2')}>0794763040</div>
+                                                <div className={cx('style_column2')}>{element.phone}</div>
                                             </li>
                                             {press && (
                                                 <li
@@ -104,7 +132,7 @@ function ChonHoSo() {
                                                         <i className={cx('fal', 'fa-venus-mars')}></i>
                                                         Giới tính
                                                     </div>
-                                                    <div className={cx('style_column2')}>Nam</div>
+                                                    <div className={cx('style_column2')}>{element.gender}</div>
                                                 </li>
                                             )}
                                             {press && (
@@ -116,7 +144,7 @@ function ChonHoSo() {
                                                         <i className={cx('fal', 'fa-id-card')}></i>
                                                         Dân tộc
                                                     </div>
-                                                    <div className={cx('style_column2')}>Kinh</div>
+                                                    <div className={cx('style_column2')}>{element.ethnicity}</div>
                                                 </li>
                                             )}
                                             {press && (
@@ -129,8 +157,7 @@ function ChonHoSo() {
                                                         <span>Địa chỉ</span>
                                                     </div>
                                                     <div className={cx('style_column2')}>
-                                                        107/18/5 Huỳnh Khương An, phường 5, quận Gò Vấp, Thành phố Hồ
-                                                        Chí Minh
+                                                    {element.address}
                                                     </div>
                                                 </li>
                                             )}
@@ -230,7 +257,7 @@ function ChonHoSo() {
                                         </ul>
                                     </div>
                                 </div>
-
+                                )}
                                 <div className={cx('style_next_prev')}>
                                     <button
                                         onClick={() => {
@@ -254,6 +281,7 @@ function ChonHoSo() {
                                             }}
                                         ></div>
                                     </button>
+                                    <Link to="/tao-moi-ho-so">
                                     <button
                                         onClick={() => {
                                             navigate('../tao-moi-ho-so');
@@ -282,8 +310,10 @@ function ChonHoSo() {
                                             }}
                                         ></div>
                                     </button>
+                                    </Link>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
