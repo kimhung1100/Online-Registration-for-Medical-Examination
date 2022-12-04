@@ -114,7 +114,7 @@
 // // }
 //adee làm
 
-.style_Menutop{
+.style_Menutop {
     padding: 0;
     position: fixed;
     z-index: 999;
@@ -123,7 +123,7 @@
     right: 0;
 }
 
-.container-fluid{
+.container-fluid {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -131,15 +131,15 @@
     margin-left: auto;
 }
 
-.style_header{
+.style_header {
     position: relative;
-    background-color: hsla(0,0%,100%,.97);
+    background-color: hsla(0, 0%, 100%, 0.97);
     z-index: 99;
 }
 
-.style_header_classic{
+.style_header_classic {
     background-color: #fff;
-    padding: 0!important;
+    padding: 0 !important;
 }
 
 .fadeIn {
@@ -155,7 +155,7 @@
 }
 
 .d-none {
-    display: none!important;
+    display: none !important;
 }
 
 .style_header_classic .style_header_content_normal {
@@ -179,7 +179,7 @@
     max-width: 320px;
 }
 
-.style_header_classic .style_navigator{
+.style_header_classic .style_navigator {
     width: 50%;
     flex-grow: 1;
     padding: 0 4.5%;
@@ -197,16 +197,25 @@
 
 .style_header_classic .style_navigator .style_nav_info:before {
     height: 0;
-    content: "";
+    content: '';
     bottom: 0;
     left: 0;
     right: 0;
     position: absolute;
-    opacity: .15;
+    opacity: 0.15;
     filter: alpha(opacity=15);
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
     display: block;
 }
 
@@ -248,11 +257,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     padding: 0.75rem 1.25rem;
     margin-bottom: -1px;
     background-color: #fff;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.list-group a, .list-group a:hover, .list-group button, .list-group button:hover {
-    transition: .5s;
+.list-group a,
+.list-group a:hover,
+.list-group button,
+.list-group button:hover {
+    transition: 0.5s;
 }
 
 .style_redirect {
@@ -265,7 +277,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     line-height: 37px;
     position: relative;
     white-space: nowrap;
-    background: transparent!important;
+    background: transparent !important;
 }
 
 .style_button {
@@ -281,7 +293,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 .style_button.style_login {
-    background-image: linear-gradient(90deg,#0352cc,#0b7df1);
+    background-image: linear-gradient(90deg, #0352cc, #0b7df1);
     color: #fff;
     border-radius: 3px;
     font-size: 14px;
@@ -301,14 +313,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     height: 37px;
     line-height: 37px;
     position: relative;
-    padding: 8px 14px 8px 34px!important;
+    padding: 8px 14px 8px 34px !important;
     color: #0352cc;
     white-space: nowrap;
-    background: transparent!important;
+    background: transparent !important;
 }
 
 .style_button:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -318,15 +330,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     transform: scaleY(0);
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
-    transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out;
-    transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
     width: 100%;
 }
 
 .style_signup:before {
-    content: "\f10b";
-    font-family: Font Awesome\ 5 Free;
+    content: '\f10b';
+    font-family: Font Awesome\5 Free;
     font-size: 16px;
     font-weight: 900;
     text-indent: 0;
@@ -338,8 +350,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 .style_button.style_login:before {
-    content: "\f2f6";
-    font-family: Font Awesome\ 5 Free;
+    content: '\f2f6';
+    font-family: Font Awesome\5 Free;
     font-size: 16px;
     font-weight: 900;
     text-indent: 0;
@@ -380,15 +392,21 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     border-radius: 0.25rem;
 }
 
-button, select {
+button,
+select {
     text-transform: none;
 }
 
-button, input {
+button,
+input {
     overflow: visible;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
@@ -399,21 +417,22 @@ button {
     border-radius: 0;
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled),
+button:not(:disabled) {
     cursor: pointer;
 }
 
-
-
-@media (min-width: 992px){
+@media (min-width: 992px) {
     .d-lg-block {
-        display: block!important;
+        display: block !important;
     }
     .navbar-expand-lg .navbar-toggler {
         display: none;
     }
     .navbar-expand-lg .navbar-collapse {
-        display: flex!important;
+        display: flex !important;
         flex-basis: auto;
     }
     .navbar-expand-lg .navbar-nav {
@@ -425,12 +444,11 @@ button {
     }
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
     .style_mdbNavbarNav a {
-        padding: 0.8rem 1.2rem!important;
+        padding: 0.8rem 1.2rem !important;
     }
 }
-
 
 .navbar-collapse {
     flex-basis: 100%;
@@ -438,17 +456,17 @@ button {
     align-items: center;
 }
 
-.style_mdbNavbarNav{
+.style_mdbNavbarNav {
     position: relative;
     border-top: 1px solid #dfe3eb;
 }
 
 .w-100 {
-    width: 100%!important;
+    width: 100% !important;
 }
 
 .justify-content-around {
-    justify-content: space-around!important;
+    justify-content: space-around !important;
 }
 
 .navbar-nav {
@@ -476,15 +494,15 @@ button {
 }
 
 .style_mdbNavbarNav li:before {
-    border-color: #0352cc!important;
-    content: "";
+    border-color: #0352cc !important;
+    content: '';
     height: 0;
     position: absolute;
     width: 0;
     right: 0;
     top: -2px;
     border-bottom: 3px solid;
-    transition: width .5s cubic-bezier(.25,.8,.25,1) 0s;
+    transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
 }
 
 .navbar .nav-item .nav-link {
@@ -499,11 +517,11 @@ button {
 .style_mdbNavbarNav li a {
     padding: 0.8rem;
     color: #12263f;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     outline: none;
     font-weight: 400;
     white-space: nowrap;
-    transition: width .5s cubic-bezier(.25,.8,.25,1) 0s;
+    transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
 }
 
 .Ripple-parent {
@@ -521,12 +539,13 @@ a {
 }
 a {
     color: #0352cc;
-    transition: all .2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
 }
 
-a, a:hover {
+a,
+a:hover {
     text-decoration: none;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 a:hover {
@@ -585,7 +604,7 @@ a {
 }
 
 .style_header_classic .style_support .style_info a {
-    border-bottom: 1px dotted rgba(0,0,0,.5);
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
     letter-spacing: 3px;
     font-weight: 600;
 }

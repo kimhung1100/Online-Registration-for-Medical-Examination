@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import React, { useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import styles from './ThongKePhieuKham.module.scss';
-import { Filter, Operators, TextFilter, NumericFilter, BooleanFilter } from '@progress/kendo-react-data-tools';
+// import { Filter, Operators, TextFilter, NumericFilter, BooleanFilter } from '@progress/kendo-react-data-tools';
 import { ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 import DatePicker from 'react-multi-date-picker';
@@ -152,7 +152,7 @@ function ThongKePhieuKham() {
                         {/* <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" /> */}
                         <Bar dataKey="ThanKinh" barSize={20} fill="#413ea0" />
                         <Bar dataKey="TamLy" barSize={20} fill="#82ca9d" />
-                        <Line type="monotone" dataKey="amt" stroke="#ff7300" />
+                        {/* <Line type="monotone" dataKey="amt" stroke="#ff7300" /> */}
                     </ComposedChart>
                 </div>
             </div>

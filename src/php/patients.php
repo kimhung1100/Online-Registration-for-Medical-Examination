@@ -41,13 +41,16 @@ switch($method) {
                 $userID = $product->userID;
                 $sql = "INSERT INTO patients (name,gender,birthday,email,phone,cmnd,job,ethnicity,address,userID) VALUES ('$name', '$gender', '$birthday', '$email', '$phone','$cmnd','$job','$ethnicity','$address','$userID')";
                 $stmt = $conn->prepare($sql);
+                echo "123";
+                if($stmt->execute()) {
+                    $response = ['Status' => '200'];
+                } else {
+                    $response = ['message' => 'Failed to update record.'];
+                }
                 break;
+                
         }
-        if($stmt->execute()) {
-            $response = ['Status' => '200'];
-        } else {
-            $response = ['message' => 'Failed to update record.'];
-        }
+        
         
     }
         
