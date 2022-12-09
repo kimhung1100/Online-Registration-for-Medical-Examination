@@ -7,7 +7,7 @@ import DangKy from '../pages/DangKy';
 import DangNhap from '../pages/DangNhap';
 import QuyTrinh from '../pages/QuyTrinh';
 import LienHe from '../pages/LienHe';
-import ThacMac from '../pages/ThacMac';
+//import ThacMac from '../pages/ThacMac';
 import ThongTinChuyenKhoa from '../pages/ChuyenKhoa/ThongTinChuyenKhoa';
 import KhoaHoHap from '../pages/ChuyenKhoa/KhoaHoHap';
 import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
@@ -23,6 +23,8 @@ import XacNhanThongTin from '../pages/XacNhanThongTin';
 import ThanhToan from '../pages/ThanhToan';
 
 import TraCuuThongTin from '../pages/TraCuuThongTin';
+import ChiTietHoSo from '../pages/TraCuuThongTin/ChiTietHoSo';
+import SuaHoSo from '../pages/TraCuuThongTin/SuaHoSo';
 import NhapHoSoBacSi from '../pages/NhapHoSoBacSi';
 import NhapLichKhamBacSi from '../pages/NhapLichKhamBacSi';
 import ChinhSuaLichKhamBacSi from '../pages/ChinhSuaLichKhamBacSi';
@@ -43,7 +45,7 @@ const publicRoutes = [
     { path: '/dang-ky', component: DangKy, layout: null },
     { path: '/dang-nhap', component: DangNhap, layout: null },
     { path: '/chuyen-khoa', component: ThongTinChuyenKhoa, layout: NotLinearBar },
-    { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
+ //   { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
     { path: '/khoa-ho-hap', component: KhoaHoHap },
     { path: '/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
     { path: '/khoa-mat', component: KhoaMat },
@@ -58,6 +60,8 @@ const publicRoutes = [
     { path: '/thanh-toan', component: ThanhToan },
 
     { path: '/tra-cuu', component: TraCuuThongTin },
+    { path: '/chi-tiet-ho-so', component: ChiTietHoSo },
+    { path: '/sua-ho-so/:id', component: SuaHoSo },
 
     // these pages below need task administrator permission, temporary write here
     { path: '/nhap-ho-so-bac-si', component: NhapHoSoBacSi },

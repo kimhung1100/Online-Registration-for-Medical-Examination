@@ -12,33 +12,44 @@ import styles from './ChonHoSo.module.scss';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const cx = classNames.bind(styles);
 
-function ChonHoSo() {
-
+function ChonHoSo(props) {
     const [user, setUser] = useContext(UserContext);
     const [patient, setPatient] = useState([]);
+    const [selected, setSelected] = useState(0);
+    const navigate = useNavigate();
+    const handleClick = (divNum) => {
+        setSelected(divNum);
+    };
 
     useEffect(() => {
+        getPatients();
+    },[]);
+
+    const getPatients = () => {
         const sendData = {
             userID: user.key
         }
-        axios.post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/patients.php/patient/lookup`, sendData)
+        axios.post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/patients.php/patient/lookup`, sendData)
         .then((result) => {
             setPatient(result.data);
             console.log(result.data);
-            console.log(patient);
         })
         .catch((error) => {
             console.log(error.response);
         });
-        //setPatient([]);
-        console.log(patient);
-    },[])
+    }
 
-    const [press, setpress] = useState(false);
-    const navigate = useNavigate();
-    const pressHoso = () => {
-        setpress(true);
-    };
+    const handleDelete = (e) => {
+        //e.preventDefault();
+        axios.delete(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/patients.php/patient/delete/${e.id}`)
+        .then((result) => {
+            getPatients();
+            console.log(result.data);
+        })
+    }
+
+    
+
     return (
         <div className={cx('style_wrapper_content')}>
             <div className={cx('style_bg_breakcum')}>
@@ -78,7 +89,7 @@ function ChonHoSo() {
                             </div>
                             
                             <div className={cx('style_wrapper_page_item')} >
-                            {patient.map((element,idx)=>
+                            {patient.map((element,idx) => (
                                 <div
                                     data-test="animation"
                                     className={cx('animated', 'fadeIn')}
@@ -89,9 +100,9 @@ function ChonHoSo() {
                                     }} key={idx}
                                 >
                                     <div
-                                        onClick={pressHoso}
+                                        onClick={() => {handleClick(idx)}}
                                         data-test="card"
-                                        className={cx('card', 'style_card', press && 'style_active')}
+                                        className={cx('card', 'style_card', (selected === idx ? ( 'style_active') : ''))}
                                     >
                                         <ul data-test="list-group" className={cx('list-group', 'style_list_group')}>
                                             <li
@@ -123,7 +134,7 @@ function ChonHoSo() {
                                                 </div>
                                                 <div className={cx('style_column2')}>{element.phone}</div>
                                             </li>
-                                            {press && (
+                                            {selected === idx  && (
                                                 <li
                                                     data-test="list-group-item"
                                                     className={cx('list-group-item', 'list-group-item-undefined')}
@@ -135,7 +146,7 @@ function ChonHoSo() {
                                                     <div className={cx('style_column2')}>{element.gender}</div>
                                                 </li>
                                             )}
-                                            {press && (
+                                            {selected === idx  && (
                                                 <li
                                                     data-test="list-group-item"
                                                     className={cx('list-group-item', 'list-group-item-undefined')}
@@ -147,7 +158,7 @@ function ChonHoSo() {
                                                     <div className={cx('style_column2')}>{element.ethnicity}</div>
                                                 </li>
                                             )}
-                                            {press && (
+                                            {selected === idx  && (
                                                 <li
                                                     data-test="list-group-item"
                                                     className={cx('list-group-item', 'list-group-item-undefined')}
@@ -161,7 +172,7 @@ function ChonHoSo() {
                                                     </div>
                                                 </li>
                                             )}
-                                            {press && (
+                                            {selected === idx  && (
                                                 <div className={cx('style_action_edit_remove')}>
                                                     <div>
                                                         <button
@@ -175,7 +186,7 @@ function ChonHoSo() {
                                                                 'style_remove',
                                                             )}
                                                         >
-                                                            <div>
+                                                            <div onClick={()=>handleDelete(element)}>
                                                                 <i className={cx('fal', 'fa-trash-alt')}></i>
                                                                 Xóa
                                                             </div>
@@ -202,9 +213,10 @@ function ChonHoSo() {
                                                                     'style_edit',
                                                                 )}
                                                             >
-                                                                <div>
+                                                                <div> <Link to={`/sua-ho-so/${element.id}`}>
                                                                     <i className={cx('fal', 'fa-edit')}></i>
                                                                     Sửa
+                                                                    </Link>
                                                                 </div>
                                                                 <div
                                                                     data-test="waves"
@@ -218,8 +230,9 @@ function ChonHoSo() {
                                                                 ></div>
                                                             </button>
                                                         </a>
-                                                    </div>
-                                                    <div className={cx('style_action_right')}>
+                                                    </div>                                                      
+                                                    <div className={cx('style_action_right')} >
+                                                    <Link to="/chon-chuyen-khoa" state={{patientID: element.id}}>
                                                         <button
                                                             data-test="button"
                                                             type="button"
@@ -231,16 +244,15 @@ function ChonHoSo() {
                                                                 'style_create',
                                                                 'style_buttonArrow',
                                                             )}
+                                                            
                                                         >
-                                                            <div
-                                                                onClick={() => {
-                                                                    navigate('../chon-chuyen-khoa');
-                                                                }}
-                                                            >
-                                                                Tiếp tục
-                                                                <i className={cx('fal', 'fa-long-arrow-right')}></i>
+                                                            <div> 
+                                                            Tiếp tục
+                                                                <i
+                                                                    className={cx('fal', 'fa-long-arrow-right')}
+                                                                ></i>
                                                             </div>
-                                                            <div
+                                                             <div
                                                                 data-test="waves"
                                                                 className={cx('Ripple', 'Ripple-outline')}
                                                                 style={{
@@ -251,12 +263,14 @@ function ChonHoSo() {
                                                                 }}
                                                             ></div>
                                                         </button>
+                                                        </Link>
                                                     </div>
-                                                </div>
+                                                </div> 
                                             )}
                                         </ul>
                                     </div>
                                 </div>
+                                ),
                                 )}
                                 <div className={cx('style_next_prev')}>
                                     <button

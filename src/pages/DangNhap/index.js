@@ -32,7 +32,7 @@ function DangNhap() {
         };
 
         axios
-            .post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/user.php/user/login`, sendData)
+            .post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/user.php/user/login`, sendData)
             .then((result) => {
                 console.log(result);
                 if (result.data.Status === '200') {

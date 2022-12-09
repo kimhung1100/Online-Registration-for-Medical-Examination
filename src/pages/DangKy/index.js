@@ -36,7 +36,7 @@ export default function DangKy() {
             role: 'Khach hang'
         }
 
-        axios.post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/user.php/user/save`,sendData)
+        axios.post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/user.php/user/save`,sendData)
         .then((result)=>{
             console.log(result);
             console.log(sendData);

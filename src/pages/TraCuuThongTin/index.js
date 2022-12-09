@@ -16,6 +16,10 @@ const cx = classNames.bind(styles);
 
 function TraCuuThongTin() {
     const [page, setPage] = useState("HoSoBenhNhan");
+    const [selected, setSelected] = useState("HoSoBenhNhan");
+    const handleClick = (divNum) => {
+        setSelected(divNum);
+    };
 //     const [user, setUser] = useContext(UserContext);
 //     const [patient, setPatient] = useState([]);
 //     useEffect(() => {
@@ -43,10 +47,6 @@ function TraCuuThongTin() {
 //     }
 // //,[patient])
 
-    $(".nav-item a").on('click', function() {
-        $('.TraCuuThongTin_active__A8PmN').removeClass('TraCuuThongTin_active__A8PmN');
-        $(this).addClass("TraCuuThongTin_active__A8PmN");
-    });
     return (
         <div className={cx("wrapper_content_lookup")}>
             <div className={cx("bg_breakcum")}>
@@ -73,38 +73,38 @@ function TraCuuThongTin() {
                 <div className="">
                     <div data-test="container" className="container">
                         <div data-test="row" className="row">
-                            <div data-test="col" className="col-md-5 col-lg-4">
+                            <div data-test="col" className="col-md-12 mb-5 col-lg-4">
                                 <Link className={cx("add_patients")} to="/tao-moi-ho-so">
                                     <i className="fas fa-user-plus"></i>Thêm hồ sơ bệnh nhân
                                 </Link>
                                 <ul data-test="nav" className={cx("nav", "nav_tab_info")}>
                                     <li data-test="nav-item" className={cx("nav-item")}>
-                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent", "active")} data-test="nav-link" role="tab" onClick={() => setPage("HoSoBenhNhan")}>
+                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent" , ((selected === "HoSoBenhNhan") ? "active" : "") )} data-test="nav-link" role="tab" onClick={() => {setPage("HoSoBenhNhan"); handleClick("HoSoBenhNhan");}}>
                                             <i className="far fa-address-book"></i>Hồ sơ bệnh nhân
                                             <div data-test="waves" className={cx("Ripple ")} style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}></div>
                                         </Link>
                                     </li>
                                     <li data-test="nav-item" className={cx("nav-item")}>
-                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent")} data-test="nav-link" role="tab" onClick={() => setPage("PhieuKhamBenh")}>
+                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent", ((selected === "PhieuKhamBenh") ? "active" : ""))} data-test="nav-link" role="tab" onClick={() => {setPage("PhieuKhamBenh"); handleClick("PhieuKhamBenh");}}>
                                             <i className="fas fa-file-medical"></i>Phiếu khám bệnh
                                             <div data-test="waves" className={cx("Ripple ")} style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}></div>
                                         </Link>
                                     </li>
                                     <li data-test="nav-item" className="nav-item">
-                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent")} data-test="nav-link" role="tab" onClick={() => setPage("ThongBao")}>
+                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent", ((selected === "ThongBao") ? "active" : ""))} data-test="nav-link" role="tab" onClick={() => {setPage("ThongBao"); handleClick("ThongBao");}}>
                                             <i className="far fa-bell"></i>Thông báo 
                                             <div data-test="waves" className={cx("Ripple ")} style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}></div>
                                         </Link>
                                     </li>
                                     <li data-test="nav-item" className="nav-item">
-                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent")} data-test="nav-link" role="tab" onClick={() => setPage("LichSu")}>
+                                        <Link aria-current="page" className={cx("nav-link", "Ripple-parent", ((selected === "LichSu") ? "active" : ""))} data-test="nav-link" role="tab" onClick={() => {setPage("LichSu"); handleClick("LichSu");}}>
                                             <i className="fa fa-history"></i>Lịch sử thanh toán viện phí
                                             <div data-test="waves" className={cx("Ripple ")} style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}></div>
                                         </Link>
                                     </li>
                                 </ul>
                             </div>
-                            <div data-test="col" class="col-md-7 col-lg-8">
+                            <div data-test="col" class="col-md-12 col-lg-8">
                                 <div data-test="card" className={cx("card", "panels")}>
                                     {/* <div data-test="row" class="row">
                                         <div data-test="col" class="col">

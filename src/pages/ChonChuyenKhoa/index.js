@@ -1,8 +1,14 @@
 import classNames from 'classnames/bind';
 // import "./chonChuyenKhoa.css"
 import styles from './ChonChuyenKhoa.module.scss';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
+
 function ChonChuyenKhoa() {
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location.state);
     return (
         <div>
         <div className={cx('ChonChuyenKhoa_wrapper')}>
@@ -132,7 +138,7 @@ function ChonChuyenKhoa() {
                     </ul>
                 </div>
                 <a href="" className={cx('ChonChuyenKhoa_thac_mac')}>Bạn không biết vấn đề bạn gặp phải là gì?</a>
-                <a href="" className={cx('ChonChuyenKhoa_back')}>Quay lại</a>
+                <a onClick={() => {navigate('../chon-ho-so');}} className={cx('ChonChuyenKhoa_back')}>Quay lại</a>
             </div>
         </div>
     </div>
