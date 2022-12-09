@@ -5,8 +5,8 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: *");
 
-include 'DbConnect.php';
-$objDb = new DbConnect;
+include 'DBconnect.php';
+$objDb = new DBconnect;
 $conn = $objDb->connect();
 
 $method = $_SERVER['REQUEST_METHOD'];

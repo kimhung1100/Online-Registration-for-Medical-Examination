@@ -113,7 +113,13 @@ function Header() {
                                                 </li>
 
                                                 <li>
-                                                    <button class="dropdown-item" type="button">
+                                                    <button
+                                                        onClick={() => {
+                                                            navigate('/tra-cuu');
+                                                        }}
+                                                        class="dropdown-item"
+                                                        type="button"
+                                                    >
                                                         Hồ sơ bệnh nhân
                                                     </button>
                                                 </li>

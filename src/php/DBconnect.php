@@ -2,8 +2,8 @@
 	/**
 	* Database Connection
 	*/
-	class DbConnect {
-		private $server = 'localhost:3307';
+	class DBconnect {
+		private $server = 'localhost:4306';
 		private $dbname = 'online_medical';
 		private $user = 'root';
 		private $pass = '';

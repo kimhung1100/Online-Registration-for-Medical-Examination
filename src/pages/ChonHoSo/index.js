@@ -4,9 +4,9 @@ import { useState } from 'react';
 // import { Button, View, Text } from 'react-native';
 // import { NavigationContainer } from '@react-navigation/native';
 import { Link } from 'react-router-dom';
-import {UserContext} from '../../components/UserContext';
+import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
-import React, { useEffect} from "react";
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import styles from './ChonHoSo.module.scss';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -179,11 +179,8 @@ function ChonHoSo(props) {
                                                             data-test="button"
                                                             type="button"
                                                             className={cx(
-                                                                'btn',
-                                                                'btn-flat',
-                                                                'Ripple-parent',
-                                                                'style_button',
-                                                                'style_remove',
+                                                                'list-group-item',
+                                                                'list-group-item-undefined',
                                                             )}
                                                         >
                                                             <div onClick={()=>handleDelete(element)}>
@@ -237,12 +234,8 @@ function ChonHoSo(props) {
                                                             data-test="button"
                                                             type="button"
                                                             className={cx(
-                                                                'btn',
-                                                                'btn-flat',
-                                                                'Ripple-parent',
-                                                                'style_button',
-                                                                'style_create',
-                                                                'style_buttonArrow',
+                                                                'list-group-item',
+                                                                'list-group-item-undefined',
                                                             )}
                                                             
                                                         >
@@ -296,38 +289,37 @@ function ChonHoSo(props) {
                                         ></div>
                                     </button>
                                     <Link to="/tao-moi-ho-so">
-                                    <button
-                                        onClick={() => {
-                                            navigate('../tao-moi-ho-so');
-                                        }}
-                                        id="btn-add"
-                                        data-test="button"
-                                        type="button"
-                                        className={cx(
-                                            'btn-flat',
-                                            'btn',
-                                            'Ripple-parent',
-                                            'style_button',
-                                            'style_create',
-                                        )}
-                                    >
-                                        <div>Thêm hồ sơ</div>
-                                        <div
-                                            data-test="waves"
-                                            type="button"
-                                            className={cx('Ripple', 'Ripple-outline')}
-                                            style={{
-                                                top: '0',
-                                                left: '0',
-                                                width: '0',
-                                                height: '0',
+                                        <button
+                                            onClick={() => {
+                                                navigate('../tao-moi-ho-so');
                                             }}
-                                        ></div>
-                                    </button>
+                                            id="btn-add"
+                                            data-test="button"
+                                            type="button"
+                                            className={cx(
+                                                'btn-flat',
+                                                'btn',
+                                                'Ripple-parent',
+                                                'style_button',
+                                                'style_create',
+                                            )}
+                                        >
+                                            <div>Thêm hồ sơ</div>
+                                            <div
+                                                data-test="waves"
+                                                type="button"
+                                                className={cx('Ripple', 'Ripple-outline')}
+                                                style={{
+                                                    top: '0',
+                                                    left: '0',
+                                                    width: '0',
+                                                    height: '0',
+                                                }}
+                                            ></div>
+                                        </button>
                                     </Link>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './TraCuuThongTin.module.scss';
 import medical_insurance from './medical_insurance.jpg';
-import {UserContext} from '../../components/UserContext';
+import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,7 +12,7 @@ import Table from 'react-bootstrap/Table';
 import ChiTietHoSo from './ChiTietHoSo';
 const cx = classNames.bind(styles);
 
-export default function HoSoBenhNhan(){
+export default function HoSoBenhNhan() {
     const [user, setUser] = useContext(UserContext);
     const [patient, setPatient] = useState([{}]);
     const [chosenPatient, setChosenPatient] = useState();
