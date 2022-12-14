@@ -25,11 +25,11 @@ function ChonLichKham() {
             <div className={cx("container1")}>
                 <p>Thông tin khám</p>
                 <div className={cx("content")}>
-                    <p>Bệnh viện ABCD</p>
-                    <p>SĐT: 0794763040</p>
-                    <p>Chuyên khoa: CHĂM SÓC GIẢM NHẸ</p>
-                    <p>Bác sĩ: Dương Huỳnh Anh Đức</p>
-                    <p>Dịch vụ: Khám dịch vụ</p>
+                    <p><i className={cx('fa-regular', 'fa-hospital')}></i> Bệnh viện ABCD</p>
+                    <p><i class="fa-solid fa-phone"></i>: 0794763040</p>
+                    <p><i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM NHẸ</p>
+                    <p><i class="fa-solid fa-user-doctor"></i>Bác sĩ: Dương Huỳnh Anh Đức</p>
+                    <p><i class="fa-solid fa-plus"></i>Dịch vụ: Khám dịch vụ</p>
                 </div>
             </div>
             <div className={cx("cover")}>
@@ -49,20 +49,89 @@ function ChonLichKham() {
                         <span>Bảy</span>
                     </div>
                     <div className={cx("dates")}>
-                        <button>
+                        <button className={cx("no")} disabled>
                             <time>1</time>
                         </button>
-                        <button>
+                        <button className={cx("no")} disabled>
                             <time>2</time>
                         </button>
-                        <button>
+                        <button className={cx("no")} disabled>
                             <time>3</time>
                         </button>
                         <button className={cx("today")}>
                             <time>4</time>
                         </button>
-                        <button>
+                        <button className={cx("no")} disabled>
                             <time>5</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>6</time>
+                        </button>
+                        <button className={cx("no")} disabled> 
+                            <time>7</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>8</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>9</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>10</time>
+                        </button>
+                        <button >
+                            <time>11</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>12</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>13</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>14</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>15</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>16</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>17</time>
+                        </button>
+                        <button>
+                            <time>18</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>19</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>20</time>
+                        </button >
+                        <button className={cx("no")} disabled>
+                            <time>21</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>22</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>23</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>24</time>
+                        </button>
+                        <button>
+                            <time>25</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>26</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>27</time>
+                        </button>
+                        <button className={cx("no")} disabled>
+                            <time>28</time>
                         </button>
                     </div>
                 </div>
