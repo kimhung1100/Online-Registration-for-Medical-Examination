@@ -71,6 +71,16 @@
 section .noi-dung1 .form .gender li {
     list-style: none;
     cursor: pointer;
+    display: flex;
+}
+
+section .noi-dung1 .form .gender li label {
+    margin-right: 10px;
+}
+
+section .noi-dung1 .form .gender li input {
+    position: relative;
+    top: -10px;
 }
 
 .container2 .noi-dung1 .form .gender li:nth-child(1) {
