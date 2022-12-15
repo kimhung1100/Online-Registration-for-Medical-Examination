@@ -2,14 +2,18 @@ import classNames from 'classnames/bind';
 import { CartXFill } from 'react-bootstrap-icons';
 import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf';
 import styles from './ChonLichKham.module.scss';
+import { useLocation } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function ChonLichKham() {
     let navigate = useNavigate();
-    const chooseHour = (e) => {
-        navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
-    };
+    // const chooseHour = (e) => {
+    //     navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
+    // };
+    const location = useLocation();
+    console.log(location.state);
+
     return (
         <div className={cx('wrapper')}>
             <div class={cx('style__banner d-none d-lg-block')}>
@@ -38,10 +42,10 @@ function ChonLichKham() {
                             <i class="fa-solid fa-phone"></i>: 0794763040
                         </p>
                         <p>
-                            <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM NHẸ
+                            <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: {location.state.specialization}
                         </p>
                         <p>
-                            <i class="fa-solid fa-user-doctor"></i>Bác sĩ: Dương Huỳnh Anh Đức
+                            <i class="fa-solid fa-user-doctor"></i>Bác sĩ: {location.state.doctor.name}
                         </p>
                         <p>
                             <i class="fa-solid fa-plus"></i>Dịch vụ: Khám dịch vụ
@@ -165,7 +169,7 @@ function ChonLichKham() {
                 <div className={cx('switch-field')}>
                     <input type="radio" id="radio-1" name="switch-two" value="7-8" />
                     <label for="radio-1">07:00 - 08:00</label>
-                    <input onClick={chooseHour} type="radio" id="radio-2" name="switch-two" value="8-9" />
+                    <input type="radio" id="radio-2" name="switch-two" value="8-9" />
                     <label for="radio-2">08:00 - 09:00</label>
                     <input type="radio" id="radio-3" name="switch-two" value="9-10" />
                     <label for="radio-3">09:00 - 10:00</label>
