@@ -22,7 +22,7 @@ function ThongKeLuotTruyCap() {
     };
     return (
         <div id="ThongKeLuotTruyCap">
-            <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
+            {/* <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
                 <div
                     data-test="animation"
                     className={cx(
@@ -32,7 +32,7 @@ function ThongKeLuotTruyCap() {
                         'style_header_classic',
                         'd-none',
                         'd-lg-block',
-                    )} /*style={{animationIterationCount: '1', visibility: 'visible', animationName: 'fadeIn'}}*/
+                    )} 
                 >
                     <div className={cx('style_header_content_normal')}>
                         <div className={cx('style_header_brand')}>
@@ -204,7 +204,7 @@ function ThongKeLuotTruyCap() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <p>ThongKeLuotTruyCap</p>
         </div>

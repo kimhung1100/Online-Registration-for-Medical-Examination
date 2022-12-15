@@ -14,10 +14,20 @@ function App() {
         role: 'Khach Hang'
     });
     const value = useMemo (() => ({user, setUser}), [user,setUser]);
+    const [admin,setAdmin] = useState({
+        key: 0,
+        login: false,
+        name: "",
+        userName:"",
+        password:"",
+        department:"",
+        role: "",
+        status: ""
+    });
     return (
         <Router>
             <div className="App">
-            <UserContext.Provider value={[user,setUser]}>
+            <UserContext.Provider value={[[user,setUser], [admin, setAdmin]]}>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;

@@ -11,7 +11,10 @@ import userEvent from '@testing-library/user-event';
 const cx = classNames.bind(styles);
 
 function DangNhap() {
-    const [user, setUser] = useContext(UserContext);
+    const context = useContext(UserContext);
+
+    const [user, setUser] = context[0];
+   
 
     const [data, setData] = useState({
         password: '',

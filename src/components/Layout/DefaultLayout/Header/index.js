@@ -8,7 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const [user, setUser] = useContext(UserContext);
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     const [trangchu, setTrangchu] = useState(true);
     const [gioithieu, setGioithieu] = useState(false);
     const [chuyenkhoa, setChuyenkhoa] = useState(false);
