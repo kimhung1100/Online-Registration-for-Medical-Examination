@@ -136,16 +136,16 @@ export default function DangKy() {
                     </form>
                     <ul className={cx("icon-dang-nhap")}>
                         <li>
-                            <i className={cx("fa fa-facebook")} aria-hidden="true"></i>
-                            <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với facebook</a></p>
+                            <i className={cx("fa-brands fa-square-facebook")} aria-hidden="true"></i>
+                            <p><a href="">Liên kết với facebook</a></p>
                         </li>
                         <li>
-                            <i className={cx("fa fa-google")} aria-hidden="true"></i>
-                            <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với google</a></p>
+                            <i className={cx("fa-brands fa-square-google-plus")} aria-hidden="true"></i>
+                            <p><a href="">Liên kết với google</a></p>
                         </li>
                         <li>
-                            <i className={cx("fa fa-twitter")} aria-hidden="true"></i>
-                            <p><a href="http://127.0.0.1:5500/dangki.html">Liên kết với twitter</a></p>
+                            <i className={cx("fa-brands fa-square-twitter")} aria-hidden="true"></i>
+                            <p><a href="">Liên kết với twitter</a></p>
                         </li>
                     </ul>
                     

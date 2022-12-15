@@ -32,7 +32,7 @@ function DangNhap() {
         };
 
         axios
-            .post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/user.php/user/login`, sendData)
+            .post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/user.php/user/login`, sendData)
             .then((result) => {
                 console.log(result);
                 if (result.data.Status === '200') {
@@ -67,7 +67,7 @@ function DangNhap() {
 
     return (
         <section className={cx('container1')}>
-             <div className={cx('quaylai')}>
+            <div className={cx('quaylai')}>
                 <Link to="/" className={cx('previous')}>
                     &#8592;
                 </Link>
@@ -107,23 +107,23 @@ function DangNhap() {
                         </div>
                     </form>
                     <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>
-                    <ul class={cx("icon-dang-nhap")}>
+                    <ul class={cx('icon-dang-nhap')}>
                         <li>
-                            <i className={cx("fa fa-facebook")} aria-hidden="true"></i>
+                            <i className={cx('fa-brands fa-square-facebook')} aria-hidden="true"></i>
                         </li>
                         <li>
-                            <i className={cx("fa fa-google")} aria-hidden="true"></i>
+                            <i className={cx('fa-brands fa-square-google-plus')} aria-hidden="true"></i>
                         </li>
                         <li>
-                            <i className={cx("fa fa-twitter")} aria-hidden="true"></i>
+                            <i className={cx('fa-brands fa-square-twitter')} aria-hidden="true"></i>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className={cx("img-bg")}>
+            <div className={cx('img-bg')}>
                 <img src={bglogin} value="image"></img>
             </div>
         </section>
     );
-}     
+}
 export default DangNhap;
