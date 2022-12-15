@@ -349,17 +349,22 @@ section {
     transform: translateY(-50%);
 }
 
-.style_button.style_login:before {
-    content: '\f2f6';
-    font-family: Font Awesome\5 Free;
-    font-size: 16px;
-    font-weight: 900;
-    text-indent: 0;
+// .style_button.style_login:before {
+//     content: '\f2f6';
+//     font-family: Font Awesome\5 Free;
+//     font-size: 16px;
+//     font-weight: 900;
+//     text-indent: 0;
+//     position: absolute;
+//     top: 50%;
+//     left: 10px;
+//     -webkit-transform: translateY(-50%);
+//     transform: translateY(-50%);
+// }
+
+.style_button i {
     position: absolute;
-    top: 50%;
     left: 10px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
 }
 
 .list-group-item:last-child {

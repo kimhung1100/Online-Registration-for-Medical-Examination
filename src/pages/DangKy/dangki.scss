@@ -13,25 +13,22 @@
     background-color: #f6fcff;
 }
 
-
-
 .container2 .noi-dung1 {
     display: flex;
     height: 100%;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 
 .container2 .noi-dung1 .form {
     width: 100%;
     margin-top: 50px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container2 .noi-dung1 .form h2 {
-    color: #1DA1F2;
+    color: #1da1f2;
     font-weight: 700;
     font-size: 2em;
     margin-bottom: 80px;
@@ -40,7 +37,7 @@
 }
 
 .container2 .noi-dung1 .form h3 {
-    color: #12263F;
+    color: #12263f;
     font-weight: 500;
     font-size: 0.9em;
     text-align: center;
@@ -53,8 +50,6 @@
     margin-bottom: 15px;
     margin-top: 15px;
 }
-
-
 
 .container2 .noi-dung1 .form .input-form label {
     width: 150px;
@@ -76,6 +71,16 @@
 section .noi-dung1 .form .gender li {
     list-style: none;
     cursor: pointer;
+    display: flex;
+}
+
+section .noi-dung1 .form .gender li label {
+    margin-right: 10px;
+}
+
+section .noi-dung1 .form .gender li input {
+    position: relative;
+    top: -10px;
 }
 
 .container2 .noi-dung1 .form .gender li:nth-child(1) {
@@ -90,12 +95,11 @@ section .noi-dung1 .form .gender li {
     width: 150px;
 }
 
-
-.container2 .noi-dung1 .form .input-form input[type="text"] {
+.container2 .noi-dung1 .form .input-form input[type='text'] {
     width: 40%;
 }
 
-.container2 .noi-dung1 .form .input-form input[type="password"] {
+.container2 .noi-dung1 .form .input-form input[type='password'] {
     width: 40%;
 }
 
@@ -138,8 +142,8 @@ section .noi-dung1 .form .gender li {
     border-radius: 10px;
 }
 
-.container2 .noi-dung1 .form .input-form1 input[type="submit"] {
-    background: #1DA1F2;
+.container2 .noi-dung1 .form .input-form1 input[type='submit'] {
+    background: #1da1f2;
     color: #fff;
     outline: none;
     border: none;
@@ -147,15 +151,12 @@ section .noi-dung1 .form .gender li {
     cursor: pointer;
     margin-top: 15px;
     width: 200px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
-        0 2px 2px rgba(0, 0, 0, 0.12),
-        0 4px 4px rgba(0, 0, 0, 0.12),
-        0 8px 8px rgba(0, 0, 0, 0.12),
-        0 16px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12),
+        0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
-.container2 .noi-dung1 .form .input-form1 input[type="submit"]:hover {
-    background: #1DA1F2;
+.container2 .noi-dung1 .form .input-form1 input[type='submit']:hover {
+    background: #1da1f2;
 }
 
 .container2 .noi-dung1 .form .input-form p {
@@ -166,7 +167,7 @@ section .noi-dung1 .form .gender li {
 }
 
 .container2 .noi-dung1 .form .input-form p a {
-    color: #1DA1F2;
+    color: #1da1f2;
 }
 
 .container2 .noi-dung1 .form .input-form1 p {
@@ -176,14 +177,12 @@ section .noi-dung1 .form .gender li {
 }
 
 .container2 .noi-dung1 .form .input-form1 p a {
-    color: #1DA1F2;
+    color: #1da1f2;
 }
-
 
 .container2 .noi-dung1 .form .icon-dang-nhap {
     display: flex;
     margin-top: 50px;
-    
 }
 
 .container2 .noi-dung1 .form .icon-dang-nhap li {
@@ -198,17 +197,14 @@ section .noi-dung1 .form .gender li {
     line-height: 50px;
     text-align: center;
     height: 50px;
-    margin:10px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02),
-        0 2px 2px rgba(0, 0, 0, 0.02),
-        0 4px 4px rgba(0, 0, 0, 0.02),
-        0 8px 8px rgba(0, 0, 0, 0.02),
-        0 16px 16px rgba(0, 0, 0, 0.02);
+    margin: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), 0 2px 2px rgba(0, 0, 0, 0.02), 0 4px 4px rgba(0, 0, 0, 0.02),
+        0 8px 8px rgba(0, 0, 0, 0.02), 0 16px 16px rgba(0, 0, 0, 0.02);
 }
 
 .container2 .noi-dung1 .form .icon-dang-nhap li i {
     background: #ffffff00;
-    height:50px;
+    height: 50px;
     margin-top: 17px;
     margin-left: 10px;
 }
@@ -217,10 +213,8 @@ section .noi-dung1 .form .gender li {
     color: #000000;
     background: #ffffff00;
     display: flex;
-    margin-left:10px;
+    margin-left: 10px;
 }
-
-
 
 .container2 .noi-dung1 .form .icon-dang-nhap li:nth-child(1) {
     color: #3b5999;
@@ -240,14 +234,13 @@ section .noi-dung1 .form .gender li {
     padding: 8px 16px;
 }
 
-
 .container2 .quaylai .previous {
     background-color: #f6fcff;
-    color: #1DA1F2;
+    color: #1da1f2;
     font-size: 24px;
 }
 
-button {
+.quaylai button {
     border: 1px solid #607d8b;
     font-size: 14px;
     letter-spacing: 1px;
