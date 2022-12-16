@@ -20,7 +20,6 @@ function ThongKeLuotTruyCap() {
         setQuanLyTaiKhoan = true;
         setThongKeLuotTruyCap = false;
     };
-<<<<<<< HEAD
     const [values, setValues] = useState([new DateObject()]);
 
     const [problem1, setProblem1] = useState(false);
@@ -28,8 +27,6 @@ function ThongKeLuotTruyCap() {
     const handleProblem1 = () => {
         setProblem1(!problem1) 
     }
-=======
->>>>>>> d01196d7c9b85b30347d1634e3f206deabfc8149
     return (
         <div id="ThongKeLuotTruyCap">
             <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
