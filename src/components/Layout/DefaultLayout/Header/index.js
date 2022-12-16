@@ -148,7 +148,7 @@ function Header() {
                                             data-test="list-group-item"
                                             className={cx('list-group-item', 'list-group-item-undefined')}
                                         >
-                                            <Link className={cx('style_button', 'style_login')} to="/dang-nhap">
+                                            <Link style={{textDecoration: 'none'}} className={cx('style_button', 'style_login')} to="/dang-nhap">
                                                 Đăng nhập
                                                 <i class="fa-solid fa-bars"></i>
                                             </Link>
@@ -156,8 +156,9 @@ function Header() {
                                         <li
                                             data-test="list-group-item"
                                             className={cx('list-group-item', 'list-group-item-undefined')}
+                                            
                                         >
-                                            <Link className={cx('style_button', 'style_signup')} to="/dang-ky">
+                                            <Link style={{textDecoration: 'none'}} className={cx('style_button', 'style_signup')} to="/dang-ky">
                                                 Đăng ký
                                             </Link>
                                         </li>
@@ -205,6 +206,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', trangchu && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Trang chủ
                                                 <div
@@ -228,6 +230,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', gioithieu && 'target')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Giới thiệu
                                                 <div
@@ -251,6 +254,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', chuyenkhoa && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Chuyên khoa
                                                 <div
@@ -274,6 +278,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', quytrinh && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Quy trình
                                                 <div
@@ -297,6 +302,7 @@ function Header() {
                                                 className={cx('nav-link', 'Ripple-parent', thacmac && 'active')}
                                                 data-test="nav-link"
                                                 to="/thac-mac"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Thắc mắc
                                                 <div
@@ -316,6 +322,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', lienhe && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Liên hệ
                                                 <div

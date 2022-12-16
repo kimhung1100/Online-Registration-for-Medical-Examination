@@ -8,9 +8,9 @@ import { Link, useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 function ChonLichKham() {
     let navigate = useNavigate();
-    // const chooseHour = (e) => {
-    //     navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
-    // };
+    const chooseHour = (e) => {
+        navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
+    };
     const location = useLocation();
     console.log(location.state);
 

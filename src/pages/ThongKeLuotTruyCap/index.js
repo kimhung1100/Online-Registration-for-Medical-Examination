@@ -4,8 +4,37 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './ThongKeLuotTruyCap.module.scss';
 import { UserContext } from '../../components/UserContext';
 import whiteLogo from '../../assets/images/white_logo.jpg';
+import { ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import DatePicker, { DateObject } from 'react-multi-date-picker';
+import { Calendar } from 'react-multi-date-picker';
 
 const cx = classNames.bind(styles);
+const data = [
+    {
+        name: 'Page A',
+        LuotDangNhap: 1230,
+    },
+    {
+        name: 'Page A',
+        LuotDangNhap: 1500,
+    },
+    {
+        name: 'Page A',
+        LuotDangNhap: 1000,
+    },
+    {
+        name: 'Page A',
+        LuotDangNhap: 990,
+    },
+    {
+        name: 'Page A',
+        LuotDangNhap: 1603,
+    },
+    {
+        name: 'Page A',
+        LuotDangNhap: 1320,
+    },
+];
 function ThongKeLuotTruyCap() {
     const [user, setUser] = useContext(UserContext);
     const navigate = useNavigate();
@@ -20,6 +49,7 @@ function ThongKeLuotTruyCap() {
         setQuanLyTaiKhoan = true;
         setThongKeLuotTruyCap = false;
     };
+    const [values, setValues] = useState([new DateObject()]);
     return (
         <div id="ThongKeLuotTruyCap">
             <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
@@ -206,7 +236,42 @@ function ThongKeLuotTruyCap() {
                 </div>
             </div>
 
-            <p>ThongKeLuotTruyCap</p>
+            <div className={cx('filter-cover')}>
+                <div className={cx('filter')}>
+                    <div className={cx('selection')}>
+                        <div className={cx('match')}>
+                            <p>Match</p>
+                        </div>
+                        <div>
+                            <div className={cx('calendar')}>
+                                <Calendar value={values} onChange={setValues} range rangeHover />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={cx('toolbox')}>
+                    <div className={'clear-button'} id="undo">
+                        <p>clear filters</p>
+                    </div>
+                    <div className={cx('submit-button')} id="submit">
+                        <p>apply filters</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center text-center">
+                    <ComposedChart width={1000} height={500} data={data}>
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <CartesianGrid stroke="#f5f5f5" />
+                        {/* <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" /> */}
+                        {/* <Bar dataKey="LuotDangNhap" barSize={20} fill="#413ea0" /> */}
+                        <Line type="monotone" dataKey="LuotDangNhap" stroke="#ff7300" />
+                    </ComposedChart>
+                </div>
+            </div>
         </div>
     );
 }

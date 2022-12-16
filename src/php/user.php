@@ -16,6 +16,21 @@ switch($method) {
         $product = json_decode( file_get_contents('php://input') );     
         
         switch($path[6]) {
+            // case register, check if the phone number is already registered
+            case "register":
+                $phone = $product -> phone;
+                $sql = "SELECT * FROM users WHERE phone = '$phone'";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
+                $nums = $stmt -> rowCount();
+                $result = $stmt -> fetch();
+                $outp ="";
+
+                if($nums >= 1){
+                    $outp .= '{"Status":"400"}'; 
+                }
+                echo $outp;
+                break;
             case "login":
                 $phone = $product -> phone;
                 $passwordd = $product -> password;

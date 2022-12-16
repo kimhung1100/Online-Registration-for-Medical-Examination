@@ -9,7 +9,7 @@ import DangKy from '../pages/DangKy';
 import DangNhap from '../pages/DangNhap';
 import QuyTrinh from '../pages/QuyTrinh';
 import LienHe from '../pages/LienHe';
-// import ThacMac from '../pages/ThacMac';
+import ThacMac from '../pages/ThacMac';
 import ThongTinChuyenKhoa from '../pages/ChuyenKhoa/ThongTinChuyenKhoa';
 import KhoaHoHap from '../pages/ChuyenKhoa/KhoaHoHap';
 import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
@@ -45,7 +45,7 @@ const publicRoutes = [
     { path: '/dang-ky', component: DangKy, layout: null },
     { path: '/dang-nhap', component: DangNhap, layout: null },
     { path: '/chuyen-khoa', component: ThongTinChuyenKhoa, layout: NotLinearBar },
-//    { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
+    { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
     { path: '/khoa-ho-hap', component: KhoaHoHap },
     { path: '/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
     { path: '/khoa-mat', component: KhoaMat },

@@ -38,19 +38,23 @@ export default function DangKy() {
             alert('Số điện thoại không hợp lệ');
             return;
         }
-        // if password is not valid
-        if (data.password.length < 4 || data.password.length > 20) {
-            alert('Mật khẩu không hợp lệ');
+        // check password combination of letters and numbers
+        if (!data.password.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/)) {
+            alert('Mật khẩu phải có ít nhất 6 ký tự, bao gồm chữ và số');
             return;
         }
+
         // if user name is not valid
         if (data.userName.length < 4 || data.userName.length > 20) {
             alert('Tên đăng nhập không hợp lệ');
             return;
         }
-
+        console.log(sendData);
         axios
-            .post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/user.php/user/save`, sendData)
+            .post(
+                `http://localhost/Online-Registration-for-Medical-Examination-1/src/php/user.php/user/register`,
+                sendData,
+            )
             .then((result) => {
                 console.log(result);
                 console.log(sendData);
@@ -124,7 +128,7 @@ export default function DangKy() {
                             <li>
                                 <label>Nam</label>
                                 <input
-                                    style={{ opacity: 1 }}
+                                    style={{ opacity: '1' }}
                                     type="radio"
                                     name="gender"
                                     id="male"
@@ -137,7 +141,7 @@ export default function DangKy() {
                             <li>
                                 <label>Nữ</label>
                                 <input
-                                    style={{ opacity: 1 }}
+                                    style={{ opacity: '1' }}
                                     type="radio"
                                     name="gender"
                                     id="female"
