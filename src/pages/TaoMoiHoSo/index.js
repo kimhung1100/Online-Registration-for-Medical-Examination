@@ -103,6 +103,61 @@ function TaoMoiHoSo() {
             ward: data.ward,
             userID: user.key,
         };
+        // valid input
+        if (data.name === '') {
+            alert('Vui lòng nhập họ tên');
+            return;
+        }
+        // valid phone number
+        if (data.phone === '') {
+            alert('Vui lòng nhập số điện thoại');
+            return;
+        } else if (data.phone.length < 10 || data.phone.length > 11) {
+            alert('Số điện thoại không hợp lệ');
+            return;
+        }
+        // valid cmnd
+        if (data.cmnd === '') {
+            alert('Vui lòng nhập số CMND');
+            return;
+        } else if (data.cmnd.length < 9 || data.cmnd.length > 12) {
+            alert('Số CMND không hợp lệ');
+            return;
+        }
+        // valid email
+        if (data.email === '') {
+            alert('Vui lòng nhập email');
+            return;
+        } else if (!data.email.includes('@')) {
+            alert('Email không hợp lệ');
+            return;
+        }
+
+        // valid address
+        if (data.address === '') {
+            alert('Vui lòng nhập địa chỉ');
+            return;
+        }
+        // valid province
+        if (data.province === '') {
+            alert('Vui lòng chọn tỉnh/thành phố');
+            return;
+        }
+        // valid city
+        if (data.city === '') {
+            alert('Vui lòng chọn quận/huyện');
+            return;
+        }
+        // valid ward
+        if (data.ward === '') {
+            alert('Vui lòng chọn phường/xã');
+            return;
+        }
+        // valid birthday
+        if (data.birthday === '') {
+            alert('Vui lòng chọn ngày sinh');
+            return;
+        }
 
         axios
             .post(
@@ -413,9 +468,7 @@ function TaoMoiHoSo() {
                     <div className={cx('TaoMoiHoSo_da_tung')}>
                         <div className={cx('TaoMoiHoSo_dien_form')}>
                             <input type="text" placeholder="Nhập mã số bệnh nhân / Mã số BHYT"></input>
-                            <div className={cx('TaoMoiHoSo_search')}>
-                                Tìm kiếm
-                            </div>
+                            <div className={cx('TaoMoiHoSo_search')}>Tìm kiếm</div>
                         </div>
                         <div className={cx('TaoMoiHoSo_lost')}>
                             <i className={cx('fa-solid fa-caret-right')}></i>

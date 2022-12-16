@@ -33,6 +33,25 @@ export default function DangKy() {
             gender: data.gender,
             role: 'Khach hang',
         };
+        // valid userName
+        if (sendData.userName === '') {
+            alert('Vui lòng nhập tên tài khoản');
+            return;
+        }
+        // valid password
+        if (sendData.password === '') {
+            alert('Vui lòng nhập mật khẩu');
+            return;
+        }
+        // valid phone
+        if (sendData.phone === '') {
+            alert('Vui lòng nhập số điện thoại');
+            return;
+        } else if (sendData.phone.length < 10 || sendData.phone.length > 11) {
+            alert('Số điện thoại không hợp lệ');
+            return;
+        }
+        // valid gender
 
         axios
             .post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/user.php/user/save`, sendData)
@@ -116,7 +135,7 @@ export default function DangKy() {
                                     checked={data.gender === 'male'}
                                     onChange={handleChange}
                                     value="male"
-                                    style={{opacity: 'none !important'}}
+                                    style={{ opacity: 'none !important' }}
                                 />
                             </li>
                             <li>

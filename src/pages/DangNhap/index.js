@@ -64,7 +64,16 @@ function DangNhap() {
             password: data.password,
             phone: data.phone,
         };
-
+        // if phone number is not valid
+        if (data.phone.length < 10 || data.phone.length > 11) {
+            alert('Số điện thoại không hợp lệ');
+            return;
+        }
+        // if password is not valid
+        if (data.password.length < 4 || data.password.length > 20) {
+            alert('Mật khẩu không hợp lệ');
+            return;
+        }
         axios
             .post(
                 `http://localhost/Online-Registration-for-Medical-Examination-1/src/php/user.php/user/login`,
