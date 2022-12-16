@@ -216,7 +216,6 @@ function ThongKeLuotTruyCap() {
                 </div>
             </div>
 
-<<<<<<< HEAD
             <div className={cx('filter-cover')}>
                 <div className={cx('filter')}>
                     <div className={cx('selection')}>
@@ -256,9 +255,6 @@ function ThongKeLuotTruyCap() {
                     </ComposedChart>
                 </div>
             </div>
-=======
-            <p>ThongKeLuotTruyCap</p>
->>>>>>> d01196d7c9b85b30347d1634e3f206deabfc8149
         </div>
     );
 }
