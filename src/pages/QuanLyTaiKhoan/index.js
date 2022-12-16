@@ -249,6 +249,7 @@ function QuanLyTaiKhoan() {
                     </div>
                 </div>
             </div>
+
             <table cellspacing="0" cellpadding="0">
                 <tr>
                     <th>Mã tài khoản</th>

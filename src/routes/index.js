@@ -16,7 +16,6 @@ import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
 import KhoaMat from '../pages/ChuyenKhoa/KhoaMat';
 
 import TaoMoiHoSo from '../pages/TaoMoiHoSo';
-import NhapLichKham from '../pages/NhapLichKham';
 import ChonHoSo from '../pages/ChonHoSo';
 import ChonChuyenKhoa from '../pages/ChonChuyenKhoa';
 import ChonBacSi from '../pages/ChonBacSi';
@@ -66,21 +65,21 @@ const publicRoutes = [
     { path: '/sua-ho-so/:id', component: SuaHoSo },
 
     // these pages below need task administrator permission, temporary write here
-    { path: '/nhap-ho-so-bac-si', component: NhapHoSoBacSi, layout: None2 },
-    { path: '/nhap-lich-kham-bac-si', component: NhapLichKhamBacSi, layout: None2 },
-    { path: '/chinh-sua-lich-kham-bac-si', component: ChinhSuaLichKhamBacSi, layout: None2 },
+    { path: '/nhap-ho-so-bac-si', component: NhapHoSoBacSi, layout: None2 }, // thieu
+    { path: '/nhap-lich-kham-bac-si', component: NhapLichKhamBacSi, layout: None2 }, // thieu
+    { path: '/chinh-sua-lich-kham-bac-si', component: ChinhSuaLichKhamBacSi, layout: None2 }, // thieu :pink
 
     // the page below need medical answer permission, temporary write here
     { path: '/tra-loi-thac-mac-chuyen-mon', component: TraLoiThacMacChuyenMon, layout: None },
 
     // these pages below need system administrator permission, temporary write here
-    { path: '/thong-ke-luot-truy-cap', component: ThongKeLuotTruyCap, layout: None },
-    { path: '/quan-ly-tai-khoan', component: QuanLyTaiKhoan, layout: None },
+    { path: '/thong-ke-luot-truy-cap', component: ThongKeLuotTruyCap, layout: None }, // thieu, giong thong ke phieu kham
+    { path: '/quan-ly-tai-khoan', component: QuanLyTaiKhoan, layout: None }, // thieu tao tai khoan dac biet :qa
 
     // the page below need management permission, temporary write here
     { path: '/thong-ke-phieu-kham', component: ThongKePhieuKham, layout: None },
 ];
 // must login
-const privateRoutes = [{ path: '/nhap-lich-kham', component: NhapLichKham }];
+const privateRoutes = [];
 
 export { publicRoutes, privateRoutes };
