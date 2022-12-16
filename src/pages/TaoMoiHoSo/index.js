@@ -376,14 +376,14 @@ function TaoMoiHoSo() {
                             </div>
                         </div>
                         <div className={cx('TaoMoiHoSo_button')}>
-                            <div className={cx('TaoMoiHoSo_agree')}>
+                            <button className={cx('TaoMoiHoSo_agree')} type='submit'>
                                 {/* <a href="" className={cx("TaoMoiHoSo_agree")}> */}
-                                <button type="submit">
+                                {/* <button type="submit"> */}
                                     {' '}
                                     <i className={cx('fa-solid fa-user-plus')}></i> Tạo mới
-                                </button>
+                                {/* </button> */}
                                 {/* </a> */}
-                            </div>
+                            </button>
                             <div className={cx('TaoMoiHoSo_erase')} onClick={handleReset}>
                                 <i className={cx('fa-solid fa-eraser')}></i>
                                 Nhập lại

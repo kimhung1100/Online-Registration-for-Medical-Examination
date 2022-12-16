@@ -186,7 +186,7 @@ function ThanhToan() {
                                 </div>
                                 
                                 <div className={cx('style_next_prev')}>
-                                    <button id="btn-back" onClick={() => navigate('/chon-lich-kham')}  data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button')}>
+                                    <button id="btn-back" onClick={() => navigate('/xac-nhan-thong-tin')}  data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button')}>
                                         <div>Quay lại</div>
                                         {/* <div data-test="waves" className={cx('Ripple', 'Ripple-outlin')} style={{top: '0px', left: '0px', width: '0px', height: '0px'}}></div> */}
                                     </button>

@@ -66,8 +66,9 @@ function ChonBacSi() {
                     <div className={cx('ChonBacSi_cac_bac_si')}>
                         <ul>
                         {doctor.map((element, idx) => 
+                        
                             <li key={idx}>
-                                <Link to="/chon-lich-kham" state={{...location.state, doctor: element}} >
+                                <Link to="/chon-lich-kham" state={{...location.state, doctor: element}}>
                                 <div className={cx('ChonBacSi_thong_tin_bac_si')}>
                                     <p style={{color: '#00559c', fontWeight: '800'}}>
                                         <i class="fa-solid fa-user-doctor"></i>{element.name}
@@ -87,6 +88,7 @@ function ChonBacSi() {
                                 </div>
                                 </Link>
                             </li>
+                           
                             
                             )}
                         </ul>

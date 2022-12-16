@@ -142,8 +142,9 @@
     border: #1da1f2 3px solid;
 }
 
-.ChonChuyenKhoa_cac_chuyen_khoa li link {
+.ChonBacSi_cac_bac_si li link {
     text-decoration: none;
+    color: black !important;
 }
 
 .ChonBacSi_thong_tin_bac_si i {
@@ -157,4 +158,8 @@
     font-weight: 700;
     padding: 20px 0 20px;
     left: 0;
+}
+
+.ChonBacSi_cac_bac_si li p {
+    color: black;
 }

@@ -26,13 +26,13 @@ function TrangChu() {
                     </div> */}
                     {user.key === 0 ? (
                         <Link to="/dang-nhap">
-                            <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                            <button type="button" className={cx("btn", "btn-warning", "btn-lg", "button-dang-ky")} >
                                 Đặt lịch khám
                             </button>
                         </Link>
                     ) : (
                         <Link to="/chon-ho-so">
-                            <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                            <button type="button" className={cx("btn", "btn-warning", "btn-lg", "button-dang-ky")}>
                                 Đặt lịch khám
                             </button>
                         </Link>
