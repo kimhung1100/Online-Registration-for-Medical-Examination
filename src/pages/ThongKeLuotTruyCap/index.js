@@ -49,6 +49,12 @@ function ThongKeLuotTruyCap() {
         setThongKeLuotTruyCap = false;
     };
     const [values, setValues] = useState([new DateObject()]);
+
+    const [problem1, setProblem1] = useState(false);
+
+    const handleProblem1 = () => {
+        setProblem1(!problem1) 
+    }
     return (
         <div id="ThongKeLuotTruyCap">
             {/* <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
@@ -239,13 +245,16 @@ function ThongKeLuotTruyCap() {
                 <div className={cx('filter')}>
                     <div className={cx('selection')}>
                         <div className={cx('match')}>
-                            <p>Match</p>
+                            Match
                         </div>
-                        <div>
-                            <div className={cx('calendar')}>
-                                <Calendar value={values} onChange={setValues} range rangeHover />
+                        <button onClick={handleProblem1}>Choose days</button>
+                        {problem1 && (
+                            <div>
+                                <div className={cx('calendar')}>
+                                    <Calendar value={values} onChange={setValues} range rangeHover />
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
                 <div className={cx('toolbox')}>

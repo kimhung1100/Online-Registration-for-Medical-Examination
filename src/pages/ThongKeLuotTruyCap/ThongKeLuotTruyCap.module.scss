@@ -623,8 +623,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
     // background
 }
+
 .filter-cover {
     background-color: #f9f8fa;
     width: 60%;
@@ -659,6 +661,7 @@ a {
     display: flex;
     justify-content: left;
     flex-flow: row wrap;
+    align-items: center;
 }
 
 .holder {
@@ -676,6 +679,15 @@ a {
     line-height: 30px;
     font-size: 0.9em;
     margin-right: 10px;
+}
+
+.filter button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
 }
 
 .clear-button {
