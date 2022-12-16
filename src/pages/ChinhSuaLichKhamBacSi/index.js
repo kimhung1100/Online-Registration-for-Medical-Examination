@@ -34,28 +34,31 @@ function ChinhSuaLichKhamBacSi() {
             <h1 className={cx('text-center', 'p-5')}>CHỈNH SỬA LỊCH KHÁM</h1>
             <div className={cx('wrapp', 'col-10', 'mb-5')}>
                 <div className={cx('container1', 'col-5')}>
-                    <div className={cx('choose')}>CHỌN BÁC SĨ
-                        <br/>
-                        <input type='text' placeholder='Tìm nhanh bác sĩ' className={cx('')}></input>
+                    <div className={cx('choose')}>
+                        CHỌN BÁC SĨ
+                        <br />
+                        <input type="text" placeholder="Tìm nhanh bác sĩ" className={cx('')}></input>
                     </div>
                     <div className={cx('content')}>
                         <div className={cx('d-flex', 'justify-content-around', 'mb-2')}>
-                            <div className={cx('search-by')}>HỌC HÀM HỌC VỊ
+                            <div className={cx('search-by')}>
+                                HỌC HÀM HỌC VỊ
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
-                            <div className={cx('search-by')}>CHUYÊN KHOA
+                            <div className={cx('search-by')}>
+                                CHUYÊN KHOA
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
-                            <div className={cx('search-by')}>GIỚI TÍNH
+                            <div className={cx('search-by')}>
+                                GIỚI TÍNH
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
                         </div>
                         <div className={cx('bac-si')}>
-                            
                             <button className={cx('cac-bac-si')}>
-                                <div style={{color: '#0352cc'}}>
+                                <div style={{ color: '#0352cc' }}>
                                     <i class="fa-solid fa-user"></i>
-                                    <p style={{color: '#0352cc'}}>TS. Phan Hồng Đức</p>
+                                    <p style={{ color: '#0352cc' }}>TS. Phan Hồng Đức</p>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-venus-mars"></i>
@@ -71,9 +74,9 @@ function ChinhSuaLichKhamBacSi() {
                                 </div>
                             </button>
                             <button className={cx('cac-bac-si')}>
-                                <div style={{color: '#0352cc'}}>
+                                <div style={{ color: '#0352cc' }}>
                                     <i class="fa-solid fa-user"></i>
-                                    <p style={{color: '#0352cc'}}>TS. Nguyễn Thị Minh Châu</p>
+                                    <p style={{ color: '#0352cc' }}>TS. Nguyễn Thị Minh Châu</p>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-venus-mars"></i>
@@ -89,9 +92,9 @@ function ChinhSuaLichKhamBacSi() {
                                 </div>
                             </button>
                             <button className={cx('cac-bac-si')}>
-                                <div style={{color: '#0352cc'}}>
+                                <div style={{ color: '#0352cc' }}>
                                     <i class="fa-solid fa-user"></i>
-                                    <p style={{color: '#0352cc'}}>TS. Dương Huỳnh Anh Đức</p>
+                                    <p style={{ color: '#0352cc' }}>TS. Dương Huỳnh Anh Đức</p>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-venus-mars"></i>
@@ -107,9 +110,9 @@ function ChinhSuaLichKhamBacSi() {
                                 </div>
                             </button>
                             <button className={cx('cac-bac-si')}>
-                                <div style={{color: '#0352cc'}}>
+                                <div style={{ color: '#0352cc' }}>
                                     <i class="fa-solid fa-user"></i>
-                                    <p style={{color: '#0352cc'}}>TS. BSCKII Phạm Quốc An</p>
+                                    <p style={{ color: '#0352cc' }}>TS. BSCKII Phạm Quốc An</p>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-venus-mars"></i>
@@ -142,13 +145,13 @@ function ChinhSuaLichKhamBacSi() {
                             </a>
                         </div>
                         <div className={cx('days')}>
-                            <span style={{color: '#d2691e'}}>CN</span>
+                            <span style={{ color: '#d2691e' }}>CN</span>
                             <span>Hai</span>
                             <span>Ba</span>
                             <span>Tư</span>
                             <span>Năm</span>
                             <span>Sáu</span>
-                            <span style={{color: '#d2691e'}}>Bảy</span>
+                            <span style={{ color: '#d2691e' }}>Bảy</span>
                         </div>
                         <div className={cx('dates')}>
                             <button className={cx('no')} disabled>
@@ -247,11 +250,17 @@ function ChinhSuaLichKhamBacSi() {
                         </div>
                         <div className={cx('d-flex', 'justify-content-between', 'mt-5', 'mb-5')}>
                             <div className={cx('option1')}>SÁNG</div>
-                            <div style={{color: '#999'}} className={cx('option1', 'bg-light')}>CHIỀU</div>
+                            <div style={{ color: '#999' }} className={cx('option1', 'bg-light')}>
+                                CHIỀU
+                            </div>
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected>Phòng 405</option>
-                                <option value="1" disabled>Phòng 401</option>
-                                <option value="1" disabled>Phòng 402</option>
+                                <option value="1" disabled>
+                                    Phòng 401
+                                </option>
+                                <option value="1" disabled>
+                                    Phòng 402
+                                </option>
                                 <option value="1">Phòng 403</option>
                                 <option value="1">Phòng 404</option>
                             </select>
@@ -262,9 +271,9 @@ function ChinhSuaLichKhamBacSi() {
                                 <option value="1">TIM MẠCH</option>
                                 <option value="2">CHỌN CHUYÊN KHOA</option>
                             </select>
-                            <div style={{color: 'red'}} className={cx('option', 'bg-white')}>
+                            <div style={{ color: 'red' }} className={cx('option', 'bg-white')}>
                                 <i class="fa-solid fa-pen-to-square"></i>
-                                <a href=''>Gán lịch khám</a>
+                                <a href="">Gán lịch khám</a>
                             </div>
                         </div>
                     </div>

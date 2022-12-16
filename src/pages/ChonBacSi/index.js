@@ -5,15 +5,16 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import styles from './ChonBacSi.module.scss';
+import native from 'i/lib/native';
 const cx = classNames.bind(styles);
-
 
 function ChonBacSi() {
     let navigate = useNavigate();
     const [selectedSchedule, setSelectedSchedule] = useState('');
-    // const chooseSchedule = (e) => {
-    //     navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
-    // };
+    const chooseSchedule = (e) => {
+        navigate('/chon-lich-kham');
+        // navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
+    };
 
     const [doctor, setDoctor] = useState([]);
     const location = useLocation();
@@ -21,18 +22,21 @@ function ChonBacSi() {
 
     useEffect(() => {
         getDoctors();
-    },[]);
+    }, []);
 
     const getDoctors = () => {
-        axios.post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/doctors.php/doctor/lookup`, {specialization: location.state.specialization})
-        .then((result) => {
-            setDoctor(result.data);
-            console.log(result.data);
-        })
-        .catch((error) => {
-            console.log(error.response);
-        });
-    }
+        axios
+            .post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/doctors.php/doctor/lookup`, {
+                specialization: location.state.specialization,
+            })
+            .then((result) => {
+                setDoctor(result.data);
+                console.log(result.data);
+            })
+            .catch((error) => {
+                console.log(error.response);
+            });
+    };
 
     return (
         <div>
@@ -92,9 +96,8 @@ function ChonBacSi() {
                             
                             )}
                         </ul>
-                        
                     </div>
-                    <a onClick={() => {navigate('../chon-chuyen-khoa');}}  className={cx('ChonBacSi_back')}>Quay lại</a>
+                    {/* <a className={cx('ChonBacSi_back')}>Quay lại</a> */}
                 </div>
             </div>
         </div>

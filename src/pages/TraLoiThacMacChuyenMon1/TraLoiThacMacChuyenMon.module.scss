@@ -1,3 +1,32 @@
+.ThacMacChuyenMon_wrapper {
+    min-height: 800px;
+}
+.ThacMacChuyenMon_container {
+    min-width: 500px;
+}
+.left-side {
+    float: left;
+    padding: 0 10px;
+}
+
+.right-side {
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+}
+.question {
+    text-align: center;
+}
+.questionDay {
+    text-align: center;
+}
+.sender {
+    text-align: center;
+}
+.not_seen_question {
+    background-color: #d8f3a7;
+}
+
 // .wrapper {
 //     width: 100%;
 //     height: 125px;
@@ -121,6 +150,7 @@
     top: 0;
     left: 0;
     right: 0;
+    border-bottom: 1px solid rgb(28, 28, 134);
 }
 
 .container-fluid {
@@ -538,6 +568,7 @@ button:not(:disabled) {
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;
+    text-align: right;
 }
 a {
     text-transform: none !important;
@@ -618,99 +649,10 @@ a {
     color: #cb0a48;
 }
 
-.calendar {
-    // middle
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // background
-}
-.filter-cover {
-    background-color: #f9f8fa;
-    width: 60%;
-    height: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #969696;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.filter {
-    background-color: #ffffff;
-    width: 98%;
-    height: 90px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #969696;
-    border-radius: 10px;
-}
-
-.toolbox {
-    margin: 8px;
-    display: flex;
-    justify-content: right;
-    flex-flow: row wrap;
-}
-
-.selection {
-    margin: 10px;
-    display: flex;
-    justify-content: left;
-    flex-flow: row wrap;
-}
-
-.holder {
-    margin: 10px;
-    display: flex;
-    justify-content: left;
-    flex-flow: row wrap;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-}
-
-.match {
-    line-height: 30px;
-    font-size: 0.9em;
-    margin-right: 10px;
-}
-
-.clear-button {
-    user-select: none;
-    width: 100px;
-    color: #4f4f4f;
-    font-size: 0.8em;
+.ThongKePhieuKham p {
     text-align: center;
-    line-height: 30px;
-    cursor: pointer;
-    height: 30px;
-    border-radius: 4px;
-    background: #e1e1e1;
-    opacity: 1;
-    margin-right: 5px;
-}
-
-.clear-button:hover {
-    opacity: 0.8;
-}
-
-.submit-button {
-    user-select: none;
-    width: 100px;
-    color: #ffffff;
-    font-size: 0.8em;
-    text-align: center;
-    line-height: 30px;
-    cursor: pointer;
-    height: 30px;
-    border-radius: 4px;
-    background: #1da1f2;
-    opacity: 1;
-}
-
-.submit-button:hover {
-    opacity: 0.8;
+    margin: 0;
+    padding: 10px 0;
+    color: #0056b3;
+    font-weight: 500;
 }

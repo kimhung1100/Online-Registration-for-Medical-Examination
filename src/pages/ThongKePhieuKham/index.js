@@ -145,7 +145,7 @@ function ThongKePhieuKham() {
                         isSearchable={true}
                     />
                 </div>
-                <button onClick={handleSubmit} type="button" class="btn btn-primary btn-lg">
+                <button onClick={handleSubmit} onSubmit={handleChange} type="button" class="btn btn-primary btn-lg">
                     Large button
                 </button>
             </div>
