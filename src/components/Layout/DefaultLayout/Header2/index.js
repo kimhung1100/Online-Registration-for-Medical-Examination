@@ -7,64 +7,28 @@ import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header2() {
     const [user, setUser] = useContext(UserContext);
-    const [trangchu, setTrangchu] = useState(true);
-    const [gioithieu, setGioithieu] = useState(false);
-    const [chuyenkhoa, setChuyenkhoa] = useState(false);
-    const [quytrinh, setQuytrinh] = useState(false);
-    const [thacmac, setThacmac] = useState(false);
-    const [lienhe, setLienhe] = useState(false);
+    const [NhapHoSoBacSi, setNhapHoSoBacSi] = useState(true);
+    const [NhapLichKhamBacSi, setNhapLichKhamBacSi] = useState(false);
+    const [ChinhSuaLichKhamBacSi, setChinhSuaLichKhamBacSi] = useState(false);
 
-    const handleTrangchu = () => {
-        setTrangchu = true;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = false;
+    const handleNhapHoSoBacSi = () => {
+        setNhapHoSoBacSi = true;
+        setNhapLichKhamBacSi = false;
+        setChinhSuaLichKhamBacSi = false;
     };
 
-    const handleGioithieu = () => {
-        setTrangchu(false);
-        setGioithieu = true;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = false;
+    const handleNhapLichKhamBacSi = () => {
+        setNhapHoSoBacSi = false;
+        setNhapLichKhamBacSi = true;
+        setChinhSuaLichKhamBacSi = false;
     };
 
-    const handleChuyenkhoa = () => {
-        setTrangchu(false);
-        setGioithieu = false;
-        setChuyenkhoa = true;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = false;
-    };
-    const handleQuytrinh = () => {
-        setTrangchu = false;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = true;
-        setThacmac = false;
-        setLienhe = false;
-    };
-    const handleThacmac = () => {
-        setTrangchu = false;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = true;
-        setLienhe = false;
-    };
-    const handleLienhe = () => {
-        setTrangchu = false;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = true;
+    const handleChinhSuaLichKhamBacSi = () => {
+        setNhapHoSoBacSi = false;
+        setNhapLichKhamBacSi = false;
+        setChinhSuaLichKhamBacSi = true;
     };
 
     const navigate = useNavigate();
@@ -113,7 +77,13 @@ function Header() {
                                                 </li>
 
                                                 <li>
-                                                    <button class="dropdown-item" type="button">
+                                                    <button
+                                                        onClick={() => {
+                                                            navigate('/tra-cuu');
+                                                        }}
+                                                        class="dropdown-item"
+                                                        type="button"
+                                                    >
                                                         Hồ sơ bệnh nhân
                                                     </button>
                                                 </li>
@@ -192,21 +162,25 @@ function Header() {
                                         )}
                                     >
                                         <li
-                                            onClick={handleTrangchu}
+                                            onClick={handleNhapLichKhamBacSi}
                                             data-test="nav-item"
                                             className={cx(
                                                 'nav-item',
-                                                trangchu && 'style_active',
-                                                trangchu && 'undefined',
+                                                NhapLichKhamBacSi && 'style_active',
+                                                NhapLichKhamBacSi && 'undefined',
                                             )}
                                         >
                                             <Link
-                                                to="/"
+                                                to="/nhap-lich-kham-bac-si"
                                                 aria-current="page"
-                                                className={cx('nav-link', 'Ripple-parent', trangchu && 'active')}
+                                                className={cx(
+                                                    'nav-link',
+                                                    'Ripple-parent',
+                                                    NhapLichKhamBacSi && 'active',
+                                                )}
                                                 data-test="nav-link"
                                             >
-                                                Trang chủ
+                                                Nhập lịch khám bác sĩ
                                                 <div
                                                     data-test="waves"
                                                     class="Ripple "
@@ -215,21 +189,25 @@ function Header() {
                                             </Link>
                                         </li>
                                         <li
-                                            onClick={handleGioithieu}
+                                            onClick={handleChinhSuaLichKhamBacSi}
                                             data-test="nav-item"
                                             className={cx(
                                                 'nav-item',
-                                                gioithieu && 'style_active',
-                                                gioithieu && 'undefined',
+                                                ChinhSuaLichKhamBacSi && 'style_active',
+                                                ChinhSuaLichKhamBacSi && 'undefined',
                                             )}
                                         >
                                             <Link
-                                                to="/gioi-thieu"
+                                                to="/chinh-sua-lich-kham-bac-si"
                                                 aria-current="page"
-                                                className={cx('nav-link', 'Ripple-parent', gioithieu && 'target')}
+                                                className={cx(
+                                                    'nav-link',
+                                                    'Ripple-parent',
+                                                    ChinhSuaLichKhamBacSi && 'active',
+                                                )}
                                                 data-test="nav-link"
                                             >
-                                                Giới thiệu
+                                                Chỉnh sửa lịch khám bác sĩ
                                                 <div
                                                     data-test="waves"
                                                     class="Ripple "
@@ -238,86 +216,21 @@ function Header() {
                                             </Link>
                                         </li>
                                         <li
-                                            onClick={handleChuyenkhoa}
+                                            onClick={handleNhapHoSoBacSi}
                                             data-test="nav-item"
                                             className={cx(
                                                 'nav-item',
-                                                chuyenkhoa && 'style_active',
-                                                chuyenkhoa && 'undefined',
+                                                NhapHoSoBacSi && 'style_active',
+                                                NhapHoSoBacSi && 'undefined',
                                             )}
                                         >
                                             <Link
-                                                to="/chuyen-khoa"
+                                                to="/nhap-ho-so-bac-si"
                                                 aria-current="page"
-                                                className={cx('nav-link', 'Ripple-parent', chuyenkhoa && 'active')}
+                                                className={cx('nav-link', 'Ripple-parent', NhapHoSoBacSi && 'target')}
                                                 data-test="nav-link"
                                             >
-                                                Chuyên khoa
-                                                <div
-                                                    data-test="waves"
-                                                    class="Ripple "
-                                                    style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
-                                                ></div>
-                                            </Link>
-                                        </li>
-                                        <li
-                                            onClick={handleQuytrinh}
-                                            data-test="nav-item"
-                                            className={cx(
-                                                'nav-item',
-                                                quytrinh && 'style_active',
-                                                quytrinh && 'undefined',
-                                            )}
-                                        >
-                                            <Link
-                                                to="/quy-trinh"
-                                                aria-current="page"
-                                                className={cx('nav-link', 'Ripple-parent', quytrinh && 'active')}
-                                                data-test="nav-link"
-                                            >
-                                                Quy trình
-                                                <div
-                                                    data-test="waves"
-                                                    class="Ripple "
-                                                    style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
-                                                ></div>
-                                            </Link>
-                                        </li>
-                                        <li
-                                            onClick={handleThacmac}
-                                            data-test="nav-item"
-                                            className={cx(
-                                                'nav-item',
-                                                thacmac && 'style_active',
-                                                thacmac && 'undefined',
-                                            )}
-                                        >
-                                            <Link
-                                                aria-current="page"
-                                                className={cx('nav-link', 'Ripple-parent', thacmac && 'active')}
-                                                data-test="nav-link"
-                                                to="/thac-mac"
-                                            >
-                                                Thắc mắc
-                                                <div
-                                                    data-test="waves"
-                                                    class="Ripple "
-                                                    style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
-                                                ></div>
-                                            </Link>
-                                        </li>
-                                        <li
-                                            onClick={handleLienhe}
-                                            data-test="nav-item"
-                                            className={cx('nav-item', lienhe && 'style_active', lienhe && 'undefined')}
-                                        >
-                                            <Link
-                                                to="/lien-he"
-                                                aria-current="page"
-                                                className={cx('nav-link', 'Ripple-parent', lienhe && 'active')}
-                                                data-test="nav-link"
-                                            >
-                                                Liên hệ
+                                                Nhập hồ sơ bác sĩ
                                                 <div
                                                     data-test="waves"
                                                     class="Ripple "
@@ -385,4 +298,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Header2;
