@@ -13,7 +13,8 @@ import ChiTietHoSo from './ChiTietHoSo';
 const cx = classNames.bind(styles);
 
 export default function HoSoBenhNhan() {
-    const [user, setUser] = useContext(UserContext);
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     const [patient, setPatient] = useState([{}]);
     const [chosenPatient, setChosenPatient] = useState();
     

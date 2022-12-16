@@ -41,10 +41,6 @@ Validator.isRequired = function () {};
 Validator.isEmail = function () {};
 
 function DangNhap() {
-    const initialValues = {
-        phone: '',
-        password: '',
-    };
     const context = useContext(UserContext);
 
     const [user, setUser] = context[0];

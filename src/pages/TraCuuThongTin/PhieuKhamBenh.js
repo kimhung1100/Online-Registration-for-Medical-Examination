@@ -8,7 +8,8 @@ import axios from 'axios';
 const cx = classNames.bind(styles);
 
 export default function PhieuKhamBenh (){
-    const [user,setUser] = useContext(UserContext);
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     const [record, setRecord] = useState([]);
     const [selected, setSelected] = useState(false);
     //const [double, setDouble] = useState(false);

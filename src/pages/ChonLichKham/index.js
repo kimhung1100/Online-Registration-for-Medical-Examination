@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 // import { CartXFill } from 'react-bootstrap-icons';
 import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf';
 import styles from './ChonLichKham.module.scss';
+import { useLocation } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 import { format } from 'date-fns';
@@ -34,9 +35,9 @@ function ChonLichKham() {
     // Onclick to set selectedDay
 
     let navigate = useNavigate();
-    const chooseHour = (e) => {
-        navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
-    };
+    // const chooseHour = (e) => {
+    //     navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
+    // };
     var examDay;
     if (selectedDay) {
         examDay = <p>Ngày khám: {selectedDay.format()}</p>;
@@ -66,19 +67,21 @@ function ChonLichKham() {
                             <i className={cx('fa-regular', 'fa-hospital')}></i> Bệnh viện ABCD
                         </p>
                         <p>
-                            <i class="fa-solid fa-phone"></i>: 0794763040
+                            <i class="fa-solid fa-phone"></i>Số điện thoại: 0794763040
                         </p>
                         <p>
-                            <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM NHẸ
+                            {/* {useLocation.state.specialization} */}
+                            <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: Hô hấp
                         </p>
                         <p>
-                            <i class="fa-solid fa-user-doctor"></i>Bác sĩ: Dương Huỳnh Anh Đức
+                            {/* {useLocation.state.doctor.name} */}
+                            <i class="fa-solid fa-user-doctor"></i>Bác sĩ: Nguyễn Văn A
                         </p>
                         <p>
                             <i class="fa-solid fa-plus"></i>Dịch vụ: Khám dịch vụ
                         </p>
                         <div>
-                            // show examDay
+                            {/* // show examDay */}
                             {examDay}
                         </div>
                     </div>
