@@ -49,11 +49,7 @@ const publicRoutes = [
     { path: '/dang-ky', component: DangKy, layout: null },
     { path: '/dang-nhap', component: DangNhap, layout: null },
     { path: '/chuyen-khoa', component: ThongTinChuyenKhoa, layout: NotLinearBar },
-<<<<<<< HEAD
     { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
-=======
-    //    { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
->>>>>>> d13c7bfe8a1fcaf6786255850ac5940014b740f7
     { path: '/khoa-ho-hap', component: KhoaHoHap },
     { path: '/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
     { path: '/khoa-mat', component: KhoaMat },
