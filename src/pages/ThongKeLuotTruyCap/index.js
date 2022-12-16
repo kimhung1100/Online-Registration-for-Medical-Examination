@@ -4,36 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './ThongKeLuotTruyCap.module.scss';
 import { UserContext } from '../../components/UserContext';
 import whiteLogo from '../../assets/images/white_logo.jpg';
-import { ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import DatePicker, { DateObject } from 'react-multi-date-picker';
-import { Calendar } from 'react-multi-date-picker';
+
 const cx = classNames.bind(styles);
-const data = [
-    {
-        name: 'Page A',
-        LuotDangNhap: 1230,
-    },
-    {
-        name: 'Page A',
-        LuotDangNhap: 1500,
-    },
-    {
-        name: 'Page A',
-        LuotDangNhap: 1000,
-    },
-    {
-        name: 'Page A',
-        LuotDangNhap: 990,
-    },
-    {
-        name: 'Page A',
-        LuotDangNhap: 1603,
-    },
-    {
-        name: 'Page A',
-        LuotDangNhap: 1320,
-    },
-];
 function ThongKeLuotTruyCap() {
     const [user, setUser] = useContext(UserContext);
     const navigate = useNavigate();
@@ -48,6 +20,7 @@ function ThongKeLuotTruyCap() {
         setQuanLyTaiKhoan = true;
         setThongKeLuotTruyCap = false;
     };
+<<<<<<< HEAD
     const [values, setValues] = useState([new DateObject()]);
 
     const [problem1, setProblem1] = useState(false);
@@ -55,9 +28,11 @@ function ThongKeLuotTruyCap() {
     const handleProblem1 = () => {
         setProblem1(!problem1) 
     }
+=======
+>>>>>>> d01196d7c9b85b30347d1634e3f206deabfc8149
     return (
         <div id="ThongKeLuotTruyCap">
-            {/* <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
+            <div data-test="container" className={cx('container-fluid', 'style_Menutop')} style={{ padding: '0' }}>
                 <div
                     data-test="animation"
                     className={cx(
@@ -67,7 +42,7 @@ function ThongKeLuotTruyCap() {
                         'style_header_classic',
                         'd-none',
                         'd-lg-block',
-                    )} 
+                    )} /*style={{animationIterationCount: '1', visibility: 'visible', animationName: 'fadeIn'}}*/
                 >
                     <div className={cx('style_header_content_normal')}>
                         <div className={cx('style_header_brand')}>
@@ -239,8 +214,9 @@ function ThongKeLuotTruyCap() {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
+<<<<<<< HEAD
             <div className={cx('filter-cover')}>
                 <div className={cx('filter')}>
                     <div className={cx('selection')}>
@@ -280,6 +256,9 @@ function ThongKeLuotTruyCap() {
                     </ComposedChart>
                 </div>
             </div>
+=======
+            <p>ThongKeLuotTruyCap</p>
+>>>>>>> d01196d7c9b85b30347d1634e3f206deabfc8149
         </div>
     );
 }

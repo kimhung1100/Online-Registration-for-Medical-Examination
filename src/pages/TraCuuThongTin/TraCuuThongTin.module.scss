@@ -335,7 +335,7 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
       a {
         display: flex;
         align-items: center;
-        //width: 100%;
+        width: 100%;
         padding: 10px;
         cursor: pointer;
         &:hover,
@@ -737,12 +737,12 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
       margin-top: 2rem;
     }
 }
-// .list-group {
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 0;
-//     margin-bottom: 0;
-// }
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
 .list-group-item {
     position: relative;
     display: block;
@@ -1025,148 +1025,15 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 }
 Table {
   td{
-    color: #52575C;
-    font-size: 1.3rem;
-  }
+    color: #52575C;}
   th{
     background-color: #fafafa;
-    font-size: 1.4rem;
   }
   // tr:first-child {
   //   th:first-child {border: 1.5px solid #E8E8E8; border-top-left-radius: 10px; }
   // }
-  font-size: 10rem;
+  font-size: 1.2rem;
   //border-radius: 10px !important;
 }
 
-
-//infoDetail
-.button {
-  padding: 12px 20px;
-  border-radius: 3px;
-  text-transform: none;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0;
-  white-space: nowrap;
-  &.back_children {
-    background: #fff;
-    color: #12263f !important;
-    border: 1px solid #e3ebf6;
-    padding: 0.6rem 0.85rem 0.5rem;
-    font-size: 12px;
-    line-height: 1.5;
-    &:hover {
-      background-color: #fff !important;
-      color: #0352cc !important;
-      border: 1px solid #0352cc;
-    }
-  }
-}
-.title_component {
-  button {
-    padding: 8px 25px;
-  }
-  i {
-    margin-right: 7px;
-  }
-  &.title_info_account {
-    font-size: 0.875rem;
-    margin: 0;
-    font-weight: bold;
-  }
-  &.text_left {
-    text-align: left !important;
-  }
-  &.title_thacmac {
-    padding: 11px 15px;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    background: #1da1f2;
-    color: #fff;
-    border-radius: 4px;
-  }
-  &.title_line {
-    margin-bottom: 35px;
-    //color: $main_black;
-    text-align: center;
-    font-weight: 500;
-    position: relative;
-    text-transform: uppercase;
-    z-index: 2;
-    font-size: 1.25rem;
-
-    span {
-      position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        border-bottom: 5px solid #9bf4cf;
-        bottom: 4px;
-        left: 0;
-        width: 100%;
-        z-index: -1;
-      }
-    }
-    &.title_login {
-      margin-bottom: 0.5rem;
-      text-align: left;
-      z-index: 0;
-    }
-  }
-  &.title_user {
-    font-size: 1.5rem;
-  }
-  &.title_headline {
-    font-weight: 700 !important;
-    color: #12263f;
-    font-size: 1rem;
-    text-align: center;
-    margin: 10px 0 22px;
-    text-transform: uppercase;
-    width: 100%;
-  }
-  &.title_contact {
-    color: #ffffff;
-    z-index: 2;
-    font-size: 2rem;
-    span {
-      &::after {
-        content: "";
-        position: absolute;
-        border-bottom: 5px solid #54dd76;
-        bottom: 4px;
-        left: 0;
-        width: 100%;
-        z-index: -1;
-      }
-    }
-  }
-  &.title_header_mobile {
-    @media #{$medium-and-down} {
-      font-size: 1rem;
-      text-transform: uppercase;
-      margin: 15px 0;
-      display: block;
-      text-align: center;
-      span {
-        &:after {
-          border: 0;
-        }
-      }
-    }
-  }
-}
-.space_between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.title_choose_date {
-  font-size: 1rem;
-  text-align: left;
-  font-weight: 500;
-  margin-bottom: 0;
-}
+  

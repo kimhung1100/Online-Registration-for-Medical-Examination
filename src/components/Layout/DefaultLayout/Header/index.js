@@ -8,8 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const context = useContext(UserContext);
-    const [user, setUser] = context[0];
+    const [user, setUser] = useContext(UserContext);
     const [trangchu, setTrangchu] = useState(true);
     const [gioithieu, setGioithieu] = useState(false);
     const [chuyenkhoa, setChuyenkhoa] = useState(false);
@@ -18,54 +17,54 @@ function Header() {
     const [lienhe, setLienhe] = useState(false);
 
     const handleTrangchu = () => {
-        setTrangchu(true);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(false);
+        setTrangchu = true;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = false;
     };
 
     const handleGioithieu = () => {
         setTrangchu(false);
-        setGioithieu(true);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(false);
+        setGioithieu = true;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = false;
     };
 
     const handleChuyenkhoa = () => {
         setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(true);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(false);
+        setGioithieu = false;
+        setChuyenkhoa = true;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = false;
     };
     const handleQuytrinh = () => {
-        setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(true);
-        setThacmac(false);
-        setLienhe(false);
+        setTrangchu = false;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = true;
+        setThacmac = false;
+        setLienhe = false;
     };
     const handleThacmac = () => {
-        setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(true);
-        setLienhe(false);
+        setTrangchu = false;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = true;
+        setLienhe = false;
     };
     const handleLienhe = () => {
-        setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(true);
+        setTrangchu = false;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = true;
     };
 
     const navigate = useNavigate();
@@ -114,13 +113,7 @@ function Header() {
                                                 </li>
 
                                                 <li>
-                                                    <button
-                                                        onClick={() => {
-                                                            navigate('/tra-cuu');
-                                                        }}
-                                                        class="dropdown-item"
-                                                        type="button"
-                                                    >
+                                                    <button class="dropdown-item" type="button">
                                                         Hồ sơ bệnh nhân
                                                     </button>
                                                 </li>
@@ -155,7 +148,7 @@ function Header() {
                                             data-test="list-group-item"
                                             className={cx('list-group-item', 'list-group-item-undefined')}
                                         >
-                                            <Link className={cx('style_button', 'style_login')} to="/dang-nhap">
+                                            <Link style={{textDecoration: 'none'}} className={cx('style_button', 'style_login')} to="/dang-nhap">
                                                 Đăng nhập
                                                 <i class="fa-solid fa-bars"></i>
                                             </Link>
@@ -163,8 +156,9 @@ function Header() {
                                         <li
                                             data-test="list-group-item"
                                             className={cx('list-group-item', 'list-group-item-undefined')}
+                                            
                                         >
-                                            <Link className={cx('style_button', 'style_signup')} to="/dang-ky">
+                                            <Link style={{textDecoration: 'none'}} className={cx('style_button', 'style_signup')} to="/dang-ky">
                                                 Đăng ký
                                             </Link>
                                         </li>
@@ -212,6 +206,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', trangchu && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Trang chủ
                                                 <div
@@ -235,6 +230,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', gioithieu && 'target')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Giới thiệu
                                                 <div
@@ -258,6 +254,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', chuyenkhoa && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Chuyên khoa
                                                 <div
@@ -281,6 +278,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', quytrinh && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Quy trình
                                                 <div
@@ -304,6 +302,7 @@ function Header() {
                                                 className={cx('nav-link', 'Ripple-parent', thacmac && 'active')}
                                                 data-test="nav-link"
                                                 to="/thac-mac"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Thắc mắc
                                                 <div
@@ -323,6 +322,7 @@ function Header() {
                                                 aria-current="page"
                                                 className={cx('nav-link', 'Ripple-parent', lienhe && 'active')}
                                                 data-test="nav-link"
+                                                style={{textDecoration: 'none'}}
                                             >
                                                 Liên hệ
                                                 <div

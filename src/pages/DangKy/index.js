@@ -33,6 +33,36 @@ export default function DangKy() {
             gender: data.gender,
             role: 'Khach hang',
         };
+        // valid userName
+        if (sendData.userName === '') {
+            alert('Vui lòng nhập tên tài khoản');
+            return;
+        }
+        // valid password
+        if (sendData.password === '') {
+            alert('Vui lòng nhập mật khẩu');
+            return;
+        }
+        // valid phone
+        if (sendData.phone === '') {
+            alert('Vui lòng nhập số điện thoại');
+            return;
+        } else if (sendData.phone.length < 10 || sendData.phone.length > 11) {
+            alert('Số điện thoại không hợp lệ');
+            return;
+        }
+        // valid gender
+
+        axios
+            .post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/user.php/user/save`, sendData)
+            .then((result) => {
+                console.log(result);
+                console.log(sendData);
+                navigate(`/`);
+            })
+            .catch((error) => {
+                console.log(error.response);
+            });
 
         axios
             .post(`http://localhost/Online-Registration-for-Medical-Examination/src/php/user.php/user/save`, sendData)
@@ -64,7 +94,7 @@ export default function DangKy() {
             </div>
             <div className={cx('noi-dung1')}>
                 <div className={cx('form')}>
-                    <h2>Đăng kí tài khoản mới</h2>
+                    <h2>Form đăng kí</h2>
                     <form onSubmit={handleSubmit}>
                         <div className={cx('input-form')}>
                             <label>Số điện thoại:</label>
@@ -92,7 +122,7 @@ export default function DangKy() {
                         <div className={cx('input-form')}>
                             <label>Password:</label>
                             <input
-                                type="password"
+                                type="text"
                                 id="password"
                                 name="password"
                                 placeholder=""
@@ -109,6 +139,7 @@ export default function DangKy() {
                             <li>
                                 <label>Nam</label>
                                 <input
+                                    style={{opacity: '1'}}
                                     type="radio"
                                     name="gender"
                                     id="male"
@@ -116,12 +147,12 @@ export default function DangKy() {
                                     checked={data.gender === 'male'}
                                     onChange={handleChange}
                                     value="male"
-                                    style={{opacity: 'none !important'}}
                                 />
                             </li>
                             <li>
                                 <label>Nữ</label>
                                 <input
+                                    style={{opacity: '1'}}
                                     type="radio"
                                     name="gender"
                                     id="female"
@@ -137,21 +168,21 @@ export default function DangKy() {
                     </form>
                     <ul className={cx('icon-dang-nhap')}>
                         <li>
-                            <i className={cx('fa fa-facebook')} aria-hidden="true"></i>
+                            <i className={cx('fa-brands fa-square-facebook')} aria-hidden="true"></i>
                             <p>
-                                <a href="http://127.0.0.1:5500/dangki.html">Liên kết với facebook</a>
+                                <a href="">Liên kết với facebook</a>
                             </p>
                         </li>
                         <li>
-                            <i className={cx('fa fa-google')} aria-hidden="true"></i>
+                            <i className={cx('fa-brands fa-square-google-plus')} aria-hidden="true"></i>
                             <p>
-                                <a href="http://127.0.0.1:5500/dangki.html">Liên kết với google</a>
+                                <a href="">Liên kết với google</a>
                             </p>
                         </li>
                         <li>
-                            <i className={cx('fa fa-twitter')} aria-hidden="true"></i>
+                            <i className={cx('fa-brands fa-square-twitter')} aria-hidden="true"></i>
                             <p>
-                                <a href="http://127.0.0.1:5500/dangki.html">Liên kết với twitter</a>
+                                <a href="">Liên kết với twitter</a>
                             </p>
                         </li>
                     </ul>
