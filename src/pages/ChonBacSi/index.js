@@ -5,15 +5,16 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import styles from './ChonBacSi.module.scss';
+import native from 'i/lib/native';
 const cx = classNames.bind(styles);
-
 
 function ChonBacSi() {
     let navigate = useNavigate();
     const [selectedSchedule, setSelectedSchedule] = useState('');
-    // const chooseSchedule = (e) => {
-    //     navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
-    // };
+    const chooseSchedule = (e) => {
+        navigate('/chon-lich-kham');
+        // navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
+    };
 
     const [doctor, setDoctor] = useState([]);
     const location = useLocation();
@@ -21,26 +22,29 @@ function ChonBacSi() {
 
     useEffect(() => {
         getDoctors();
-    },[]);
+    }, []);
 
     const getDoctors = () => {
-        axios.post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/doctors.php/doctor/lookup`, {specialization: location.state.specialization})
-        .then((result) => {
-            setDoctor(result.data);
-            console.log(result.data);
-        })
-        .catch((error) => {
-            console.log(error.response);
-        });
-    }
+        axios
+            .post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/doctors.php/doctor/lookup`, {
+                specialization: location.state.specialization,
+            })
+            .then((result) => {
+                setDoctor(result.data);
+                console.log(result.data);
+            })
+            .catch((error) => {
+                console.log(error.response);
+            });
+    };
 
     return (
         <div>
             <div className={cx('ChonBacSi_wrapper')}>
                 <div className={cx('ChonBacSi_wrapper_content')}>
-                    <a href="./" className={cx('ChonBacSi_trang_chu')}>
+                    <Link to="/" className={cx('ChonBacSi_trang_chu')}>
                         Trang chủ
-                    </a>
+                    </Link>
                     <div className={cx('ChonBacSi_chon_bac_si')}>
                         <i className={cx('fa-solid', 'fa-chevron-right')}></i>
                         Chọn bác sĩ
@@ -66,8 +70,9 @@ function ChonBacSi() {
                     <div className={cx('ChonBacSi_cac_bac_si')}>
                         <ul>
                         {doctor.map((element, idx) => 
+                        
                             <li key={idx}>
-                                <Link to="/chon-lich-kham" state={{...location.state, doctor: element}} >
+                                <Link to="/chon-lich-kham" state={{...location.state, doctor: element}}>
                                 <div className={cx('ChonBacSi_thong_tin_bac_si')}>
                                     <p style={{color: '#00559c', fontWeight: '800'}}>
                                         <i class="fa-solid fa-user-doctor"></i>{element.name}
@@ -87,12 +92,12 @@ function ChonBacSi() {
                                 </div>
                                 </Link>
                             </li>
+                           
                             
                             )}
                         </ul>
-                        
                     </div>
-                    <a className={cx('ChonBacSi_back')}>Quay lại</a>
+                    {/* <a className={cx('ChonBacSi_back')}>Quay lại</a> */}
                 </div>
             </div>
         </div>

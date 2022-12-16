@@ -5,6 +5,7 @@ import styles from './QuanLyTaiKhoan.module.scss';
 import { UserContext } from '../../components/UserContext';
 import whiteLogo from '../../assets/images/white_logo.jpg';
 const cx = classNames.bind(styles);
+
 function QuanLyTaiKhoan() {
     const [user, setUser] = useContext(UserContext);
     const navigate = useNavigate();
@@ -67,6 +68,7 @@ function QuanLyTaiKhoan() {
                     </div>
                 </div>
             </div>
+
             <table cellspacing="0" cellpadding="0">
                 <tr>
                     <th>Mã tài khoản</th>

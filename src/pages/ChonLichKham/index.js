@@ -1,19 +1,47 @@
 import classNames from 'classnames/bind';
-import { CartXFill } from 'react-bootstrap-icons';
+import React, { useState } from 'react';
+
+// import { CartXFill } from 'react-bootstrap-icons';
 import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf';
 import styles from './ChonLichKham.module.scss';
 import { useLocation } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom';
-
+// import axios from 'axios';
+import { format } from 'date-fns';
+import DatePicker, { DateObject } from 'react-multi-date-picker';
+import { Calendar } from 'react-multi-date-picker';
+// import { DayPicker } from 'react-day-picker';
 const cx = classNames.bind(styles);
+// const css1 = `
+//   .my-selected:not([disabled]) {
+//     font-weight: bold;
+//     border: 2px solid currentColor;
+//   }
+//   .my-selected:hover:not([disabled]) {
+//     border-color: blue;
+//     color: blue;
+//   }
+//   .my-today {
+//     font-weight: bold;
+//     font-size: 140%;
+//     color: red;
+//   }
+// `;
 function ChonLichKham() {
+    // useState Date value
+    const [selectedDay, setSelectedDay] = useState(null);
+    const [selectedHour, setSelectedHour] = useState(null);
+    // const [selectedDay, setSelectedDay] = useState(null);
+    // Onclick to set selectedDay
+
     let navigate = useNavigate();
     // const chooseHour = (e) => {
     //     navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
     // };
-    const location = useLocation();
-    console.log(location.state);
-
+    var examDay;
+    if (selectedDay) {
+        examDay = <p>Ngày khám: {selectedDay.format()}</p>;
+    }
     return (
         <div className={cx('wrapper')}>
             <div class={cx('style__banner d-none d-lg-block')}>
@@ -39,20 +67,94 @@ function ChonLichKham() {
                             <i className={cx('fa-regular', 'fa-hospital')}></i> Bệnh viện ABCD
                         </p>
                         <p>
-                            <i class="fa-solid fa-phone"></i>: 0794763040
+                            <i class="fa-solid fa-phone"></i>Số điện thoại: 0794763040
                         </p>
                         <p>
-                            <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: {location.state.specialization}
+                            {/* {useLocation.state.specialization} */}
+                            <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: Hô hấp
                         </p>
                         <p>
-                            <i class="fa-solid fa-user-doctor"></i>Bác sĩ: {location.state.doctor.name}
+                            {/* {useLocation.state.doctor.name} */}
+                            <i class="fa-solid fa-user-doctor"></i>Bác sĩ: Nguyễn Văn A
                         </p>
                         <p>
                             <i class="fa-solid fa-plus"></i>Dịch vụ: Khám dịch vụ
                         </p>
+                        <div>
+                            {/* // show examDay */}
+                            {examDay}
+                        </div>
                     </div>
                 </div>
-                <div className={cx('cover')}>
+
+                <div className={cx('container2')}>
+                    <p>Chọn ngày khám</p>
+                    <div className={cx('content')}>
+                        <Calendar
+                            value={selectedDay}
+                            onChange={(dateObject) => {
+                                console.log(dateObject.format());
+                                setSelectedDay(dateObject);
+                            }}
+                        />
+                    </div>
+                </div>
+            </div>
+            <form className={cx('form')}>
+                <h2>Buổi sáng</h2>
+                <div className={cx('switch-field')}>
+                    <input type="radio" id="radio-1" name="switch-two" value="7-8" />
+                    <label for="radio-1">07:00 - 08:00</label>
+                    <input type="radio" id="radio-2" name="switch-two" value="8-9" />
+                    <label for="radio-2">08:00 - 09:00</label>
+                    <input type="radio" id="radio-3" name="switch-two" value="9-10" />
+                    <label for="radio-3">09:00 - 10:00</label>
+                    <input type="radio" id="radio-4" name="switch-two" value="10-11" />
+                    <label for="radio-4">10:00 - 11:00</label>
+                </div>
+                <h2>Buổi chiều</h2>
+                <div class={cx('switch-field')}>
+                    <input type="radio" id="radio-5" name="switch-two" value="13-14" />
+                    <label for="radio-5">13:00 - 14:00</label>
+                    <input type="radio" id="radio-6" name="switch-two" value="14-15" />
+                    <label for="radio-6">14:00 - 15:00</label>
+                    <input type="radio" id="radio-7" name="switch-two" value="15-16" />
+                    <label for="radio-7">15:00 - 16:00</label>
+                    <input type="radio" id="radio-8" name="switch-two" value="16-17" />
+                    <label for="radio-8">16:00 - 17:00</label>
+                </div>
+
+                <div class={cx('xacnhan')}>
+                    <Link to="/xac-nhan-thong-tin">
+                        <button>Xác nhận</button>
+                    </Link>
+                </div>
+            </form>
+
+            {/* <div>
+                <style>{css1}</style>
+                <DayPicker
+                    mode="single"
+                    classNames={classNames}
+                    selected={selectedDay}
+                    dateFormat="dd/MM/yyyy"
+                    onSelect={setSelectedDay}
+                    modifiersClassNames={{
+                        selected: 'my-selected',
+                        today: 'my-today',
+                    }}
+                    // modifiersStyles={{
+                    //     disabled: { fontSize: '75%' },
+                    // }}
+                />
+            </div> */}
+        </div>
+    );
+}
+
+export default ChonLichKham;
+{
+    /* <div className={cx('cover')}>
                     <p>Chọn ngày khám</p>
                     <div className={cx('calendar')}>
                         <div className={cx('month')}>
@@ -109,7 +211,7 @@ function ChonLichKham() {
                             <button>
                                 <time>11</time>
                             </button>
-                            <button className={cx('no')} disabled>
+                            <button disabled>
                                 <time>12</time>
                             </button>
                             <button className={cx('no')} disabled>
@@ -160,41 +262,8 @@ function ChonLichKham() {
                             <button className={cx('no')} disabled>
                                 <time>28</time>
                             </button>
+                            x
                         </div>
                     </div>
-                </div>
-            </div>
-            <form className={cx('form')}>
-                <h2>Buổi sáng</h2>
-                <div className={cx('switch-field')}>
-                    <input type="radio" id="radio-1" name="switch-two" value="7-8" />
-                    <label for="radio-1">07:00 - 08:00</label>
-                    <input type="radio" id="radio-2" name="switch-two" value="8-9" />
-                    <label for="radio-2">08:00 - 09:00</label>
-                    <input type="radio" id="radio-3" name="switch-two" value="9-10" />
-                    <label for="radio-3">09:00 - 10:00</label>
-                    <input type="radio" id="radio-4" name="switch-two" value="10-11" />
-                    <label for="radio-4">10:00 - 11:00</label>
-                </div>
-                <h2>Buổi chiều</h2>
-                <div class={cx('switch-field')}>
-                    <input type="radio" id="radio-5" name="switch-two" value="13-14" />
-                    <label for="radio-5">13:00 - 14:00</label>
-                    <input type="radio" id="radio-6" name="switch-two" value="14-15" />
-                    <label for="radio-6">14:00 - 15:00</label>
-                    <input type="radio" id="radio-7" name="switch-two" value="15-16" />
-                    <label for="radio-7">15:00 - 16:00</label>
-                    <input type="radio" id="radio-8" name="switch-two" value="16-17" />
-                    <label for="radio-8">16:00 - 17:00</label>
-                </div>
-                <div class={cx('xacnhan')}>
-                    <Link to="/xac-nhan-thong-tin">
-                        <button>Xác nhận</button>
-                    </Link>
-                </div>
-            </form>
-        </div>
-    );
+                </div> */
 }
-
-export default ChonLichKham;

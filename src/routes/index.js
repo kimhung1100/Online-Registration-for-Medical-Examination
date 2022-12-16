@@ -17,7 +17,6 @@ import KhoaTaiMuiHong from '../pages/ChuyenKhoa/KhoaTaiMuiHong';
 import KhoaMat from '../pages/ChuyenKhoa/KhoaMat';
 
 import TaoMoiHoSo from '../pages/TaoMoiHoSo';
-import NhapLichKham from '../pages/NhapLichKham';
 import ChonHoSo from '../pages/ChonHoSo';
 import ChonChuyenKhoa from '../pages/ChonChuyenKhoa';
 import ChonBacSi from '../pages/ChonBacSi';
@@ -33,6 +32,7 @@ import NhapLichKhamBacSi from '../pages/NhapLichKhamBacSi';
 import ChinhSuaLichKhamBacSi from '../pages/ChinhSuaLichKhamBacSi';
 
 import TraLoiThacMacChuyenMon from '../pages/TraLoiThacMacChuyenMon';
+import TraLoiThacMacChuyenMon1 from '../pages/TraLoiThacMacChuyenMon1';
 
 import DangNhapAdmin from '../pages/DangNhapAdmin';
 import ThongKeLuotTruyCap from '../pages/ThongKeLuotTruyCap';
@@ -49,7 +49,11 @@ const publicRoutes = [
     { path: '/dang-ky', component: DangKy, layout: null },
     { path: '/dang-nhap', component: DangNhap, layout: null },
     { path: '/chuyen-khoa', component: ThongTinChuyenKhoa, layout: NotLinearBar },
+<<<<<<< HEAD
     { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
+=======
+    //    { path: '/thac-mac', component: ThacMac, layout: NotLinearBar },
+>>>>>>> d13c7bfe8a1fcaf6786255850ac5940014b740f7
     { path: '/khoa-ho-hap', component: KhoaHoHap },
     { path: '/khoa-tai-mui-hong', component: KhoaTaiMuiHong },
     { path: '/khoa-mat', component: KhoaMat },
@@ -75,6 +79,7 @@ const publicRoutes = [
 
     // the page below need medical answer permission, temporary write here
     { path: '/tra-loi-thac-mac-chuyen-mon', component: TraLoiThacMacChuyenMon, layout: None2 },
+    { path: '/tra-loi-thac-mac-chuyen-mon-1', component: TraLoiThacMacChuyenMon1, layout: None2 },
 
     // these pages below need system administrator permission, temporary write here
     { path: '/thong-ke-luot-truy-cap', component: ThongKeLuotTruyCap, layout: None2 },
@@ -84,6 +89,6 @@ const publicRoutes = [
     { path: '/thong-ke-phieu-kham', component: ThongKePhieuKham, layout: None2 },
 ];
 // must login
-const privateRoutes = [{ path: '/nhap-lich-kham', component: NhapLichKham }];
+const privateRoutes = [];
 
 export { publicRoutes, privateRoutes };

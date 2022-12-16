@@ -51,7 +51,7 @@ function DangNhap() {
                         navigate('/tra-loi-thac-mac-chuyen-mon');
                     }
                     else if(result.data.role === 'Nhân viên quản trị lịch khám') {
-                        navigate('/nhap-lich-kham-bac-si');
+                        navigate('/nhap-ho-so-bac-si');
                     }
                     else if (result.data.role === 'Nhân viên quản trị hệ thống') {
                         // <Link to='/thong-ke-luot-truy-cap'/>;

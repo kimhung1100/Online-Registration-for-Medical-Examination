@@ -9,7 +9,8 @@ import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
 const cx = classNames.bind(styles);
 function TrangChu() {
-    const [user, setUser] = useContext(UserContext);
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     return (
         <div className={cx('container')}>
             <div className={cx('content')}>
@@ -25,13 +26,13 @@ function TrangChu() {
                     </div> */}
                     {user.key === 0 ? (
                         <Link to="/dang-nhap">
-                            <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                            <button type="button" className={cx("btn", "btn-warning", "btn-lg", "button-dang-ky")} >
                                 Đặt lịch khám
                             </button>
                         </Link>
                     ) : (
                         <Link to="/chon-ho-so">
-                            <button type="button" class="btn btn-warning btn-lg button-dang-ky">
+                            <button type="button" className={cx("btn", "btn-warning", "btn-lg", "button-dang-ky")}>
                                 Đặt lịch khám
                             </button>
                         </Link>

@@ -5,9 +5,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
 import axios from 'axios';
+// import * as Yup from 'yup';
+// import { Formik, Form, Field, ErrorMessage } from 'formik';
+
 const cx = classNames.bind(styles);
 
 function TaoMoiHoSo() {
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     const [problem1, setProblem1] = useState(false);
     const [problem2, setProblem2] = useState(false);
 
@@ -21,6 +26,20 @@ function TaoMoiHoSo() {
         if (problem2 === false) setProblem1(false);
     };
 
+    // const validationSchema = Yup.object().shape({
+    //     name: Yup.string().required('Vui lòng nhập họ tên'),
+    //     gender: Yup.string().required('Vui lòng chọn giới tính'),
+    //     birthday: Yup.string().required('Vui lòng nhập ngày sinh'),
+    //     email: Yup.string().email('Vui lòng nhập đúng định dạng email'),
+    //     phone: Yup.string().required('Vui lòng nhập số điện thoại'),
+    //     cmnd: Yup.string().required('Vui lòng nhập số CMND'),
+    //     job: Yup.string().required('Vui lòng nhập nghề nghiệp'),
+    //     ethnicity: Yup.string().required('Vui lòng nhập dân tộc'),
+    //     address: Yup.string().required('Vui lòng nhập địa chỉ'),
+    //     province: Yup.string().required('Vui lòng chọn tỉnh/thành phố'),
+    //     ward: Yup.string().required('Vui lòng chọn quận/huyện'),
+    //     city: Yup.string().required('Vui lòng chọn phường/xã'),
+    // });
     // useEffect(() => {
     //     const notiChua = document.querySelector('.TaoMoiHoSo_chua_tung_kham')
     //     const formChua = document.querySelector('.TaoMoiHoSo_form_chua_tung_kham')
@@ -45,8 +64,6 @@ function TaoMoiHoSo() {
     //     notiChua.addEventListener('click', openChua)
     //     notiDa.addEventListener('click', openDa)
     // },[])
-
-    const [user, setUser] = useContext(UserContext);
 
     const [data, setData] = useState({
         name: '',
@@ -376,14 +393,14 @@ function TaoMoiHoSo() {
                             </div>
                         </div>
                         <div className={cx('TaoMoiHoSo_button')}>
-                            <div className={cx('TaoMoiHoSo_agree')}>
+                            <button className={cx('TaoMoiHoSo_agree')} type='submit'>
                                 {/* <a href="" className={cx("TaoMoiHoSo_agree")}> */}
-                                <button type="submit">
+                                {/* <button type="submit"> */}
                                     {' '}
                                     <i className={cx('fa-solid fa-user-plus')}></i> Tạo mới
-                                </button>
+                                {/* </button> */}
                                 {/* </a> */}
-                            </div>
+                            </button>
                             <div className={cx('TaoMoiHoSo_erase')} onClick={handleReset}>
                                 <i className={cx('fa-solid fa-eraser')}></i>
                                 Nhập lại
@@ -396,9 +413,9 @@ function TaoMoiHoSo() {
                     <div className={cx('TaoMoiHoSo_da_tung')}>
                         <div className={cx('TaoMoiHoSo_dien_form')}>
                             <input type="text" placeholder="Nhập mã số bệnh nhân / Mã số BHYT"></input>
-                            <a href="" className={cx('TaoMoiHoSo_search')}>
+                            <div className={cx('TaoMoiHoSo_search')}>
                                 Tìm kiếm
-                            </a>
+                            </div>
                         </div>
                         <div className={cx('TaoMoiHoSo_lost')}>
                             <i className={cx('fa-solid fa-caret-right')}></i>
