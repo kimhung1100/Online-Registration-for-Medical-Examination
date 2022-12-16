@@ -38,9 +38,9 @@ function ChonBacSi() {
         <div>
             <div className={cx('ChonBacSi_wrapper')}>
                 <div className={cx('ChonBacSi_wrapper_content')}>
-                    <a href="./" className={cx('ChonBacSi_trang_chu')}>
+                    <Link to="/" className={cx('ChonBacSi_trang_chu')}>
                         Trang chủ
-                    </a>
+                    </Link>
                     <div className={cx('ChonBacSi_chon_bac_si')}>
                         <i className={cx('fa-solid', 'fa-chevron-right')}></i>
                         Chọn bác sĩ
@@ -92,7 +92,7 @@ function ChonBacSi() {
                         </ul>
                         
                     </div>
-                    <a className={cx('ChonBacSi_back')}>Quay lại</a>
+                    <a onClick={() => {navigate('../chon-chuyen-khoa');}}  className={cx('ChonBacSi_back')}>Quay lại</a>
                 </div>
             </div>
         </div>

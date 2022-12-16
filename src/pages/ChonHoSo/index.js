@@ -13,7 +13,8 @@ import styles from './ChonHoSo.module.scss';
 const cx = classNames.bind(styles);
 
 function ChonHoSo(props) {
-    const [user, setUser] = useContext(UserContext);
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     const [patient, setPatient] = useState([]);
     const [selected, setSelected] = useState(0);
     const navigate = useNavigate();
@@ -60,7 +61,7 @@ function ChonHoSo(props) {
                                 <nav data-test="breadcrumb">
                                     <ol className={cx('breadcrumb')}>
                                         <li data-test="breadcrumb-item" className={cx('breadcrumb-item')}>
-                                            <a href="../">Trang chủ</a>
+                                            <Link to="/">Trang chủ</Link>
                                         </li>
                                         <li data-test="breadcrumb-item" className={cx('breadcrumb-item')}>
                                             Chọn hồ sơ bệnh nhân

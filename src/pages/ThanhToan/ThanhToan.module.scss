@@ -303,7 +303,7 @@ td button{
 
 [type=radio]:checked, [type=radio]:not(:checked) {
     position: absolute;
-    opacity: 0;
+    //opacity: 0;
     pointer-events: none;
 }
 

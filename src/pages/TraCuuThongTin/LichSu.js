@@ -51,32 +51,32 @@ export default function HoSoBenhNhan(){
                                 <td>1</td>
                                 <td>BÙI KIM HƯNG</td>
                                 <td>THẨM MỸ DA</td>
-                                <td>5/10/2022</td>
-                                <td>11:59:00 4/10/2022</td>
+                                <td>05/10/2022</td>
+                                <td>11:59:00 04/10/2022</td>
                                 <td>160.000 VNĐ</td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>NGUYỄN THỊ MINH CHÂU</td>
                                 <td>CHĂM SÓC GIẢM NHẸ</td>
-                                <td>5/10/2022</td>
-                                <td>8:00:00 3/10/2022</td>
+                                <td>05/10/2022</td>
+                                <td>8:00:00 03/10/2022</td>
                                 <td>200.000 VNĐ</td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>PHẠM QUỐC AN</td>
                                 <td>THẨM MỸ DA</td>
-                                <td>3/10/2022</td>
-                                <td>15:37:30 2/10/2022</td>
+                                <td>03/10/2022</td>
+                                <td>15:37:30 02/10/2022</td>
                                 <td>160.000 VNĐ</td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>DƯƠNG HUỲNH ANH ĐỨC</td>
                                 <td>MẮT</td>
-                                <td>3/10/2022</td>
-                                <td>20:50:45 2/10/2022</td>
+                                <td>03/10/2022</td>
+                                <td>20:50:45 02/10/2022</td>
                                 <td>200.000 VNĐ</td>
                             </tr>
                             <tr>
@@ -84,15 +84,15 @@ export default function HoSoBenhNhan(){
                                 <td>BÙI KIM HƯNG</td>
                                 <td>THẨM MỸ DA</td>
                                 <td>20/11/2021</td>
-                                <td>10:47:24 4/10/2021</td>
+                                <td>10:47:24 04/10/2021</td>
                                 <td>160.000 VNĐ</td>
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>PHAN HỒNG ĐỨC</td>
                                 <td>TỔNG QUÁT</td>
-                                <td>5/10/2021</td>
-                                <td>17:30:20 4/10/2021</td>
+                                <td>05/10/2021</td>
+                                <td>17:30:20 04/10/2021</td>
                                 <td>300.000 VNĐ</td>
                             </tr>
                         </tbody>
