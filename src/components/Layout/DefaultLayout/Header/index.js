@@ -8,8 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const context = useContext(UserContext);
-    const [user, setUser] = context[0];
+    const [user, setUser] = useContext(UserContext);
     const [trangchu, setTrangchu] = useState(true);
     const [gioithieu, setGioithieu] = useState(false);
     const [chuyenkhoa, setChuyenkhoa] = useState(false);
@@ -18,54 +17,54 @@ function Header() {
     const [lienhe, setLienhe] = useState(false);
 
     const handleTrangchu = () => {
-        setTrangchu(true);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(false);
+        setTrangchu = true;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = false;
     };
 
     const handleGioithieu = () => {
         setTrangchu(false);
-        setGioithieu(true);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(false);
+        setGioithieu = true;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = false;
     };
 
     const handleChuyenkhoa = () => {
         setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(true);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(false);
+        setGioithieu = false;
+        setChuyenkhoa = true;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = false;
     };
     const handleQuytrinh = () => {
-        setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(true);
-        setThacmac(false);
-        setLienhe(false);
+        setTrangchu = false;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = true;
+        setThacmac = false;
+        setLienhe = false;
     };
     const handleThacmac = () => {
-        setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(true);
-        setLienhe(false);
+        setTrangchu = false;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = true;
+        setLienhe = false;
     };
     const handleLienhe = () => {
-        setTrangchu(false);
-        setGioithieu(false);
-        setChuyenkhoa(false);
-        setQuytrinh(false);
-        setThacmac(false);
-        setLienhe(true);
+        setTrangchu = false;
+        setGioithieu = false;
+        setChuyenkhoa = false;
+        setQuytrinh = false;
+        setThacmac = false;
+        setLienhe = true;
     };
 
     const navigate = useNavigate();
@@ -114,13 +113,7 @@ function Header() {
                                                 </li>
 
                                                 <li>
-                                                    <button
-                                                        onClick={() => {
-                                                            navigate('/tra-cuu');
-                                                        }}
-                                                        class="dropdown-item"
-                                                        type="button"
-                                                    >
+                                                    <button class="dropdown-item" type="button">
                                                         Hồ sơ bệnh nhân
                                                     </button>
                                                 </li>

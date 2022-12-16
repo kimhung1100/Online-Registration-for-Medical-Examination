@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import styles from './TraLoiThacMacChuyenMon.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, useContext } from 'react';
@@ -15,7 +16,6 @@ function TraLoiThacMacChuyenMon() {
     };
     return (
         <div className={cx('ThacMacChuyenMon_wrapper')}>
-            
             <div className={cx('ThacMacChuyenMon_container')} class="d-flex justify-content-center">
                 <div className={cx('left-side')}>
                     <div class="table table-hover">

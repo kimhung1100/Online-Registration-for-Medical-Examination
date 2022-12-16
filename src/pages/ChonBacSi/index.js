@@ -5,16 +5,15 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import styles from './ChonBacSi.module.scss';
-import native from 'i/lib/native';
 const cx = classNames.bind(styles);
+
 
 function ChonBacSi() {
     let navigate = useNavigate();
     const [selectedSchedule, setSelectedSchedule] = useState('');
-    const chooseSchedule = (e) => {
-        navigate('/chon-lich-kham');
-        // navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
-    };
+    // const chooseSchedule = (e) => {
+    //     navigate('/chon-lich-kham', { state: { schedule: e.target.value } });
+    // };
 
     const [doctor, setDoctor] = useState([]);
     const location = useLocation();
@@ -22,29 +21,26 @@ function ChonBacSi() {
 
     useEffect(() => {
         getDoctors();
-    }, []);
+    },[]);
 
     const getDoctors = () => {
-        axios
-            .post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/doctors.php/doctor/lookup`, {
-                specialization: location.state.specialization,
-            })
-            .then((result) => {
-                setDoctor(result.data);
-                console.log(result.data);
-            })
-            .catch((error) => {
-                console.log(error.response);
-            });
-    };
+        axios.post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/doctors.php/doctor/lookup`, {specialization: location.state.specialization})
+        .then((result) => {
+            setDoctor(result.data);
+            console.log(result.data);
+        })
+        .catch((error) => {
+            console.log(error.response);
+        });
+    }
 
     return (
         <div>
             <div className={cx('ChonBacSi_wrapper')}>
                 <div className={cx('ChonBacSi_wrapper_content')}>
-                    <Link to="/" className={cx('ChonBacSi_trang_chu')}>
+                    <a href="./" className={cx('ChonBacSi_trang_chu')}>
                         Trang chủ
-                    </Link>
+                    </a>
                     <div className={cx('ChonBacSi_chon_bac_si')}>
                         <i className={cx('fa-solid', 'fa-chevron-right')}></i>
                         Chọn bác sĩ
@@ -69,168 +65,34 @@ function ChonBacSi() {
                     </div>
                     <div className={cx('ChonBacSi_cac_bac_si')}>
                         <ul>
-                            {doctor.map((element, idx) => (
-                                <li key={idx}>
-                                    <Link to="/chon-lich-kham" state={{ ...location.state, doctor: element }}>
-                                        <div className={cx('ChonBacSi_thong_tin_bac_si')}>
-                                            <p style={{ color: '#00559c', fontWeight: '800' }}>
-                                                <i class="fa-solid fa-user-doctor"></i>
-                                                {element.name}
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-venus-mars"></i>Giới tính: {element.gender}
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-stethoscope"></i>Chuyên khoa:{' '}
-                                                {element.specialization}
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-calendar-days"></i>Lịch khám: {element.day}
-                                            </p>
-                                            <p>
-                                                <i class="fa-solid fa-dollar-sign"></i>Giá khám: {element.price}
-                                            </p>
-                                        </div>
-                                    </Link>
-                                </li>
-                            ))}
-                            <div className={cx('ChonBacSi_chon_nhung_bac_si')}>
-                                <div className={cx('ChonBacSi_thong_tin')}>Vui lòng chọn bác sĩ</div>
-                                <div className={cx('ChonBacSi_search')}>
-                                    <div className={cx('ChonBacSi_search_box')}>
-                                        <i className={cx('fa-solid', 'fa-magnifying-glass')}></i>
-                                        <input type="text" placeholder="Tìm nhanh bác sĩ"></input>
-                                    </div>
+                        {doctor.map((element, idx) => 
+                            <li key={idx}>
+                                <Link to="/chon-lich-kham" state={{...location.state, doctor: element}} >
+                                <div className={cx('ChonBacSi_thong_tin_bac_si')}>
+                                    <p style={{color: '#00559c', fontWeight: '800'}}>
+                                        <i class="fa-solid fa-user-doctor"></i>{element.name}
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-venus-mars"></i>Giới tính: {element.gender}
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: {element.specialization}
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-calendar-days"></i>Lịch khám: {element.day}
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-dollar-sign"></i>Giá khám: {element.price}
+                                    </p>
                                 </div>
-                                <div className={cx('ChonBacSi_cac_bac_si')}>
-                                    <ul>
-                                        <li>
-                                            <div onClick={chooseSchedule} className={cx('ChonBacSi_thong_tin_bac_si')}>
-                                                <p style={{ color: '#00559c', fontWeight: '800' }}>
-                                                    <i class="fa-solid fa-user-doctor"></i>BSCKI. Đỗ Kim Thành
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-venus-mars"></i>Giới tính: Nam
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM
-                                                    NHẸ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-calendar-days"></i>Lịch khám: Thứ 6
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-dollar-sign"></i>Giá khám: 150.000đ
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div onClick={chooseSchedule} className={cx('ChonBacSi_thong_tin_bac_si')}>
-                                                <p style={{ color: '#00559c', fontWeight: '800' }}>
-                                                    <i class="fa-solid fa-user-doctor"></i>ThS BS. Lê Đại Dương
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-venus-mars"></i>Giới tính: Nam
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM
-                                                    NHẸ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-calendar-days"></i>Lịch khám: Thứ 3
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-dollar-sign"></i>Giá khám: 150.000đ
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div onClick={chooseSchedule} className={cx('ChonBacSi_thong_tin_bac_si')}>
-                                                <p style={{ color: '#00559c', fontWeight: '800' }}>
-                                                    <i class="fa-solid fa-user-doctor"></i>BSCKII. Lương Văn Đến
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-venus-mars"></i>Giới tính: Nam
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM
-                                                    NHẸ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-calendar-days"></i>Lịch khám: Thứ 5
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-dollar-sign"></i>Giá khám: 150.000đ
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div onClick={chooseSchedule} className={cx('ChonBacSi_thong_tin_bac_si')}>
-                                                <p style={{ color: '#00559c', fontWeight: '800' }}>
-                                                    <i class="fa-solid fa-user-doctor"></i>BSCKII. Nguyễn Thị Minh Ngọc
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-venus-mars"></i>Giới tính: Nữ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM
-                                                    NHẸ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-calendar-days"></i>Lịch khám: Thứ 2
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-dollar-sign"></i>Giá khám: 150.000đ
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div onClick={chooseSchedule} className={cx('ChonBacSi_thong_tin_bac_si')}>
-                                                <p style={{ color: '#00559c', fontWeight: '800' }}>
-                                                    <i class="fa-solid fa-user-doctor"></i>BSCKI. Trương Hồ Tường Vi
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-venus-mars"></i>Giới tính: Nữ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM
-                                                    NHẸ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-calendar-days"></i>Lịch khám: Thứ 2
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-dollar-sign"></i>Giá khám: 150.000đ
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div onClick={chooseSchedule} className={cx('ChonBacSi_thong_tin_bac_si')}>
-                                                <p style={{ color: '#00559c', fontWeight: '800' }}>
-                                                    <i class="fa-solid fa-user-doctor"></i>BSCKI. Vũ Trần Minh Nguyên
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-venus-mars"></i>Giới tính: Nam
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-stethoscope"></i>Chuyên khoa: CHĂM SÓC GIẢM
-                                                    NHẸ
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-calendar-days"></i>Lịch khám: Thứ 7
-                                                </p>
-                                                <p>
-                                                    <i class="fa-solid fa-dollar-sign"></i>Giá khám: 150.000đ
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a className={cx('ChonBacSi_back')}>Quay lại</a>
-                            </div>
+                                </Link>
+                            </li>
+                            
+                            )}
                         </ul>
+                        
                     </div>
-                    {/* <a className={cx('ChonBacSi_back')}>Quay lại</a> */}
+                    <a className={cx('ChonBacSi_back')}>Quay lại</a>
                 </div>
             </div>
         </div>

@@ -6,8 +6,7 @@ import { useContext } from 'react';
 const cx = classNames.bind(styles);
 
 export default function ThongBao (){
-    const context = useContext(UserContext);
-    const [user, setUser] = context[0];
+    const [user,setUser] = useContext(UserContext);
 
     return (
     <div id = "Notification">

@@ -94,6 +94,17 @@
     font-weight: 500;
 }
 
+// .card-header {
+//     padding: 0.75rem 1.25rem;
+//     margin-bottom: 0;
+//     background-color: rgba(0,0,0,.03);
+//     border-bottom: 1px solid rgba(0,0,0,.125);
+// }
+
+// .card-header:first-child {
+//     border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+// }
+
 .style_panels .style_card_body {
     border-bottom: 1px solid #dfe3eb;
     border-right: 1px solid #dfe3eb;
@@ -109,6 +120,15 @@
     padding: 0 0 10px;
     margin: 0 0 10px;
 }
+
+// .style_list_group {
+//     margin-bottom: 0!important;
+// }
+
+// .list-group .list-group-item:first-child {
+//     border-top-left-radius: 0.125rem;
+//     border-top-right-radius: 0.125rem;
+// }
 
 .style_list_group li:first-child {
     font-weight: 500;
@@ -286,11 +306,3 @@ td button{
     transition: transform .3s ease-out,-webkit-transform .3s ease-out;
     width: 100%;
 }
-
-.style_button.style_confirm, .style_button.style_create, .style_button.style_create_patient_form, .style_button.style_payment {
-    background: #1da1f2;
-    color: #fff;
-}
-// .fa-user-circle:before {
-//     content: "\f2bd";
-// }

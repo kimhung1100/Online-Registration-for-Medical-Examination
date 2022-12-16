@@ -9,8 +9,7 @@ import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
 const cx = classNames.bind(styles);
 function TrangChu() {
-    const context = useContext(UserContext);
-    const [user, setUser] = context[0];
+    const [user, setUser] = useContext(UserContext);
     return (
         <div className={cx('container')}>
             <div className={cx('content')}>
