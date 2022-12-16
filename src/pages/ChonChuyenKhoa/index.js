@@ -27,9 +27,9 @@ function ChonChuyenKhoa() {
         <div>
             <div className={cx('ChonChuyenKhoa_wrapper')}>
                 <div className={cx('ChonChuyenKhoa_wrapper_content')}>
-                    <a href="./" className={cx('ChonChuyenKhoa_trang_chu')}>
+                    <Link to="/" className={cx('ChonChuyenKhoa_trang_chu')}>
                         Trang chủ
-                    </a>
+                    </Link>
                     <div className={cx('ChonChuyenKhoa_chon_chuyen_khoa')}>
                         <i className={cx('fa-solid', 'fa-chevron-right')}></i>
                         Chọn chuyên khoa

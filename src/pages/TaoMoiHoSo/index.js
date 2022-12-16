@@ -413,9 +413,9 @@ function TaoMoiHoSo() {
                     <div className={cx('TaoMoiHoSo_da_tung')}>
                         <div className={cx('TaoMoiHoSo_dien_form')}>
                             <input type="text" placeholder="Nhập mã số bệnh nhân / Mã số BHYT"></input>
-                            <a href="" className={cx('TaoMoiHoSo_search')}>
+                            <div className={cx('TaoMoiHoSo_search')}>
                                 Tìm kiếm
-                            </a>
+                            </div>
                         </div>
                         <div className={cx('TaoMoiHoSo_lost')}>
                             <i className={cx('fa-solid fa-caret-right')}></i>

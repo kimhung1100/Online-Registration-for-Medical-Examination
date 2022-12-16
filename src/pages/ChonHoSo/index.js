@@ -66,7 +66,7 @@ function ChonHoSo(props) {
                                 <nav data-test="breadcrumb">
                                     <ol className={cx('breadcrumb')}>
                                         <li data-test="breadcrumb-item" className={cx('breadcrumb-item')}>
-                                            <a href="../">Trang chủ</a>
+                                            <Link to="/">Trang chủ</Link>
                                         </li>
                                         <li data-test="breadcrumb-item" className={cx('breadcrumb-item')}>
                                             Chọn hồ sơ bệnh nhân

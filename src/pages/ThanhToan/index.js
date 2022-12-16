@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
-
+import { useNavigate } from 'react-router-dom';
 import styles from './ThanhToan.module.scss';
 const cx = classNames.bind(styles);
+
 function ThanhToan() {
+    const navigate = useNavigate();
     return (
         <div className={cx('style_wrapper_content')}>
             <div className={cx('style_bg_breakcum')}>
@@ -184,13 +186,13 @@ function ThanhToan() {
                                 </div>
                                 
                                 <div className={cx('style_next_prev')}>
-                                    <button style={{backgroundColor:'#fff'}} data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button')}>
+                                    <button id="btn-back" onClick={() => navigate('/chon-lich-kham')}  data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button')}>
                                         <div>Quay lại</div>
-                                        <div data-test="waves" className={cx('Ripple', 'Ripple-outlin')} style={{top: '0px', left: '0px', width: '0px', height: '0px'}}></div>
+                                        {/* <div data-test="waves" className={cx('Ripple', 'Ripple-outlin')} style={{top: '0px', left: '0px', width: '0px', height: '0px'}}></div> */}
                                     </button>
                                     <ul className={cx('list-unstyle', 'list-inline', 'm-0', 'p-0')}>
                                         <li className={cx('list-inline-item', 'm-0', 'pr-3')}>
-                                            <button data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button', 'style_create')}>
+                                            <button onClick={() => {navigate('../chon-chuyen-khoa');}} data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button', 'style_create')}>
                                                 <div>Thêm chuyên khoa</div>
                                                 <div data-test="waves" className={cx('Ripple', 'Ripple-outlin')} style={{top: '0px', left: '0px', width: '0px', height: '0px'}}></div>
                                             </button>

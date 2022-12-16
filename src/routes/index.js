@@ -32,6 +32,7 @@ import NhapLichKhamBacSi from '../pages/NhapLichKhamBacSi';
 import ChinhSuaLichKhamBacSi from '../pages/ChinhSuaLichKhamBacSi';
 
 import TraLoiThacMacChuyenMon from '../pages/TraLoiThacMacChuyenMon';
+import TraLoiThacMacChuyenMon1 from '../pages/TraLoiThacMacChuyenMon1';
 
 import DangNhapAdmin from '../pages/DangNhapAdmin';
 import ThongKeLuotTruyCap from '../pages/ThongKeLuotTruyCap';
@@ -74,6 +75,7 @@ const publicRoutes = [
 
     // the page below need medical answer permission, temporary write here
     { path: '/tra-loi-thac-mac-chuyen-mon', component: TraLoiThacMacChuyenMon, layout: None2 },
+    { path: '/tra-loi-thac-mac-chuyen-mon-1', component: TraLoiThacMacChuyenMon1, layout: None2 },
 
     // these pages below need system administrator permission, temporary write here
     { path: '/thong-ke-luot-truy-cap', component: ThongKeLuotTruyCap, layout: None2 },

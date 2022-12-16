@@ -18,54 +18,54 @@ function Header() {
     const [lienhe, setLienhe] = useState(false);
 
     const handleTrangchu = () => {
-        setTrangchu = true;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = false;
+        setTrangchu(true);
+        setGioithieu(false);
+        setChuyenkhoa(false);
+        setQuytrinh(false);
+        setThacmac(false);
+        setLienhe(false);
     };
 
     const handleGioithieu = () => {
         setTrangchu(false);
-        setGioithieu = true;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = false;
+        setGioithieu(true);
+        setChuyenkhoa(false);
+        setQuytrinh(false);
+        setThacmac(false);
+        setLienhe(false);
     };
 
     const handleChuyenkhoa = () => {
         setTrangchu(false);
-        setGioithieu = false;
-        setChuyenkhoa = true;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = false;
+        setGioithieu(false);
+        setChuyenkhoa(true);
+        setQuytrinh(false);
+        setThacmac(false);
+        setLienhe(false);
     };
     const handleQuytrinh = () => {
-        setTrangchu = false;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = true;
-        setThacmac = false;
-        setLienhe = false;
+        setTrangchu(false);
+        setGioithieu(false);
+        setChuyenkhoa(false);
+        setQuytrinh(true);
+        setThacmac(false);
+        setLienhe(false);
     };
     const handleThacmac = () => {
-        setTrangchu = false;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = true;
-        setLienhe = false;
+        setTrangchu(false);
+        setGioithieu(false);
+        setChuyenkhoa(false);
+        setQuytrinh(false);
+        setThacmac(true);
+        setLienhe(false);
     };
     const handleLienhe = () => {
-        setTrangchu = false;
-        setGioithieu = false;
-        setChuyenkhoa = false;
-        setQuytrinh = false;
-        setThacmac = false;
-        setLienhe = true;
+        setTrangchu(false);
+        setGioithieu(false);
+        setChuyenkhoa(false);
+        setQuytrinh(false);
+        setThacmac(false);
+        setLienhe(true);
     };
 
     const navigate = useNavigate();

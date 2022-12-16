@@ -64,7 +64,7 @@ export default function DangKy() {
             </div>
             <div className={cx('noi-dung1')}>
                 <div className={cx('form')}>
-                    <h2>Form đăng kí</h2>
+                    <h2>Đăng kí tài khoản mới</h2>
                     <form onSubmit={handleSubmit}>
                         <div className={cx('input-form')}>
                             <label>Số điện thoại:</label>
@@ -116,6 +116,7 @@ export default function DangKy() {
                                     checked={data.gender === 'male'}
                                     onChange={handleChange}
                                     value="male"
+                                    style={{opacity: 'none !important'}}
                                 />
                             </li>
                             <li>

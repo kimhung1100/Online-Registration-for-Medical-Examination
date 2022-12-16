@@ -95,7 +95,7 @@ function ChiTietHoSo({element}) {
                                     {/* <div data-test="tabContent" className={cx("tab-content", "tabcontent")}>
                                         <div data-test="tab-pane" role="tabpanel" className={cx("tab-pane active")}>
                                             <div data-test="animation" className={cx("animated", "fadeIn", "no_noti_inform")} style={{animationIterationcount: 1, visibility: `visible`, animationName: `fadeIn`}}> */}
-                                    <div data-test="col" class="col-md-12 col-lg-8">
+                                    <div data-test="col" class="col-md-12 col-lg-12">
                                     <div data-test="row" class="row">
                                         <div data-test="col" class="col">
                                             <div className={cx("back_btn")}>
@@ -145,7 +145,7 @@ function ChiTietHoSo({element}) {
                                                     <div className={cx("column2")}>{element.email}</div>
                                                 </li>
                                                 <li data-test="list-group-item" className={cx("list-group-item", "list-group-item-undefined")}>
-                                                    <div className={cx("style_column1")}>
+                                                    <div className={cx("column1")}>
                                                         <i className="fal fa-users"></i>Dân tộc &nbsp;
                                                     </div>
                                                     <div className={cx("column2")}>{element.ethnicity}</div>

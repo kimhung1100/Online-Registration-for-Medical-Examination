@@ -21,21 +21,21 @@ function Header2() {
    
 
     const handleNhapHoSoBacSi = () => {
-        setNhapHoSoBacSi = true;
-        setNhapLichKhamBacSi = false;
-        setChinhSuaLichKhamBacSi = false;
+        setNhapHoSoBacSi(true);
+        setNhapLichKhamBacSi(false);
+        setChinhSuaLichKhamBacSi(false);
     };
 
     const handleNhapLichKhamBacSi = () => {
-        setNhapHoSoBacSi = false;
-        setNhapLichKhamBacSi = true;
-        setChinhSuaLichKhamBacSi = false;
+        setNhapHoSoBacSi(false);
+        setNhapLichKhamBacSi(true);
+        setChinhSuaLichKhamBacSi(false);
     };
 
     const handleChinhSuaLichKhamBacSi = () => {
-        setNhapHoSoBacSi = false;
-        setNhapLichKhamBacSi = false;
-        setChinhSuaLichKhamBacSi = true;
+        setNhapHoSoBacSi(false);
+        setNhapLichKhamBacSi(false);
+        setChinhSuaLichKhamBacSi(true);
     };
 
     const handleThongKeLuotTruyCap = () => {
@@ -175,12 +175,35 @@ function Header2() {
                                                     )}
                                                 >
                                                     <li
+                                                        onClick={handleNhapHoSoBacSi}
+                                                        data-test="nav-item"
+                                                        className={cx(
+                                                            'nav-item',
+                                                            (NhapHoSoBacSi ? ('style_active'):('')),
+                                                            // NhapHoSoBacSi && 'undefined',
+                                                        )}
+                                                    >
+                                                        <Link
+                                                            to="/nhap-ho-so-bac-si"
+                                                            aria-current="page"
+                                                            className={cx('nav-link', 'Ripple-parent', (NhapHoSoBacSi ? ('active'):('')),)}
+                                                            data-test="nav-link"
+                                                        >
+                                                            Nhập hồ sơ bác sĩ
+                                                            <div
+                                                                data-test="waves"
+                                                                class="Ripple "
+                                                                style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
+                                                            ></div>
+                                                        </Link>
+                                                    </li>
+                                                    <li
                                                         onClick={handleNhapLichKhamBacSi}
                                                         data-test="nav-item"
                                                         className={cx(
                                                             'nav-item',
-                                                            NhapLichKhamBacSi && 'style_active',
-                                                            NhapLichKhamBacSi && 'undefined',
+                                                            (NhapLichKhamBacSi ? ('style_active'): ("")),
+                                                            // NhapLichKhamBacSi && 'undefined',
                                                         )}
                                                     >
                                                         <Link
@@ -189,7 +212,7 @@ function Header2() {
                                                             className={cx(
                                                                 'nav-link',
                                                                 'Ripple-parent',
-                                                                NhapLichKhamBacSi && 'active',
+                                                                (NhapLichKhamBacSi ? ('active'): ("")),
                                                             )}
                                                             data-test="nav-link"
                                                         >
@@ -206,8 +229,8 @@ function Header2() {
                                                         data-test="nav-item"
                                                         className={cx(
                                                             'nav-item',
-                                                            ChinhSuaLichKhamBacSi && 'style_active',
-                                                            ChinhSuaLichKhamBacSi && 'undefined',
+                                                            (ChinhSuaLichKhamBacSi ? ('style_active'):('')),
+                                                            // ChinhSuaLichKhamBacSi && 'undefined',
                                                         )}
                                                     >
                                                         <Link
@@ -216,7 +239,7 @@ function Header2() {
                                                             className={cx(
                                                                 'nav-link',
                                                                 'Ripple-parent',
-                                                                ChinhSuaLichKhamBacSi && 'active',
+                                                                (ChinhSuaLichKhamBacSi ? ('active'):('')),
                                                             )}
                                                             data-test="nav-link"
                                                         >
@@ -228,29 +251,7 @@ function Header2() {
                                                             ></div>
                                                         </Link>
                                                     </li>
-                                                    <li
-                                                        onClick={handleNhapHoSoBacSi}
-                                                        data-test="nav-item"
-                                                        className={cx(
-                                                            'nav-item',
-                                                            NhapHoSoBacSi && 'style_active',
-                                                            NhapHoSoBacSi && 'undefined',
-                                                        )}
-                                                    >
-                                                        <Link
-                                                            to="/nhap-ho-so-bac-si"
-                                                            aria-current="page"
-                                                            className={cx('nav-link', 'Ripple-parent', NhapHoSoBacSi && 'target')}
-                                                            data-test="nav-link"
-                                                        >
-                                                            Nhập hồ sơ bác sĩ
-                                                            <div
-                                                                data-test="waves"
-                                                                class="Ripple "
-                                                                style={{ top: '0px', left: '0px', width: '0px', height: '0px' }}
-                                                            ></div>
-                                                        </Link>
-                                                    </li>
+                                                    
                                                 </ul>
                                             )}
                                             {admin.role === "Nhân viên quản trị hệ thống" && (
