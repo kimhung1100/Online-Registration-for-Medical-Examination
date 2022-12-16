@@ -320,7 +320,7 @@ function ThanhToan() {
                                         <div data-test="col" className={cx('col-md-6')}>
                                             <div className={cx('style_list_group_payment')}>
                                                 <div className={cx('style_sub_title')}>
-                                                    <i className={cx('fal', 'fa-info-square')}></i>
+                                                    {/* <i className={cx('fa-regular', 'fa-square-info')}></i> */}
                                                     Thông tin thanh toán
                                                 </div>
                                                 <ul data-test="list-group" className={cx('list-group', 'style_list_group__C')}>

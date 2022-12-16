@@ -208,8 +208,6 @@ function XacNhanThongTin() {
                 </div>
             </div>
         </div>
-
-        
     );
 }
 
