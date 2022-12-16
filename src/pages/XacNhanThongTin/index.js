@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
-
+import { useNavigate } from 'react-router-dom';
 import styles from './XacNhanThongTin.module.scss';
 const cx = classNames.bind(styles);
 function XacNhanThongTin() {
+    const navigate = useNavigate();
     return (
         <div className={cx('style_wrapper_content')}>
             <div className={cx('style_bg_breakcum')}>
@@ -188,7 +189,10 @@ function XacNhanThongTin() {
                                             </button>
                                         </li>
                                         <li className={cx('list-inline-item', 'm-0')}>
-                                            <button data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button', 'style_create', 'style_buttonArrow')}>
+                                            <button onClick={() => {
+                                                navigate('../thanh-toan');
+                                            }}
+                                            data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button', 'style_create', 'style_buttonArrow')}>
                                                 <div>Xác nhận
                                                     <i style={{fontWeight: '600'}} className={cx('fa-regular', 'fa-arrow-right')}></i>
                                                 </div>
