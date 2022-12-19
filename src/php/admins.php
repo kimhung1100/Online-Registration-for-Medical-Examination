@@ -17,9 +17,9 @@ switch($method) {
         
         switch($path[6]) {
             case "login":
-                $phone = $product -> phone;
+                $username = $product -> username;
                 $passwordd = $product -> password;
-                $sql = "SELECT * FROM users WHERE phone = '$phone' and password='$passwordd'";
+                $sql = "SELECT * FROM admins WHERE username = '$username' and password='$passwordd'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
                 $nums = $stmt -> rowCount();
@@ -27,7 +27,7 @@ switch($method) {
                 $outp ="";
               
                 if($nums >= 1){
-                    $outp .= '{"Status":"200",'.'"Id":"'.$result["id"].'","userName":"'.$result["username"].'","gender":"'.$result["gender"].'"}'; 
+                    $outp .= '{"Status":"200",'.'"Id":"'.$result["id"].'","name":"'.$result["name"].'","department":"'.$result["department"].'","role":"'.$result["role"].'"}'; 
                 }
                 echo $outp;
                 break;
@@ -41,7 +41,6 @@ switch($method) {
                 $stmt = $conn->prepare($sql);
                 //$created_at = date('Y-m-d');
                 //$stmt->bindParam(':created_at', $created_at);
-                $stmt->execute();
                 break;
                 
         }

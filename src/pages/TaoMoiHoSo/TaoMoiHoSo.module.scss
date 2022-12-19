@@ -1,6 +1,6 @@
 .TaoMoiHoSo_wrapper {
     padding: 60px 0;
-    background-image: linear-gradient(45deg,#6a78d1,#00a4bd);
+    background-image: linear-gradient(45deg, #6a78d1, #00a4bd);
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
@@ -20,7 +20,7 @@
     line-height: 2.5;
 }
 
-.TaoMoiHoSo_wrapper_content > a, 
+.TaoMoiHoSo_wrapper_content > a,
 .TaoMoiHoSo_tao_ho_so {
     color: white;
     text-decoration: none;
@@ -74,7 +74,7 @@
 .TaoMoiHoSo_chua_tung_kham:hover,
 .TaoMoiHoSo_da_tung_kham:hover {
     cursor: pointer;
-} 
+}
 
 .TaoMoiHoSo_da_tung_kham.open {
     color: #1da1f2;
@@ -117,7 +117,7 @@
     display: flex;
     flex-wrap: wrap;
     border-bottom: #dee2e6 2px solid;
-    justify-content: center
+    justify-content: center;
 }
 
 .TaoMoiHoSo_form_box {
@@ -187,11 +187,12 @@
 .TaoMoiHoSo_search {
     color: white;
     background-color: #1da1f2;
+    border: #1da1f2;
 }
 
 .TaoMoiHoSo_erase:hover {
     background: #f6fafe;
-    color: #1da1f2
+    color: #1da1f2;
 }
 
 .TaoMoiHoSo_agree:hover,

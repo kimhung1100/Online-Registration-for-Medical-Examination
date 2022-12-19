@@ -5,6 +5,7 @@ import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+// import { set } from 'date-fns';
 const cx = classNames.bind(styles);
 
 export default function PhieuKhamBenh() {
@@ -12,9 +13,13 @@ export default function PhieuKhamBenh() {
     const [user, setUser] = context[0];
     const [record, setRecord] = useState([]);
     const [selected, setSelected] = useState(false);
-    //const [double, setDouble] = useState(false);
     const handleClick = () => {
         setSelected(!selected);
+    };
+
+    const [chosen, setChosen] = useState(0);
+    const handleChosen = (divNum) => {
+        setChosen(divNum);
     };
 
     useEffect(() => {
@@ -33,6 +38,48 @@ export default function PhieuKhamBenh() {
             .then((result) => {
                 setRecord(result.data);
                 console.log(result.data);
+
+                for (var i = 0; i < result.data.length; i++) {
+                    return getPatient(result.data[i].patientID);
+                }
+                setPatient((patient) => [...patient, result.data]);
+                patient.push(result.data);
+                console.log(patient);
+            })
+            .catch((error) => {
+                console.log(error.response);
+            });
+    };
+
+    useEffect(() => {
+        console.log(patient[0]);
+        // getPatient(patient[0][0].patientID);
+    }, []);
+
+    const [patient, setPatient] = useState([]);
+    const [chosenPatient, setChosenPatient] = useState();
+
+    // useEffect(() => {
+    //     getPatient(record.patientID);
+    //     console.log(patient);
+    // },[]);
+
+    const getPatient = (patientID) => {
+        const sendData = {
+            userID: user.key,
+            id: patientID,
+        };
+        axios
+            .post(
+                `http://localhost/Online-Registration-for-Medical-Examination-1/src/php/patients.php/patient/lookupone`,
+                sendData,
+            )
+            .then((result) => {
+                // setPatient([...patient, {...result.data}]);
+
+                console.log(result.data);
+                setPatient([...patient, result.data]);
+                console.log(patient);
             })
             .catch((error) => {
                 console.log(error.response);
@@ -83,64 +130,109 @@ export default function PhieuKhamBenh() {
                                 style={{ animationIterationcount: 1, visibility: `visible`, animationName: `fadeIn` }}
                             >
                                 <div data-test="card" className={cx('card', 'card_collapse')}>
-                                    <div
-                                        data-test="collapse-header"
-                                        className={cx(
-                                            'card-header',
-                                            selected === true ? 'style_card_header_selected' : 'style_card_header',
-                                        )}
-                                        style={{ cursor: 'pointer' }}
-                                        onClick={() => handleClick()}
-                                    >
-                                        <h5 class="mb-0">
-                                            DF FDFDS
-                                            <i class="fa fa-angle-down rotate-icon ml-1"></i>
-                                        </h5>
-                                    </div>
-                                    <div
-                                        data-test="collapse"
-                                        id="0"
-                                        class={selected === true ? 'collapse show' : 'collapse'}
-                                        style={{}}
-                                    >
-                                        <ul
-                                            data-test="list-group"
-                                            className={cx('list-group', 'list_group', 'style_list_group_parent')}
-                                        >
-                                            <ul data-test="list-group" className={cx('list-group', 'list_group')}>
-                                                <li
-                                                    data-test="list-group-item"
-                                                    className={cx('list-group-item', 'list-group-item-undefined')}
+                                    {patient.map((element, idx) => (
+                                        <div key={idx}>
+                                            <div
+                                                data-test="collapse-header"
+                                                className={cx(
+                                                    'card-header',
+                                                    selected === true && chosen === idx
+                                                        ? 'style_card_header_selected'
+                                                        : 'style_card_header',
+                                                )}
+                                                style={{ cursor: 'pointer' }}
+                                                onClick={() => {
+                                                    handleClick();
+                                                    handleChosen(idx);
+                                                }}
+                                            >
+                                                <h5 class="mb-0">
+                                                    <i class="fa fa-angle-down rotate-icon ml-1">{element.name}</i>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    ))}
+
+                                    {record.map((element, idx) => (
+                                        <div key={idx}>
+                                            <div
+                                                data-test="collapse"
+                                                id="0"
+                                                class={
+                                                    selected === true && chosen === idx ? 'collapse show' : 'collapse'
+                                                }
+                                                style={{}}
+                                            >
+                                                <ul
+                                                    data-test="list-group"
+                                                    className={cx(
+                                                        'list-group',
+                                                        'list_group',
+                                                        'style_list_group_parent',
+                                                    )}
                                                 >
-                                                    <div data-test="card" className={cx('card', 'style_card')}>
-                                                        <div
-                                                            data-test="card-body"
-                                                            className={cx('card-body', 'style_card_body')}
+                                                    <ul
+                                                        data-test="list-group"
+                                                        className={cx('list-group', 'list_group')}
+                                                    >
+                                                        <li
+                                                            data-test="list-group-item"
+                                                            className={cx(
+                                                                'list-group-item',
+                                                                'list-group-item-undefined',
+                                                            )}
                                                         >
-                                                            <div data-test="row" class="row">
-                                                                <div data-test="col" class="col-md-12 col-xl-8">
-                                                                    <div className={cx('card_body_item')}>
-                                                                        <div className={cx('info_list')}>
-                                                                            {record.map((element, idx) => (
-                                                                                <ul
-                                                                                    data-test="list-group"
-                                                                                    className={cx(
-                                                                                        'list-group',
-                                                                                        'style_list_group',
-                                                                                        'list_group_children',
-                                                                                    )}
-                                                                                    key={idx}
-                                                                                >
-                                                                                    <li
-                                                                                        data-test="list-group-item"
+                                                            <div data-test="card" className={cx('card', 'style_card')}>
+                                                                <div
+                                                                    data-test="card-body"
+                                                                    className={cx('card-body', 'style_card_body')}
+                                                                >
+                                                                    <div data-test="row" class="row">
+                                                                        <div data-test="col" class="col-md-12 col-xl-8">
+                                                                            <div className={cx('card_body_item')}>
+                                                                                <div className={cx('info_list')}>
+                                                                                    {/* {record.map((element,idx) => */}
+                                                                                    <ul
+                                                                                        data-test="list-group"
                                                                                         className={cx(
-                                                                                            'list-group-item',
-                                                                                            'list-group-item-undefined',
+                                                                                            'list-group',
+                                                                                            'style_list_group',
+                                                                                            'list_group_children',
                                                                                         )}
                                                                                     >
-                                                                                        <div
+                                                                                        <li
+                                                                                            data-test="list-group-item"
                                                                                             className={cx(
-                                                                                                'wrapper_title',
+                                                                                                'list-group-item',
+                                                                                                'list-group-item-undefined',
+                                                                                            )}
+                                                                                        >
+                                                                                            <div
+                                                                                                className={cx(
+                                                                                                    'wrapper_title',
+                                                                                                )}
+                                                                                            >
+                                                                                                <div
+                                                                                                    className={cx(
+                                                                                                        'column1',
+                                                                                                    )}
+                                                                                                >
+                                                                                                    <span
+                                                                                                        className={cx(
+                                                                                                            'mp_blue',
+                                                                                                        )}
+                                                                                                    >
+                                                                                                        Bệnh viện The
+                                                                                                        Group
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            data-test="list-group-item"
+                                                                                            className={cx(
+                                                                                                'list-group-item',
+                                                                                                'list-group-item-undefined',
                                                                                             )}
                                                                                         >
                                                                                             <div
@@ -153,133 +245,143 @@ export default function PhieuKhamBenh() {
                                                                                                         'mp_blue',
                                                                                                     )}
                                                                                                 >
-                                                                                                    Bệnh viện The Group
+                                                                                                    Chuyên khoa:{' '}
+                                                                                                    {
+                                                                                                        element.specialization
+                                                                                                    }
                                                                                                 </span>
                                                                                             </div>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li
-                                                                                        data-test="list-group-item"
-                                                                                        className={cx(
-                                                                                            'list-group-item',
-                                                                                            'list-group-item-undefined',
-                                                                                        )}
-                                                                                    >
-                                                                                        <div className={cx('column1')}>
-                                                                                            <span
+                                                                                        </li>
+                                                                                        <li
+                                                                                            data-test="list-group-item"
+                                                                                            className={cx(
+                                                                                                'list-group-item',
+                                                                                                'list-group-item-undefined',
+                                                                                            )}
+                                                                                        >
+                                                                                            <div
                                                                                                 className={cx(
-                                                                                                    'mp_blue',
+                                                                                                    'column1',
                                                                                                 )}
                                                                                             >
-                                                                                                Chuyên khoa:{' '}
-                                                                                                {element.specialization}
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li
-                                                                                        data-test="list-group-item"
-                                                                                        className={cx(
-                                                                                            'list-group-item',
-                                                                                            'list-group-item-undefined',
-                                                                                        )}
-                                                                                    >
-                                                                                        <div className={cx('column1')}>
-                                                                                            <span
+                                                                                                <span
+                                                                                                    className={cx(
+                                                                                                        'mp_blue',
+                                                                                                    )}
+                                                                                                >
+                                                                                                    Dịch vụ: Khám dịch
+                                                                                                    vụ
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            data-test="list-group-item"
+                                                                                            className={cx(
+                                                                                                'list-group-item',
+                                                                                                'list-group-item-undefined',
+                                                                                            )}
+                                                                                        >
+                                                                                            <div
                                                                                                 className={cx(
-                                                                                                    'mp_blue',
+                                                                                                    'column1',
                                                                                                 )}
                                                                                             >
-                                                                                                Dịch vụ: Khám dịch vụ
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li
-                                                                                        data-test="list-group-item"
-                                                                                        className={cx(
-                                                                                            'list-group-item',
-                                                                                            'list-group-item-undefined',
-                                                                                        )}
-                                                                                    >
-                                                                                        <div className={cx('column1')}>
-                                                                                            <span
+                                                                                                <span
+                                                                                                    className={cx(
+                                                                                                        'mp_blue',
+                                                                                                    )}
+                                                                                                >
+                                                                                                    Bác sĩ:{' '}
+                                                                                                    {element.doctor}
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            data-test="list-group-item"
+                                                                                            className={cx(
+                                                                                                'list-group-item',
+                                                                                                'list-group-item-undefined',
+                                                                                            )}
+                                                                                        >
+                                                                                            <div
                                                                                                 className={cx(
-                                                                                                    'mp_blue',
+                                                                                                    'column1',
                                                                                                 )}
                                                                                             >
-                                                                                                Bác sĩ: {element.doctor}
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li
-                                                                                        data-test="list-group-item"
-                                                                                        className={cx(
-                                                                                            'list-group-item',
-                                                                                            'list-group-item-undefined',
-                                                                                        )}
-                                                                                    >
-                                                                                        <div className={cx('column1')}>
-                                                                                            <span
+                                                                                                <span
+                                                                                                    className={cx(
+                                                                                                        'mp_blue',
+                                                                                                    )}
+                                                                                                >
+                                                                                                    Ngày khám:{' '}
+                                                                                                    {element.date}
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            data-test="list-group-item"
+                                                                                            className={cx(
+                                                                                                'list-group-item',
+                                                                                                'list-group-item-undefined',
+                                                                                            )}
+                                                                                        >
+                                                                                            <div
                                                                                                 className={cx(
-                                                                                                    'mp_blue',
+                                                                                                    'column1',
                                                                                                 )}
                                                                                             >
-                                                                                                Ngày khám:{' '}
-                                                                                                {element.date}
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li
-                                                                                        data-test="list-group-item"
+                                                                                                <span
+                                                                                                    className={cx(
+                                                                                                        'mp_blue',
+                                                                                                    )}
+                                                                                                >
+                                                                                                    Giờ khám dự kiến:{' '}
+                                                                                                    {element.time} (Buổi{' '}
+                                                                                                    {element.period})
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    {/* )} */}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div data-test="col" class="col-md-12 col-xl-4">
+                                                                            <ul
+                                                                                data-test="list-group"
+                                                                                className={cx(
+                                                                                    'list-group',
+                                                                                    'listAction',
+                                                                                )}
+                                                                            >
+                                                                                <li
+                                                                                    data-test="list-group-item"
+                                                                                    className={cx(
+                                                                                        'list-group-item',
+                                                                                        'item',
+                                                                                        'list-group-item-undefined',
+                                                                                    )}
+                                                                                >
+                                                                                    <div
                                                                                         className={cx(
-                                                                                            'list-group-item',
-                                                                                            'list-group-item-undefined',
+                                                                                            'payment',
+                                                                                            'not_payment',
                                                                                         )}
                                                                                     >
-                                                                                        <div className={cx('column1')}>
-                                                                                            <span
-                                                                                                className={cx(
-                                                                                                    'mp_blue',
-                                                                                                )}
-                                                                                            >
-                                                                                                Giờ khám dự kiến:{' '}
-                                                                                                {element.time} (Buổi{' '}
-                                                                                                {element.period})
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            ))}
+                                                                                        Chưa thanh toán
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div data-test="col" class="col-md-12 col-xl-4">
-                                                                    <ul
-                                                                        data-test="list-group"
-                                                                        className={cx('list-group', 'listAction')}
-                                                                    >
-                                                                        <li
-                                                                            data-test="list-group-item"
-                                                                            className={cx(
-                                                                                'list-group-item',
-                                                                                'item',
-                                                                                'list-group-item-undefined',
-                                                                            )}
-                                                                        >
-                                                                            <div
-                                                                                className={cx('payment', 'not_payment')}
-                                                                            >
-                                                                                Chưa thanh toán
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </ul>
-                                    </div>
+                                                        </li>
+                                                    </ul>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

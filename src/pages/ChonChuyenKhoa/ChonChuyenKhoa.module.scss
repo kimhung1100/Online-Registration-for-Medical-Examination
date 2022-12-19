@@ -1,6 +1,6 @@
 .ChonChuyenKhoa_wrapper {
     padding: 60px 0;
-    background-image: linear-gradient(45deg,#6a78d1,#00a4bd);
+    background-image: linear-gradient(45deg, #6a78d1, #00a4bd);
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
@@ -19,7 +19,7 @@
     max-width: 1200px;
 }
 
-.ChonChuyenKhoa_wrapper_content > a, 
+.ChonChuyenKhoa_wrapper_content > a,
 .ChonChuyenKhoa_chon_chuyen_khoa {
     color: white;
     text-decoration: none;
@@ -155,4 +155,17 @@
     font-weight: 700;
     padding: 20px 0 20px;
     right: 0;
+}
+.style_next_prev {
+    margin-top: 30px;
+    padding-bottom: 0;
+}
+
+.style_next_prev {
+    text-align: right;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 3px solid #dfe3eb;
+    align-items: center;
 }

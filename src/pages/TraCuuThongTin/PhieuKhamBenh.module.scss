@@ -1,37 +1,37 @@
 $medium-screen: 992px !default;
-$medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 
 .header {
     padding-bottom: 1.5rem;
     .header_pretitle {
-        text-transform: uppercase;
-        font-size: 1.1rem;
-        letter-spacing: 0.08em;
-        color: #627792;
-        margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: #627792;
+      margin-bottom: 0.75rem;
     }
     .header_title {
-        margin-bottom: 6px;
-        font-size: 2.25rem;
-        font-weight: 500;
+      margin-bottom: 6px;
+      font-size: 2.25rem;
+      font-weight: 500;
     }
-}
+  }
 
 .no_noti_inform {
     width: 100%;
     text-align: center;
     p {
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-        color: #627792;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #627792;
     }
     .subMessageGuide {
-        color: orangered;
-        font-size: 16px;
-        margin-bottom: 3rem;
+      color: orangered;
+      font-size: 16px;
+      margin-bottom: 3rem;
     }
     .not_found_result {
-        margin-top: 2rem;
+      margin-top: 2rem;
     }
 }
 
@@ -40,65 +40,65 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
 }
 // .tab-content {
 //     padding: 1rem;
-//     padding-top: 2rem;
+//     padding-top: 2rem; 
 // }
 .tab-content {
     > .tab-pane {
-        display: none;
+      display: none;
     }
     > .active {
-        display: block;
+      display: block;
     }
 }
 .animated {
     animation-duration: 1s;
     animation-fill-mode: both;
     &.infinite {
-        animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
     }
     &.delay-1s {
-        animation-delay: 1s;
+      animation-delay: 1s;
     }
     &.delay-2s {
-        animation-delay: 2s;
+      animation-delay: 2s;
     }
     &.delay-3s {
-        animation-delay: 3s;
+      animation-delay: 3s;
     }
     &.delay-4s {
-        animation-delay: 4s;
+      animation-delay: 4s;
     }
     &.delay-5s {
-        animation-delay: 5s;
+      animation-delay: 5s;
     }
     &.fast {
-        animation-duration: 800ms;
+      animation-duration: 800ms;
     }
     &.faster {
-        animation-duration: 500ms;
+      animation-duration: 500ms;
     }
     &.slow {
-        animation-duration: 2s;
+      animation-duration: 2s;
     }
     &.slower {
-        animation-duration: 3s;
+      animation-duration: 3s;
     }
 }
 .fadeIn {
     animation-name: fadeIn;
-}
-.list_medical_user {
+  }
+  .list_medical_user {
     overflow: hidden;
-}
+}  
 .card_collapse {
     box-shadow: none;
     padding: 0;
     margin-bottom: 10px;
     h5 {
-        //color: $main_black;
-        font-weight: 500;
-        font-size: 1.5rem;
-        margin-right: 5px;
+      //color: $main_black;
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin-right: 5px;
     }
 }
 .card {
@@ -128,13 +128,13 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
     //   }
     // }
     .md-form {
-        label {
-            font-weight: 300;
-        }
+      label {
+        font-weight: 300;
+      }
     }
 }
 .card-header:first-child {
-    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
 }
 .style_card_header {
     background: none;
@@ -142,9 +142,9 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
     transition: all 0.3s ease-in-out;
     padding: 0.75rem 1rem;
     h5 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 }
 .style_card_header_selected {
@@ -154,7 +154,7 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
     transition: all 0.3s ease-in-out;
     h5,
     i {
-        color: white;
+      color: white;
     }
 }
 .card-header {
@@ -162,27 +162,27 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
     margin-bottom: 0; // Removes the default margin-bottom of <hN>
     //color: $card-cap-color;
     //background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-
+    border-bottom: 1px solid rgba(0,0,0,.125);
+  
     // &:first-child {
     //   @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
     // }
-
+  
     + .list-group {
-        .list-group-item:first-child {
-            border-top: 0;
-        }
+      .list-group-item:first-child {
+        border-top: 0;
+      }
     }
-}
+  }
 .collapse {
     &:not(.show) {
-        display: none;
+      display: none;
     }
 }
 .list-group {
     display: flex;
     flex-direction: column;
-
+  
     // No need to set list-style: none; since .list-group-item is block level
     padding-left: 0; // reset padding because ul and ol
     margin-bottom: 0;
@@ -196,25 +196,25 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
     // color: $list-group-color;
     // background-color: $list-group-bg;
     // border: $list-group-border-width solid $list-group-border-color;
-
+  
     &:first-child {
-        border-top-left-radius: 0.125rem;
-        border-top-right-radius: 0.125rem;
+        border-top-left-radius: .125rem;
+        border-top-right-radius: .125rem;
     }
-
+  
     &:last-child {
-        margin-bottom: 0;
-        border-bottom-left-radius: 0.125rem;
-        border-bottom-right-radius: 0.125rem;
+      margin-bottom: 0;
+      border-bottom-left-radius: .125rem;
+        border-bottom-right-radius: .125rem;
     }
-
+  
     // &.disabled,
     // &:disabled {
     //   color: $list-group-disabled-color;
     //   pointer-events: none;
     //   background-color: $list-group-disabled-bg;
     // }
-
+  
     // // Include both here for `<a>`s and `<button>`s
     // &.active {
     //   z-index: 2; // Place active items above their siblings for proper border styling
@@ -225,40 +225,40 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
 }
 .list_group {
     li {
-        padding: 0 0 0 0;
-        border: 0;
-        margin: 0 0 10px 0;
-        border-radius: 0;
-        display: flex;
-        // align-items: center;
-        font-size: 1.4rem;
-        background: transparent;
-        .fullname {
-            color: #0352cc;
-            font-weight: 500;
-            transition: 0.3s linear;
-            text-transform: capitalize;
+      padding: 0 0 0 0;
+      border: 0;
+      margin: 0 0 10px 0;
+      border-radius: 0;
+      display: flex;
+      // align-items: center;
+      font-size: 1.4rem;
+      background: transparent;
+      .fullname {
+        color: #0352cc;
+        font-weight: 500;
+        transition: 0.3s linear;
+        text-transform: capitalize;
+      }
+      i {
+        margin-right: 7px;
+      }
+      .column1,
+      .column2 {
+        min-width: 150px;
+        word-break: break-word;
+        &.w_80 {
+          min-width: 80px;
         }
-        i {
-            margin-right: 7px;
+        &.w_90 {
+          min-width: 90px;
         }
-        .column1,
-        .column2 {
-            min-width: 150px;
-            word-break: break-word;
-            &.w_80 {
-                min-width: 80px;
-            }
-            &.w_90 {
-                min-width: 90px;
-            }
-        }
-        &:last-child {
-            border-bottom: 0;
-        }
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
     }
-}
-.style_card {
+  }
+  .style_card {
     width: 100%;
     overflow: hidden;
     border: 2px solid #dfe3eb;
@@ -283,8 +283,8 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
     flex: 1 1 auto;
     //padding: 1.25rem;
     //color: $card-color;
-}
-.card_body_item {
+  }
+  .card_body_item {
     display: flex;
     align-items: center;
     // .stt,
@@ -315,20 +315,20 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
     // }
     .payment_number,
     .cancel_payment_number {
-        text-align: center;
-        color: #0f74d7;
-        font-size: 30px;
-        font-weight: 500;
-        min-width: 80px;
-        margin-right: 20px;
+      text-align: center;
+      color: #0f74d7;
+      font-size: 30px;
+      font-weight: 500;
+      min-width: 80px;
+      margin-right: 20px;
     }
     .cancel_payment_number {
-        color: #dfe3eb;
+      color: #dfe3eb;
     }
 }
 .info_list {
     width: 100%;
-}
+  }
 .wrapper_title {
     display: flex;
     justify-content: space-between;
@@ -344,37 +344,40 @@ $medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
 .payment,
 .not_payment,
 .cancel_payment {
-    background: #3bb54a;
-    width: 100%;
-    color: white;
-    max-width: 140px;
-    min-width: 130px;
-    height: 30px;
-    text-align: center !important;
-    border-radius: 3px;
-    line-height: 30px;
-    font-size: 14px;
+  background: #3bb54a;
+  width: 100%;
+  color: white;
+  max-width: 140px;
+  min-width: 130px;
+  height: 30px;
+  text-align: center !important;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 14px;
 }
 
 .not_payment {
-    background-color: red;
+  background-color: red;
 }
 .listAction {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
     .item {
-        justify-content: flex-end;
+      justify-content: flex-end;
     }
-}
-@media #{$medium-and-down} {
+  }
+  @media #{$medium-and-down} {
     .listAction {
-        flex-direction: row;
+      flex-direction: row;
+      justify-content: center;
+      .item {
         justify-content: center;
-        .item {
-            justify-content: center;
-            margin: 0 5px;
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-        }
+        margin: 0 5px;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
     }
-}
+  }
+  
+
+  

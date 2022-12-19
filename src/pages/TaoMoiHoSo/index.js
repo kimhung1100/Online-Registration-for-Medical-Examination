@@ -5,9 +5,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
 import axios from 'axios';
+// import * as Yup from 'yup';
+// import { Formik, Form, Field, ErrorMessage } from 'formik';
+
 const cx = classNames.bind(styles);
 
 function TaoMoiHoSo() {
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     const [problem1, setProblem1] = useState(false);
     const [problem2, setProblem2] = useState(false);
 
@@ -21,6 +26,20 @@ function TaoMoiHoSo() {
         if (problem2 === false) setProblem1(false);
     };
 
+    // const validationSchema = Yup.object().shape({
+    //     name: Yup.string().required('Vui lòng nhập họ tên'),
+    //     gender: Yup.string().required('Vui lòng chọn giới tính'),
+    //     birthday: Yup.string().required('Vui lòng nhập ngày sinh'),
+    //     email: Yup.string().email('Vui lòng nhập đúng định dạng email'),
+    //     phone: Yup.string().required('Vui lòng nhập số điện thoại'),
+    //     cmnd: Yup.string().required('Vui lòng nhập số CMND'),
+    //     job: Yup.string().required('Vui lòng nhập nghề nghiệp'),
+    //     ethnicity: Yup.string().required('Vui lòng nhập dân tộc'),
+    //     address: Yup.string().required('Vui lòng nhập địa chỉ'),
+    //     province: Yup.string().required('Vui lòng chọn tỉnh/thành phố'),
+    //     ward: Yup.string().required('Vui lòng chọn quận/huyện'),
+    //     city: Yup.string().required('Vui lòng chọn phường/xã'),
+    // });
     // useEffect(() => {
     //     const notiChua = document.querySelector('.TaoMoiHoSo_chua_tung_kham')
     //     const formChua = document.querySelector('.TaoMoiHoSo_form_chua_tung_kham')
@@ -45,8 +64,6 @@ function TaoMoiHoSo() {
     //     notiChua.addEventListener('click', openChua)
     //     notiDa.addEventListener('click', openDa)
     // },[])
-
-    const [user, setUser] = useContext(UserContext);
 
     const [data, setData] = useState({
         name: '',
@@ -86,65 +103,11 @@ function TaoMoiHoSo() {
             ward: data.ward,
             userID: user.key,
         };
-        // valid input
-        if (data.name === '') {
-            alert('Vui lòng nhập họ tên');
-            return;
-        }
-        // valid phone number
-        if (data.phone === '') {
-            alert('Vui lòng nhập số điện thoại');
-            return;
-        } else if (data.phone.length < 10 || data.phone.length > 11) {
-            alert('Số điện thoại không hợp lệ');
-            return;
-        }
-        // valid cmnd
-        if (data.cmnd === '') {
-            alert('Vui lòng nhập số CMND');
-            return;
-        } else if (data.cmnd.length < 9 || data.cmnd.length > 12) {
-            alert('Số CMND không hợp lệ');
-            return;
-        }
-        // valid email
-        if (data.email === '') {
-            alert('Vui lòng nhập email');
-            return;
-        } else if (!data.email.includes('@')) {
-            alert('Email không hợp lệ');
-            return;
-        }
-
-        // valid address
-        if (data.address === '') {
-            alert('Vui lòng nhập địa chỉ');
-            return;
-        }
-        // valid province
-        if (data.province === '') {
-            alert('Vui lòng chọn tỉnh/thành phố');
-            return;
-        }
-        // valid city
-        if (data.city === '') {
-            alert('Vui lòng chọn quận/huyện');
-            return;
-        }
-        // valid ward
-        if (data.ward === '') {
-            alert('Vui lòng chọn phường/xã');
-            return;
-        }
-        // valid birthday
-        if (data.birthday === '') {
-            alert('Vui lòng chọn ngày sinh');
-            return;
-        }
-
+        console.log('zzzz');
+        console.log(sendData);
         axios
             .post(
-                `http://localhost/Online-Registration-for-Medical-Examination/src/php/patients.php/patient/save`,
+                `http://localhost/Online-Registration-for-Medical-Examination-1/src/php/patients.php/patients/save`,
                 sendData,
             )
             .then((result) => {
@@ -431,14 +394,12 @@ function TaoMoiHoSo() {
                             </div>
                         </div>
                         <div className={cx('TaoMoiHoSo_button')}>
-                            <div className={cx('TaoMoiHoSo_agree')}>
+                            <button className={cx('TaoMoiHoSo_agree')} type="submit">
                                 {/* <a href="" className={cx("TaoMoiHoSo_agree")}> */}
-                                <button type="submit">
-                                    {' '}
-                                    <i className={cx('fa-solid fa-user-plus')}></i> Tạo mới
-                                </button>
+                                {/* <button type="submit"> */} <i className={cx('fa-solid fa-user-plus')}></i> Tạo mới
+                                {/* </button> */}
                                 {/* </a> */}
-                            </div>
+                            </button>
                             <div className={cx('TaoMoiHoSo_erase')} onClick={handleReset}>
                                 <i className={cx('fa-solid fa-eraser')}></i>
                                 Nhập lại
@@ -451,254 +412,13 @@ function TaoMoiHoSo() {
                     <div className={cx('TaoMoiHoSo_da_tung')}>
                         <div className={cx('TaoMoiHoSo_dien_form')}>
                             <input type="text" placeholder="Nhập mã số bệnh nhân / Mã số BHYT"></input>
-                            <a href="" className={cx('TaoMoiHoSo_search')}>
-                                Tìm kiếm
+                            <div className={cx('TaoMoiHoSo_search')}>Tìm kiếm</div>
+                        </div>
+                        <div className={cx('TaoMoiHoSo_lost')}>
+                            <i className={cx('fa-solid fa-caret-right')}></i>
+                            <a href="" className={cx('TaoMoiHoSo_link_lost')}>
+                                Tôi mất mã số bệnh nhân của mình
                             </a>
-                        </div>
-                        <div
-                            onClick={handleProblem2}
-                            className={cx('TaoMoiHoSo_da_tung_kham', problem2 && 'open', problem1 && 'hide')}
-                        >
-                            Đã từng khám
-                        </div>
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                        <div className={cx('TaoMoiHoSo_form_chua_tung_kham', problem1 && 'open', problem2 && 'hide')}>
-                            <h2>NHẬP THÔNG TIN BỆNH NHÂN</h2>
-                            <div className={cx('TaoMoiHoSo_info')}>
-                                Vui lòng cung cấp thông tin chính xác để được phục vụ tốt nhất. Trong trường hợp cung
-                                cấp sai thông tin bệnh nhân & điện thoại, việc xác nhận cuộc hẹn sẽ không hiệu lực trước
-                                khi đặt khám.
-                            </div>
-                            <div className={cx('TaoMoiHoSo_note')}>(*) Thông tin bắt buộc nhập</div>
-
-                            <div className={cx('TaoMoiHoSo_dien_form')}>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".ho_ten">
-                                        Họ và tên (Có dấu)
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_ho_ten')}
-                                        placeholder="Ví dụ: Bùi Kim Hưng"
-                                        id="input"
-                                        name="name"
-                                        value={data.name}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".birth">
-                                        Ngày tháng năm sinh
-                                        <sup>*</sup>
-                                    </label>
-                                    <div className={cx('TaoMoiHoSo_form_box_birth')}>
-                                        <input
-                                            type="date"
-                                            //placeholder="dd/mm/yy"
-                                            name="birthday"
-                                            value={data.birthday}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".sdt">
-                                        Số điện thoại
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_sdt')}
-                                        placeholder="Nhập số điện thoại"
-                                        name="phone"
-                                        id="input"
-                                        value={data.phone}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".gender">
-                                        Giới tính
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <select
-                                        name="gender"
-                                        id="gender"
-                                        aria-placeholder="Giới tính"
-                                        value={data.gender}
-                                        onChange={handleChange}
-                                    >
-                                        <option value="">Chọn giới tính</option>
-                                        <option value="Nam" onChange={handleChange}>
-                                            Nam
-                                        </option>
-                                        <option value="Nữ" onChange={handleChange}>
-                                            Nữ
-                                        </option>
-                                    </select>
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".job">
-                                        Nghề nghiệp
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_job')}
-                                        placeholder="Nhập nghề nghiệp"
-                                        id="input"
-                                        name="job"
-                                        value={data.job}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".cmnd">
-                                        Số CMND/Passport
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_cmnd')}
-                                        placeholder="Nhập số CMND"
-                                        id="input"
-                                        name="cmnd"
-                                        value={data.cmnd}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".email">Địa chỉ Email</label>
-                                    <br></br>
-                                    <input
-                                        type="email"
-                                        className={cx('TaoMoiHoSo_email')}
-                                        placeholder="Nhập địa chỉ email để nhận phiếu khám"
-                                        id="input"
-                                        name="email"
-                                        value={data.email}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".ethnic">Dân tộc</label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_ethnic')}
-                                        placeholder="Nhập dân tộc"
-                                        id="input"
-                                        name="ethnicity"
-                                        value={data.ethnicity}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".province">
-                                        Tỉnh / Thành
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_province')}
-                                        placeholder="Nhập tỉnh thành"
-                                        name="province"
-                                        value={data.province}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".city">
-                                        Quận / Huyện
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_city')}
-                                        placeholder="Nhập quận huyện"
-                                        name="city"
-                                        value={data.city}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".ward">
-                                        Phường / Xã
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_ward')}
-                                        placeholder="Nhập phường xã"
-                                        name="ward"
-                                        value={data.ward}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className={cx('TaoMoiHoSo_form_box')}>
-                                    <label for=".address">
-                                        Địa chỉ
-                                        <sup>*</sup>
-                                    </label>
-                                    <br></br>
-                                    <input
-                                        type="text"
-                                        className={cx('TaoMoiHoSo_address')}
-                                        placeholder="Nhập địa chỉ"
-                                        id="input"
-                                        name="address"
-                                        value={data.address}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <div className={cx('TaoMoiHoSo_button')}>
-                                <div className={cx('TaoMoiHoSo_agree')}>
-                                    {/* <a href="" className={cx("TaoMoiHoSo_agree")}> */}
-                                    <button type="submit">
-                                        {' '}
-                                        <i className={cx('fa-solid fa-user-plus')}></i> Tạo mới
-                                    </button>
-                                    {/* </a> */}
-                                </div>
-                                <div className={cx('TaoMoiHoSo_erase')} onClick={handleReset}>
-                                    <i className={cx('fa-solid fa-eraser')}></i>
-                                    Nhập lại
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div className={cx('TaoMoiHoSo_form_da_tung_kham', problem2 && 'open', problem1 && 'hide')}>
-                        <h2>NHẬP MÃ SỐ BỆNH NHÂN / MÃ SỐ BHYT</h2>
-                        <div className={cx('TaoMoiHoSo_da_tung')}>
-                            <div className={cx('TaoMoiHoSo_dien_form')}>
-                                <input type="text" placeholder="Nhập mã số bệnh nhân / Mã số BHYT"></input>
-                                <div className={cx('TaoMoiHoSo_search')}>Tìm kiếm</div>
-                            </div>
-                            <div className={cx('TaoMoiHoSo_lost')}>
-                                <i className={cx('fa-solid fa-caret-right')}></i>
-                                <a href="" className={cx('TaoMoiHoSo_link_lost')}>
-                                    Tôi mất mã số bệnh nhân của mình
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>

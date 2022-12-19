@@ -1,10 +1,45 @@
+import { provideLocalizationService } from '@progress/kendo-react-intl';
 import classNames from 'classnames/bind';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import React, { useEffect} from "react";
+import axios from 'axios';
+import {UserContext} from '../../components/UserContext';
+import { useContext } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './XacNhanThongTin.module.scss';
 const cx = classNames.bind(styles);
+
 function XacNhanThongTin() {
     const navigate = useNavigate();
-    
+    const location = useLocation();
+    console.log(location.state);
+
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
+    const [patient, setPatient] = useState({});
+    useEffect(() => {
+        getPatient();
+    },[]);
+
+    const getPatient = () => {
+        const sendData = {
+            userID: user.key, 
+            id: location.state.patientID
+        }
+        axios.post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/patients.php/patient/lookupone`, sendData)
+        .then((result) => {
+            setPatient(result.data);
+            console.log(result.data);
+
+        })
+        .catch((error) => {
+            console.log(error.response);
+        });
+    }
+
+
     return (
         <div className={cx('style_wrapper_content')}>
             <div className={cx('style_bg_breakcum')}>
@@ -38,15 +73,15 @@ function XacNhanThongTin() {
                                     <ul data-test="list-group" className={cx('list-group', 'style_list_group')}>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined')}>
                                             <i className={cx('far', 'fa-user-circle')}></i>
-                                            Dương Huỳnh Anh Đức
+                                            {patient.name}
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined')}>
                                             <i className={cx('far', 'fa-mobile-alt')}></i>
-                                            0794763040
+                                            {patient.phone}
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined')}>
                                             <i className={cx('far', 'fa-map-marker')}></i>
-                                            107/18/5 Huỳnh Khương An, phường 05, Quận Gò Vấp, Thành phố Hồ Chí Minh
+                                            {patient.address}
                                         </li>
                                     </ul>
                                 </div>
@@ -75,14 +110,13 @@ function XacNhanThongTin() {
                                             <tbody data-test="table-body">
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>PHẪU THUẬT HÀM MẶT - RHM</td>
+                                                    <td>{location.state.specialization}</td>
                                                     <td>Khám dịch vụ</td>
-                                                    <td>Đặng Vũ Thảo Vy</td>
+                                                    <td>{location.state.doctor.name}</td>
                                                     <td>
-                                                        10/12
-                                                        10:00
+                                                        {location.state.time} {location.state.date}
                                                     </td>
-                                                    <td>150.000 đ</td>
+                                                    <td>{location.state.doctor.price}</td>
                                                     <td className={cx('d-none')}>0 đ</td>
                                                     <td>
                                                         <button data-test="button" type="button" className={cx('btn-flat', 'btn', 'Ripple-parent', 'style_button')}>
@@ -109,7 +143,7 @@ function XacNhanThongTin() {
                                                 Họ và tên &nbsp;
                                             </div>
                                             <div className={cx('style_column2')}>
-                                                <strong>DƯƠNG HUỲNH ANH ĐỨC</strong>
+                                                <strong>{patient.name}</strong>
                                             </div>
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined', 'half')}>
@@ -118,7 +152,7 @@ function XacNhanThongTin() {
                                                 Giới tính &nbsp;
                                             </div>
                                             <div className={cx('style_column2')}>
-                                                Nam
+                                                {patient.gender}
                                             </div>
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined', 'half')}>
@@ -127,7 +161,7 @@ function XacNhanThongTin() {
                                                 Ngày sinh &nbsp;
                                             </div>
                                             <div className={cx('style_column2')}>
-                                                01/02/2002
+                                                {patient.birthday}
                                             </div>
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined', 'half')}>
@@ -136,7 +170,7 @@ function XacNhanThongTin() {
                                                 CMND &nbsp;
                                             </div>
                                             <div className={cx('style_column2')}>
-                                                079202001171
+                                                {patient.cmnd}
                                             </div>
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined', 'half')}>
@@ -145,7 +179,7 @@ function XacNhanThongTin() {
                                                 Email &nbsp;
                                             </div>
                                             <div className={cx('style_column2')}>
-                                                anhducduonghuynh@gmail.com
+                                                {patient.email}
                                             </div>
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined', 'half')}>
@@ -154,7 +188,7 @@ function XacNhanThongTin() {
                                                 Dân tộc &nbsp;
                                             </div>
                                             <div className={cx('style_column2')}>
-                                                Kinh
+                                                {patient.ethnicity}
                                             </div>
                                         </li>
                                         <li data-test="list-group-item" className={cx('list-group-item', 'list-group-item-undefined', 'half')}>
@@ -172,13 +206,13 @@ function XacNhanThongTin() {
                                                 Địa chỉ &nbsp;
                                             </div>
                                             <div className={cx('style_column2')}>
-                                                107/18/5 Huỳnh Khương An, Phường 05, Quận Gò Vấp, Thành phố Hồ Chí Minh
+                                                {patient.address}
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className={cx('style_next_prev')}>
-                                    <button style={{backgroundColor:'#fff'}} data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button')}>
+                                    <button onClick={() => navigate('/chon-lich-kham')} style={{backgroundColor:'#fff'}} data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button')}>
                                         <div>Quay lại</div>
                                         <div data-test="waves" className={cx('Ripple', 'Ripple-outlin')} style={{top: '0px', left: '0px', width: '0px', height: '0px'}}></div>
                                     </button>
@@ -190,15 +224,14 @@ function XacNhanThongTin() {
                                             </button>
                                         </li>
                                         <li className={cx('list-inline-item', 'm-0')}>
-                                            <button onClick={() => {
-                                                navigate('../thanh-toan');
-                                            }}
-                                            data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button', 'style_create', 'style_buttonArrow')}>
+                                            <Link to='/thanh-toan' state={{...location.state}}>
+                                            <button data-test="button" type="button" className={cx('btn', 'btn-flat', 'Ripple-parent', 'style_button', 'style_create', 'style_buttonArrow')}>
                                                 <div>Xác nhận
                                                     <i style={{fontWeight: '600'}} className={cx('fa-regular', 'fa-arrow-right')}></i>
                                                 </div>
                                                 <div data-test="waves" className={cx('Ripple', 'Ripple-outlin')} style={{top: '0px', left: '0px', width: '0px', height: '0px'}}></div>
                                             </button>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -208,6 +241,8 @@ function XacNhanThongTin() {
                 </div>
             </div>
         </div>
+
+        
     );
 }
 

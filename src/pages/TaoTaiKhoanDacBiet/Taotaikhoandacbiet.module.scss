@@ -81,7 +81,6 @@ h6 {
 
 p {
     margin-top: 0px;
-    
 }
 
 .wrapper {
@@ -98,14 +97,14 @@ p {
     height: 450px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #DFE3EB;
+    border: 1px solid #dfe3eb;
     border-radius: 5px;
     margin-bottom: 20px;
     margin-top: 50px;
 }
 
 .bar {
-    background-color: #1DA1F2;
+    background-color: #1da1f2;
     height: 50px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -113,7 +112,7 @@ p {
 
 .bar-text {
     line-height: 50px;
-    font-size: 1.2em;
+    font-size: 1.4rem;
     margin-left: 15px;
     color: #fff;
     font-weight: 550;
@@ -129,7 +128,7 @@ p {
 }
 
 .style_form_group {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     position: relative;
     margin-top: 20px;
 }
@@ -141,7 +140,7 @@ p {
 .style_form_group label {
     display: inline-block;
     color: #12263f !important;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 10px;
 }
@@ -153,7 +152,7 @@ p {
     font-style: normal;
     padding: 0 10px;
     color: #032a5f !important;
-    border: 1px solid rgba(3, 42, 95, .1);
+    border: 1px solid rgba(3, 42, 95, 0.1);
     border-radius: 5px;
     height: 40px;
     width: 350px;
@@ -171,7 +170,7 @@ p {
     font-style: normal;
     padding-top: 0;
     padding-bottom: 0;
-    border: 1px solid rgba(3, 42, 95, .1);
+    border: 1px solid rgba(3, 42, 95, 0.1);
     border-radius: 5px;
 }
 
@@ -195,7 +194,7 @@ p {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .form-control:focus {
@@ -220,7 +219,7 @@ p {
 .style-choose label {
     display: inline-block;
     color: #12263f !important;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin-right: 10px;
 }
@@ -229,11 +228,11 @@ p {
     font-style: normal;
     padding-top: 0;
     padding-bottom: 0;
-    border: 1px solid rgba(3, 42, 95, .1);
+    border: 1px solid rgba(3, 42, 95, 0.1);
     border-radius: 5px;
     height: 40px;
     color: #fff;
-    background: #1DA1F2;
+    background: #1da1f2;
     font-size: 0.9rem;
     text-align: center;
 }
@@ -254,7 +253,7 @@ p {
 }
 
 .luuthongtin button {
-    background-color: #1DA1F2;
+    background-color: #1da1f2;
     color: #fff;
     cursor: pointer;
     border: none;

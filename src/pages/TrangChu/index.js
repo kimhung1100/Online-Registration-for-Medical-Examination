@@ -9,7 +9,8 @@ import { UserContext } from '../../components/UserContext';
 import { useContext } from 'react';
 const cx = classNames.bind(styles);
 function TrangChu() {
-    const [user, setUser] = useContext(UserContext);
+    const context = useContext(UserContext);
+    const [user, setUser] = context[0];
     return (
         <div className={cx('container')}>
             <div className={cx('content')}>
@@ -18,7 +19,12 @@ function TrangChu() {
                     <div className={cx('description')}>Đặt lịch khám theo chuyên khoa, chuyên môn, bác sĩ.</div>
 
                     <div className={cx('right')}>
-                        <img src={doctorImage} className={cx('doctorImage')}></img>
+                        <img
+                            src={
+                                'https://cdnimg.vietnamplus.vn/uploaded/hotnnz/2022_05_12/5_bai_bien_hoang_so_dep_nhat3_1.jpg'
+                            }
+                            className={cx('doctorImage')}
+                        ></img>
                     </div>
                     {/* <div className={cx('button')}>
                         <a href="./chon-ho-so">Đăng ký khám</a>

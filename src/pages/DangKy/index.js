@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import styles from './dangki.scss';
 import classNames from 'classnames/bind';
 import '../../assets/fonts/Archivo-VariableFont_wdth,wght.ttf';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const cx = classNames.bind(styles);
 
 export default function DangKy() {
@@ -51,14 +53,11 @@ export default function DangKy() {
         }
         console.log(sendData);
         axios
-            .post(
-                `http://localhost/Online-Registration-for-Medical-Examination-1/src/php/user.php/user/register`,
-                sendData,
-            )
+            .post(`http://localhost/Online-Registration-for-Medical-Examination-1/src/php/user.php/user/save`, sendData)
             .then((result) => {
                 console.log(result);
                 console.log(sendData);
-                navigate(`/`);
+                navigate(`/dang-nhap`);
             })
             .catch((error) => {
                 console.log(error.response);
